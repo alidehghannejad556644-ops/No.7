@@ -1,53 +1,110 @@
-in<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No.7 | شماره ۷</title>
-    <meta name="description" content="هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست.">
+    <title>No.7 | شماره ۷ — A Psychological Narrative Experience</title>
+    <meta name="description" content="Seven people. Seven memories. One truth no one is ready to hear. A psychological narrative experience where every salvation is a loss.">
+    <meta name="keywords" content="No.7, psychological game, narrative game, indie game, memory, trauma">
+    <meta name="theme-color" content="#060609">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="No.7 | شماره ۷">
+    <meta property="og:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519608487953-e999c86e7a2d?w=1200">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="No.7 | شماره ۷">
+    <meta name="twitter:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
 
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-300-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-400-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-500-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-700-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-900-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-300-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.css">
 
     <style>
+        /* ========================================
+           DESIGN TOKENS
+        ======================================== */
         :root {
-            --font-fa: 'Vazirmatn', system-ui, sans-serif;
-            --font-en: 'Inter', system-ui, sans-serif;
+            /* Typography */
+            --font-fa: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            --font-en: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
 
-            --bg-void: #060609;
-            --bg-primary: #0a0a10;
-            --bg-secondary: #101018;
-            --bg-card: rgba(255, 255, 255, 0.02);
-            --bg-glass: rgba(255, 255, 255, 0.04);
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --border-strong: rgba(255, 255, 255, 0.15);
+            /* Colors - Deep Cinematic Palette */
+            --void: #04040a;
+            --void-2: #080812;
+            --ink: #0c0c18;
+            --ink-2: #14141f;
+            --smoke: #1c1c2a;
+            --ash: #2a2a3d;
 
-            --text-primary: #f0f0f5;
-            --text-secondary: #a0a0b8;
-            --text-muted: #606078;
+            --bone: #f4f1ea;
+            --paper: #d8d4c8;
+            --stone: #8a8694;
+            --dust: #5a5666;
+            --shadow: #3a3644;
 
-            --accent: #c0392b;
-            --accent-light: #e74c3c;
-            --accent-dark: #8b2a20;
-            --accent-glow: rgba(231, 76, 60, 0.4);
-            --accent-soft: rgba(192, 57, 43, 0.1);
+            /* Accent - Blood Red */
+            --blood: #a8201a;
+            --blood-light: #d63031;
+            --blood-deep: #6b1510;
+            --blood-glow: rgba(214, 48, 49, 0.4);
+            --blood-soft: rgba(168, 32, 26, 0.08);
 
-            --radius-lg: 24px;
-            --radius: 16px;
-            --radius-sm: 10px;
-            --radius-xs: 6px;
+            /* Gold - Memory */
+            --gold: #c9a961;
+            --gold-soft: rgba(201, 169, 97, 0.15);
 
-            --ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --transition: 0.4s var(--ease);
+            /* Glass */
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-2: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border-2: rgba(255, 255, 255, 0.12);
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            --space-2xl: 12rem;
+
+            /* Radii */
+            --r-sm: 4px;
+            --r-md: 12px;
+            --r-lg: 24px;
+            --r-xl: 40px;
+            --r-full: 9999px;
+
+            /* Easing */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Transitions */
+            --t-fast: 200ms;
+            --t-base: 400ms;
+            --t-slow: 800ms;
+            --t-glacial: 1600ms;
         }
 
+        /* ========================================
+           RESET & BASE
+        ======================================== */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -56,33 +113,123 @@ in<!DOCTYPE html>
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
             font-family: var(--font-fa);
-            background: var(--bg-void);
-            color: var(--text-primary);
-            line-height: 1.8;
+            background: var(--void);
+            color: var(--bone);
+            line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            transition: font-family 0.3s var(--ease);
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: "kern" 1, "liga" 1;
+            cursor: none;
         }
 
         body.lang-en {
             font-family: var(--font-en);
         }
 
-        ::selection {
-            background: var(--accent);
-            color: #fff;
+        body.is-loading {
+            overflow: hidden;
+            height: 100vh;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-void); }
-        ::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 3px; }
+        ::selection {
+            background: var(--blood);
+            color: var(--bone);
+        }
 
-        /* ===== 3D CHESS BACKGROUND ===== */
-        .chess-bg {
+        img, svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            cursor: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: none;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--void);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--blood-deep);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--blood);
+        }
+
+        /* ========================================
+           CUSTOM CURSOR
+        ======================================== */
+        .cursor-dot,
+        .cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            will-change: transform;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--bone);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), background 0.3s;
+        }
+
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(244, 241, 234, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), border-color 0.4s, opacity 0.4s;
+        }
+
+        .cursor-hover .cursor-ring {
+            width: 64px;
+            height: 64px;
+            border-color: var(--blood-light);
+        }
+
+        .cursor-hover .cursor-dot {
+            width: 0;
+            height: 0;
+        }
+
+        @media (hover: none) {
+            body { cursor: auto; }
+            body a, body button { cursor: pointer; }
+            .cursor-dot, .cursor-ring { display: none; }
+        }
+
+        /* ========================================
+           AMBIENT BACKGROUND LAYERS
+        ======================================== */
+        .ambient {
             position: fixed;
             inset: 0;
             z-index: 0;
@@ -90,86 +237,154 @@ in<!DOCTYPE html>
             overflow: hidden;
         }
 
-        .chess-bg::before {
-            content: '';
+        /* Layer 1: Deep gradient mesh */
+        .ambient-mesh {
             position: absolute;
-            width: 200%;
-            height: 200%;
-            left: -50%;
-            top: 20%;
-            background-image:
-                linear-gradient(45deg, rgba(192, 57, 43, 0.06) 25%, transparent 25%, transparent 75%, rgba(192, 57, 43, 0.06) 75%),
-                linear-gradient(45deg, rgba(192, 57, 43, 0.06) 25%, transparent 25%, transparent 75%, rgba(192, 57, 43, 0.06) 75%);
-            background-size: 80px 80px;
-            background-position: 0 0, 40px 40px;
-            transform: perspective(600px) rotateX(65deg) translateZ(-100px);
-            transform-origin: center top;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
-            animation: floorDrift 20s linear infinite;
-        }
-
-        .chess-bg::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            left: -50%;
-            top: 20%;
-            background-image:
-                repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(231, 76, 60, 0.08) 79px, rgba(231, 76, 60, 0.08) 80px),
-                repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(231, 76, 60, 0.08) 79px, rgba(231, 76, 60, 0.08) 80px);
-            background-size: 80px 80px;
-            transform: perspective(600px) rotateX(65deg) translateZ(-99px);
-            transform-origin: center top;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
-        }
-
-        @keyframes floorDrift {
-            0% { background-position: 0 0, 40px 40px; }
-            100% { background-position: 80px 80px, 120px 120px; }
-        }
-
-        .chess-bg-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
+            inset: -20%;
             background:
-                radial-gradient(ellipse at 50% 30%, transparent 0%, var(--bg-void) 70%),
-                linear-gradient(180deg, var(--bg-void) 0%, transparent 20%, transparent 80%, var(--bg-void) 100%);
+                radial-gradient(ellipse 60% 50% at 20% 30%, rgba(168, 32, 26, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 60% at 80% 70%, rgba(107, 21, 16, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 70% 40% at 50% 90%, rgba(201, 169, 97, 0.04) 0%, transparent 60%);
+            animation: meshDrift 30s ease-in-out infinite alternate;
+            filter: blur(40px);
         }
 
-        /* Architecture columns */
-        .arch-column {
-            position: fixed;
+        @keyframes meshDrift {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5%, 3%) scale(1.05); }
+            100% { transform: translate(3%, -2%) scale(0.98); }
+        }
+
+        /* Layer 2: Perspective grid floor */
+        .ambient-grid {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            left: -50%;
+            top: 40%;
+            background-image:
+                linear-gradient(rgba(168, 32, 26, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(168, 32, 26, 0.08) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(800px) rotateX(68deg);
+            transform-origin: center top;
+            mask-image: linear-gradient(to bottom,
+                transparent 0%,
+                black 10%,
+                black 50%,
+                transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom,
+                transparent 0%,
+                black 10%,
+                black 50%,
+                transparent 100%);
+            animation: gridFlow 40s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes gridFlow {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 60px 60px, 60px 60px; }
+        }
+
+        /* Layer 3: Floating particles */
+        .ambient-particles {
+            position: absolute;
+            inset: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--blood-light);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 8px var(--blood-glow);
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0);
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                opacity: 0;
+                transform: translateY(-20vh) translateX(40px);
+            }
+        }
+
+        /* Layer 4: Film grain */
+        .ambient-grain {
+            position: absolute;
+            inset: -50%;
+            opacity: 0.04;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            animation: grainShift 0.5s steps(4) infinite;
+        }
+
+        @keyframes grainShift {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-2%, 1%); }
+            50% { transform: translate(1%, -2%); }
+            75% { transform: translate(-1%, 2%); }
+        }
+
+        /* Layer 5: Vignette */
+        .ambient-vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center,
+                transparent 30%,
+                rgba(4, 4, 10, 0.4) 70%,
+                rgba(4, 4, 10, 0.9) 100%);
+        }
+
+        /* Layer 6: Vertical architectural lines */
+        .ambient-lines {
+            position: absolute;
+            inset: 0;
+            opacity: 0.3;
+        }
+
+        .ambient-lines::before,
+        .ambient-lines::after {
+            content: '';
+            position: absolute;
             top: 0;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(180deg, transparent, rgba(231, 76, 60, 0.1) 30%, rgba(231, 76, 60, 0.1) 70%, transparent);
-            z-index: 1;
-            pointer-events: none;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(168, 32, 26, 0.2) 20%,
+                rgba(168, 32, 26, 0.2) 80%,
+                transparent 100%);
         }
 
-        .arch-column:nth-child(1) { left: 10%; }
-        .arch-column:nth-child(2) { left: 30%; }
-        .arch-column:nth-child(3) { left: 50%; }
-        .arch-column:nth-child(4) { left: 70%; }
-        .arch-column:nth-child(5) { left: 90%; }
+        .ambient-lines::before { left: 8%; }
+        .ambient-lines::after { right: 8%; }
 
-        /* ===== PRELOADER ===== */
+        [dir="ltr"] .ambient-lines::before { left: 8%; right: auto; }
+        [dir="ltr"] .ambient-lines::after { right: 8%; left: auto; }
+
+        /* ========================================
+           PRELOADER
+        ======================================== */
         .preloader {
             position: fixed;
             inset: 0;
-            background: var(--bg-void);
+            background: var(--void);
             z-index: 10000;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 24px;
-            transition: opacity 0.8s var(--ease), visibility 0.8s var(--ease);
+            gap: var(--space-lg);
+            transition: opacity 1s var(--ease-out), visibility 1s var(--ease-out);
         }
 
         .preloader.hidden {
@@ -178,83 +393,172 @@ in<!DOCTYPE html>
         }
 
         .preloader-number {
-            font-size: clamp(5rem, 15vw, 10rem);
-            font-weight: 900;
+            font-family: var(--font-mono);
+            font-size: clamp(8rem, 25vw, 18rem);
+            font-weight: 700;
+            line-height: 0.8;
             color: transparent;
-            -webkit-text-stroke: 2px var(--accent);
-            line-height: 1;
-            animation: preloaderPulse 1.5s var(--ease) infinite;
+            -webkit-text-stroke: 1px var(--blood);
+            letter-spacing: -0.05em;
+            position: relative;
+            animation: numberPulse 2s var(--ease-in-out) infinite;
+        }
+
+        .preloader-number::after {
+            content: '7';
+            position: absolute;
+            inset: 0;
+            color: var(--blood);
+            -webkit-text-stroke: 0;
+            opacity: 0;
+            animation: numberGlitch 2s var(--ease-in-out) infinite;
+        }
+
+        @keyframes numberPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes numberGlitch {
+            0%, 85%, 100% { opacity: 0; transform: translate(0, 0); }
+            88% { opacity: 0.8; transform: translate(-3px, 2px); }
+            92% { opacity: 0; transform: translate(3px, -1px); }
+            95% { opacity: 0.6; transform: translate(-2px, -2px); }
+        }
+
+        .preloader-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--stone);
         }
 
         .preloader-bar {
-            width: 180px;
-            height: 2px;
-            background: var(--bg-secondary);
-            border-radius: 2px;
+            width: 120px;
+            height: 1px;
+            background: var(--ash);
+            position: relative;
             overflow: hidden;
         }
 
         .preloader-bar::after {
             content: '';
-            display: block;
+            position: absolute;
+            inset: 0;
+            background: var(--blood);
+            transform-origin: left;
+            animation: barFill 2s var(--ease-out) forwards;
+        }
+
+        [dir="ltr"] .preloader-bar::after { transform-origin: left; }
+        [dir="rtl"] .preloader-bar::after { transform-origin: right; }
+
+        @keyframes barFill {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* ========================================
+           SCROLL PROGRESS
+        ======================================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: transparent;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .scroll-progress-bar {
             height: 100%;
-            background: var(--accent);
-            animation: preloaderFill 1.8s var(--ease) forwards;
+            background: linear-gradient(90deg, var(--blood-deep), var(--blood-light));
+            width: 0%;
+            transform-origin: left;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px var(--blood-glow);
         }
 
-        @keyframes preloaderPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+        [dir="rtl"] .scroll-progress-bar {
+            transform-origin: right;
         }
 
-        @keyframes preloaderFill {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        /* ===== NAVIGATION ===== */
+        /* ========================================
+           NAVIGATION
+        ======================================== */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 16px 32px;
-            background: rgba(6, 6, 9, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid transparent;
+            padding: var(--space-sm) var(--space-md);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all var(--transition);
+            gap: var(--space-md);
+            transition: all var(--t-base) var(--ease-out);
         }
 
-        .nav.scrolled {
-            border-bottom-color: var(--border-glass);
-            background: rgba(6, 6, 9, 0.92);
+        .nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 4, 10, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--t-base);
+            z-index: -1;
+        }
+
+        .nav.scrolled::before {
+            border-bottom-color: var(--glass-border);
         }
 
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 900;
-            font-size: 1.1rem;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
         }
 
         .nav-brand-mark {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, var(--accent-light), var(--accent-dark));
+            background: radial-gradient(circle at 30% 30%, var(--blood-light), var(--blood-deep));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 900;
-            color: #fff;
-            box-shadow: 0 0 20px var(--accent-glow);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--bone);
+            box-shadow: 0 0 24px var(--blood-glow), inset 0 0 12px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-brand-mark::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
         }
 
         .nav-links {
@@ -264,17 +568,40 @@ in<!DOCTYPE html>
         }
 
         .nav-link {
-            padding: 8px 14px;
-            font-size: 0.85rem;
+            position: relative;
+            padding: 10px 16px;
+            font-size: 0.82rem;
             font-weight: 500;
-            color: var(--text-secondary);
-            border-radius: var(--radius-xs);
-            transition: all var(--transition);
+            color: var(--paper);
+            border-radius: var(--r-sm);
+            transition: color var(--t-fast);
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--glass);
+            border-radius: var(--r-sm);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        [dir="ltr"] .nav-link::before { transform-origin: left; }
+
+        .nav-link:hover::before {
+            transform: scaleX(1);
         }
 
         .nav-link:hover {
-            color: var(--text-primary);
-            background: var(--bg-glass);
+            color: var(--bone);
+        }
+
+        .nav-link-text {
+            position: relative;
+            z-index: 1;
         }
 
         .nav-actions {
@@ -286,60 +613,76 @@ in<!DOCTYPE html>
         .lang-toggle {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 50px;
-            font-size: 0.8rem;
+            gap: 10px;
+            padding: 10px 18px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-full);
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all var(--transition);
-            font-family: inherit;
+            letter-spacing: 0.1em;
+            color: var(--bone);
+            transition: all var(--t-base) var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-toggle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--blood);
+            transform: translateY(100%);
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        .lang-toggle:hover::before {
+            transform: translateY(0);
+        }
+
+        .lang-toggle > * {
+            position: relative;
+            z-index: 1;
         }
 
         .lang-toggle:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px var(--accent-glow);
+            border-color: var(--blood);
+            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
-        .lang-toggle .pulse {
+        .lang-indicator {
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: var(--accent-light);
-            animation: pulseDot 2s infinite;
+            background: var(--blood-light);
+            box-shadow: 0 0 8px var(--blood-glow);
+            animation: pulseDot 2s ease-in-out infinite;
         }
-
-        .lang-toggle:hover .pulse { background: #fff; }
 
         @keyframes pulseDot {
             0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.7); }
+            50% { opacity: 0.5; transform: scale(0.8); }
         }
 
         .mobile-toggle {
             display: none;
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-xs);
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--r-sm);
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
             align-items: center;
             justify-content: center;
-            cursor: pointer;
+            position: relative;
         }
 
         .mobile-toggle span {
             display: block;
             width: 18px;
-            height: 2px;
-            background: var(--text-primary);
+            height: 1.5px;
+            background: var(--bone);
             position: relative;
-            transition: all var(--transition);
+            transition: all var(--t-base) var(--ease-out);
         }
 
         .mobile-toggle span::before,
@@ -347,48 +690,85 @@ in<!DOCTYPE html>
             content: '';
             position: absolute;
             width: 18px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all var(--transition);
+            height: 1.5px;
+            background: var(--bone);
+            transition: all var(--t-base) var(--ease-out);
         }
 
         .mobile-toggle span::before { top: -6px; }
         .mobile-toggle span::after { top: 6px; }
 
-        /* ===== HERO ===== */
+        .mobile-toggle.active span {
+            background: transparent;
+        }
+
+        .mobile-toggle.active span::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .mobile-toggle.active span::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
         .hero {
             min-height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 24px 80px;
+            padding: var(--space-2xl) var(--space-md) var(--space-lg);
             z-index: 2;
+            overflow: hidden;
+        }
+
+        .hero-bg-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-mono);
+            font-size: clamp(30rem, 80vw, 70rem);
+            font-weight: 700;
+            line-height: 0.8;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(168, 32, 26, 0.15);
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
         }
 
         .hero-content {
             text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             position: relative;
-            z-index: 3;
+            z-index: 2;
         }
 
         .hero-eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 20px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-glass);
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent-light);
-            letter-spacing: 3px;
+            gap: 12px;
+            padding: 10px 24px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-full);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--blood-light);
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            margin-bottom: 32px;
-            animation: fadeInUp 1s var(--ease) 0.2s both;
+            margin-bottom: var(--space-md);
+            opacity: 0;
+            animation: heroReveal 1.2s var(--ease-out) 0.3s forwards;
         }
 
         .hero-eyebrow::before {
@@ -396,36 +776,63 @@ in<!DOCTYPE html>
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: var(--accent-light);
-            box-shadow: 0 0 10px var(--accent-glow);
-            animation: pulseDot 2s infinite;
+            background: var(--blood-light);
+            box-shadow: 0 0 12px var(--blood-glow);
+            animation: pulseDot 2s ease-in-out infinite;
         }
 
         .hero-title {
-            font-size: clamp(4rem, 14vw, 11rem);
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
+            font-family: var(--font-mono);
+            font-size: clamp(5rem, 18vw, 16rem);
+            font-weight: 700;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            margin-bottom: var(--space-md);
             position: relative;
-            animation: fadeInUp 1s var(--ease) 0.4s both;
+            opacity: 0;
+            animation: heroReveal 1.2s var(--ease-out) 0.5s forwards;
         }
 
         .hero-title-main {
             display: block;
-            background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            background: linear-gradient(180deg,
+                var(--bone) 0%,
+                var(--paper) 50%,
+                var(--stone) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+        }
+
+        .hero-title-main::after {
+            content: 'No.7';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, var(--blood-light), var(--blood));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            animation: titleGlitch 6s ease-in-out infinite;
+        }
+
+        @keyframes titleGlitch {
+            0%, 92%, 100% { opacity: 0; transform: translate(0, 0); }
+            93% { opacity: 0.8; transform: translate(-4px, 2px); }
+            95% { opacity: 0; transform: translate(4px, -2px); }
+            97% { opacity: 0.6; transform: translate(-2px, 3px); }
         }
 
         .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: var(--text-secondary);
-            max-width: 640px;
-            margin: 0 auto 48px;
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            color: var(--paper);
+            max-width: 680px;
+            margin: 0 auto var(--space-lg);
             line-height: 2;
-            animation: fadeInUp 1s var(--ease) 0.6s both;
+            font-weight: 300;
+            opacity: 0;
+            animation: heroReveal 1.2s var(--ease-out) 0.7s forwards;
         }
 
         .hero-cta {
@@ -433,52 +840,111 @@ in<!DOCTYPE html>
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s var(--ease) 0.8s both;
+            opacity: 0;
+            animation: heroReveal 1.2s var(--ease-out) 0.9s forwards;
         }
 
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
         .btn {
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            transition: all var(--transition);
+            position: relative;
+            padding: 16px 36px;
+            border-radius: var(--r-full);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-            text-decoration: none;
+            gap: 12px;
+            overflow: hidden;
+            transition: transform var(--t-base) var(--ease-out);
+            will-change: transform;
         }
 
         .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            box-shadow: 0 8px 32px var(--accent-glow);
+            background: var(--blood);
+            color: var(--bone);
+            box-shadow: 0 8px 32px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--blood-light), var(--blood));
+            opacity: 0;
+            transition: opacity var(--t-base);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px var(--accent-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.15);
         }
 
         .btn-secondary {
-            background: var(--bg-glass);
-            color: var(--text-primary);
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(10px);
+            background: var(--glass);
+            color: var(--bone);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--glass-2);
+            opacity: 0;
+            transition: opacity var(--t-base);
+        }
+
+        .btn-secondary:hover::before {
+            opacity: 1;
         }
 
         .btn-secondary:hover {
-            background: var(--bg-secondary);
-            border-color: var(--border-strong);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            border-color: var(--glass-border-2);
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-arrow {
+            position: relative;
+            z-index: 1;
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        [dir="rtl"] .btn-arrow { transform: rotate(180deg); }
+
+        .btn:hover .btn-arrow {
+            transform: translateX(4px);
+        }
+
+        [dir="rtl"] .btn:hover .btn-arrow {
+            transform: rotate(180deg) translateX(4px);
         }
 
         .hero-scroll {
             position: absolute;
-            bottom: 40px;
+            bottom: var(--space-lg);
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -486,17 +952,19 @@ in<!DOCTYPE html>
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            letter-spacing: 2px;
+            color: var(--dust);
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            animation: fadeInUp 1s var(--ease) 1.2s both;
+            opacity: 0;
+            animation: heroReveal 1.2s var(--ease-out) 1.3s forwards;
         }
 
         .hero-scroll-line {
             width: 1px;
-            height: 40px;
-            background: linear-gradient(180deg, var(--text-muted), transparent);
+            height: 50px;
+            background: linear-gradient(180deg, var(--dust), transparent);
             position: relative;
             overflow: hidden;
         }
@@ -507,80 +975,120 @@ in<!DOCTYPE html>
             top: 0;
             left: 0;
             right: 0;
-            height: 10px;
-            background: var(--accent-light);
-            animation: scrollLine 2s var(--ease) infinite;
+            height: 12px;
+            background: var(--blood-light);
+            box-shadow: 0 0 8px var(--blood-glow);
+            animation: scrollLine 2.5s var(--ease-in-out) infinite;
         }
 
         @keyframes scrollLine {
             0% { transform: translateY(-100%); }
-            100% { transform: translateY(400%); }
+            100% { transform: translateY(500%); }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ===== SECTIONS ===== */
+        /* ========================================
+           SECTION BASE
+        ======================================== */
         .section {
-            padding: 120px 24px;
+            padding: var(--space-2xl) var(--space-md);
             position: relative;
             z-index: 2;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 80px;
-            max-width: 700px;
+            margin-bottom: var(--space-xl);
+            max-width: 720px;
             margin-inline: auto;
         }
 
         .section-eyebrow {
-            display: inline-block;
-            color: var(--accent-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-mono);
             font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 4px;
+            font-weight: 500;
+            color: var(--blood-light);
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            margin-bottom: 16px;
-            padding: 6px 14px;
-            background: var(--accent-soft);
-            border: 1px solid rgba(231, 76, 60, 0.2);
-            border-radius: 50px;
+            margin-bottom: var(--space-sm);
+            padding: 6px 16px;
+            background: var(--blood-soft);
+            border: 1px solid rgba(168, 32, 26, 0.2);
+            border-radius: var(--r-full);
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--blood-light);
+            box-shadow: 0 0 8px var(--blood-glow);
         }
 
         .section-title {
             font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 900;
+            font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-sm);
             letter-spacing: -0.02em;
         }
 
         .section-title .accent {
-            color: var(--accent-light);
+            color: var(--blood-light);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--blood);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1s var(--ease-out);
+        }
+
+        [dir="rtl"] .section-title .accent::after {
+            transform-origin: right;
+        }
+
+        .section-title.is-visible .accent::after {
+            transform: scaleX(1);
         }
 
         .section-desc {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 1.05rem;
             line-height: 1.9;
+            font-weight: 300;
         }
 
-        /* ===== STORY TIMELINE ===== */
+        /* ========================================
+           STORY TIMELINE
+        ======================================== */
         .story-section {
-            background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.8) 10%, rgba(10, 10, 16, 0.8) 90%, transparent 100%);
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(12, 12, 24, 0.6) 10%,
+                rgba(12, 12, 24, 0.6) 90%,
+                transparent 100%);
         }
 
         .timeline {
             position: relative;
-            padding: 20px 0;
+            padding: var(--space-lg) 0;
         }
 
         .timeline::before {
@@ -589,56 +1097,75 @@ in<!DOCTYPE html>
             top: 0;
             bottom: 0;
             left: 50%;
-            width: 2px;
+            width: 1px;
             background: linear-gradient(180deg,
                 transparent 0%,
-                var(--border-glass) 10%,
-                var(--accent) 50%,
-                var(--border-glass) 90%,
+                var(--glass-border) 10%,
+                var(--blood) 50%,
+                var(--glass-border) 90%,
                 transparent 100%);
             transform: translateX(-50%);
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: var(--space-lg);
             display: grid;
             grid-template-columns: 1fr auto 1fr;
-            gap: 40px;
+            gap: var(--space-lg);
             align-items: start;
         }
 
-        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
 
         .timeline-dot {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            background: var(--bg-void);
-            border: 2px solid var(--accent);
+            background: var(--void);
+            border: 2px solid var(--blood);
             position: relative;
             z-index: 2;
-            box-shadow: 0 0 0 4px var(--bg-void), 0 0 20px var(--accent-glow);
-            transition: all var(--transition);
             grid-column: 2;
             grid-row: 1;
             align-self: start;
             margin-top: 32px;
+            transition: all var(--t-base) var(--ease-out);
+            box-shadow: 0 0 0 4px var(--void), 0 0 20px var(--blood-glow);
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px solid var(--blood);
+            opacity: 0;
+            animation: dotPulse 2s ease-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(1.8); opacity: 0; }
         }
 
         .timeline-item:hover .timeline-dot {
-            background: var(--accent);
+            background: var(--blood);
             transform: scale(1.3);
         }
 
         .timeline-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 32px;
-            transition: all var(--transition);
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: var(--space-md);
             position: relative;
             overflow: hidden;
+            transition: all var(--t-base) var(--ease-out);
         }
 
         .timeline-content::before {
@@ -648,18 +1175,33 @@ in<!DOCTYPE html>
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: linear-gradient(90deg, transparent, var(--blood), transparent);
             opacity: 0;
-            transition: opacity var(--transition);
+            transition: opacity var(--t-base);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(168, 32, 26, 0.08) 0%,
+                transparent 50%);
+            opacity: 0;
+            transition: opacity var(--t-base);
+            pointer-events: none;
         }
 
         .timeline-item:hover .timeline-content {
-            border-color: rgba(231, 76, 60, 0.3);
+            border-color: rgba(168, 32, 26, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
         }
 
-        .timeline-item:hover .timeline-content::before { opacity: 1; }
+        .timeline-item:hover .timeline-content::before,
+        .timeline-item:hover .timeline-content::after {
+            opacity: 1;
+        }
 
         .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; }
         .timeline-item:nth-child(even) .timeline-content { grid-column: 3; }
@@ -668,298 +1210,437 @@ in<!DOCTYPE html>
 
         .timeline-chapter {
             display: inline-block;
-            color: var(--accent-light);
+            font-family: var(--font-mono);
             font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-weight: 500;
+            color: var(--blood-light);
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: var(--space-sm);
+            padding: 4px 12px;
+            background: var(--blood-soft);
+            border-radius: var(--r-sm);
         }
 
         .timeline-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: var(--space-sm);
             line-height: 1.3;
+            letter-spacing: -0.01em;
         }
 
         .timeline-text {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 0.95rem;
             line-height: 2;
+            font-weight: 300;
         }
 
         .timeline-quote {
             display: block;
-            margin: 20px 0;
+            margin: var(--space-sm) 0;
             padding: 16px 24px;
-            background: linear-gradient(90deg, var(--accent-soft), transparent);
-            border-inline-start: 3px solid var(--accent);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            color: var(--text-primary);
+            background: linear-gradient(90deg, var(--blood-soft), transparent);
+            border-inline-start: 2px solid var(--blood);
+            border-radius: 0 var(--r-sm) var(--r-sm) 0;
+            color: var(--bone);
             font-style: italic;
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
+            position: relative;
+        }
+
+        .timeline-quote::before {
+            content: '"';
+            position: absolute;
+            top: -8px;
+            inset-inline-start: 12px;
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: var(--blood);
+            opacity: 0.3;
+            line-height: 1;
         }
 
         .timeline-highlight {
-            color: var(--accent-light);
-            font-weight: 700;
+            color: var(--blood-light);
+            font-weight: 500;
         }
 
-        /* ===== CHARACTERS ===== */
+        /* ========================================
+           CHARACTERS
+        ======================================== */
         .characters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            gap: var(--space-md);
         }
 
         .character-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 32px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: var(--space-md);
             position: relative;
             overflow: hidden;
-            transition: all var(--transition);
-            min-height: 280px;
+            transition: all var(--t-base) var(--ease-out);
+            min-height: 320px;
             display: flex;
             flex-direction: column;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
 
         .character-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%);
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+                rgba(168, 32, 26, 0.12) 0%,
+                transparent 60%);
             opacity: 0;
-            transition: opacity var(--transition);
+            transition: opacity var(--t-base);
+            pointer-events: none;
+        }
+
+        .character-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.03) 50%,
+                transparent 70%);
+            transform: translateX(-100%) translateY(-100%) rotate(25deg);
+            transition: transform 1s var(--ease-out);
+            pointer-events: none;
         }
 
         .character-card:hover {
-            border-color: rgba(231, 76, 60, 0.4);
-            transform: translateY(-6px);
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+            border-color: rgba(168, 32, 26, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
         }
 
-        .character-card:hover::before { opacity: 1; }
+        .character-card:hover::before {
+            opacity: 1;
+        }
+
+        .character-card:hover::after {
+            transform: translateX(100%) translateY(100%) rotate(25deg);
+        }
 
         .character-number {
             position: absolute;
             top: 20px;
             inset-inline-end: 24px;
+            font-family: var(--font-mono);
             font-size: 5rem;
-            font-weight: 900;
+            font-weight: 700;
             line-height: 1;
             color: transparent;
-            -webkit-text-stroke: 1px var(--accent);
-            opacity: 0.3;
-            transition: all var(--transition);
+            -webkit-text-stroke: 1px var(--blood);
+            opacity: 0.25;
+            transition: all var(--t-base) var(--ease-out);
+            letter-spacing: -0.05em;
         }
 
         .character-card:hover .character-number {
-            opacity: 0.6;
+            opacity: 0.5;
             transform: scale(1.1);
+            -webkit-text-stroke-color: var(--blood-light);
         }
 
         .character-avatar {
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            background: linear-gradient(135deg, var(--blood), var(--blood-deep));
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: var(--font-mono);
             font-size: 1.3rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--bone);
+            margin-bottom: var(--space-sm);
             position: relative;
             z-index: 1;
-            box-shadow: 0 8px 24px var(--accent-glow);
+            box-shadow: 0 8px 24px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+
+        .character-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 1px solid var(--blood-light);
+            opacity: 0;
+            transition: all var(--t-base) var(--ease-out);
+        }
+
+        .character-card:hover .character-avatar::after {
+            opacity: 0.5;
+            inset: -6px;
         }
 
         .character-name {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 6px;
             position: relative;
             z-index: 1;
+            letter-spacing: -0.01em;
         }
 
         .character-role {
-            color: var(--accent-light);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-family: var(--font-mono);
+            color: var(--blood-light);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: var(--space-sm);
             position: relative;
             z-index: 1;
         }
 
         .character-desc {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 0.9rem;
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-sm);
             position: relative;
             z-index: 1;
             flex: 1;
+            font-weight: 300;
         }
 
         .character-quote {
-            padding-top: 16px;
-            border-top: 1px solid var(--border-glass);
-            color: var(--text-muted);
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--glass-border);
+            color: var(--stone);
             font-size: 0.85rem;
             font-style: italic;
             position: relative;
             z-index: 1;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            transition: color var(--t-base);
+        }
+
+        .character-card:hover .character-quote {
+            color: var(--paper);
         }
 
         .character-quote::before {
             content: '';
-            width: 20px;
+            width: 24px;
             height: 1px;
-            background: var(--accent);
+            background: var(--blood);
+            transition: width var(--t-base) var(--ease-out);
         }
 
-        /* ===== LOCATIONS ===== */
+        .character-card:hover .character-quote::before {
+            width: 40px;
+        }
+
+        /* ========================================
+           LOCATIONS
+        ======================================== */
         .locations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            gap: var(--space-md);
         }
 
         .location-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 32px;
-            transition: all var(--transition);
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: var(--space-md);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--t-base) var(--ease-out);
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(168, 32, 26, 0.1) 0%,
+                transparent 50%);
+            opacity: 0;
+            transition: opacity var(--t-base);
+            pointer-events: none;
         }
 
         .location-card:hover {
-            border-color: rgba(231, 76, 60, 0.3);
+            border-color: rgba(168, 32, 26, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+        }
+
+        .location-card:hover::before {
+            opacity: 1;
         }
 
         .location-icon {
             width: 56px;
             height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent-soft), transparent);
-            border: 1px solid rgba(231, 76, 60, 0.2);
+            border-radius: var(--r-md);
+            background: linear-gradient(135deg, var(--blood-soft), transparent);
+            border: 1px solid rgba(168, 32, 26, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-sm);
             font-size: 1.5rem;
+            transition: all var(--t-base) var(--ease-out);
+        }
+
+        .location-card:hover .location-icon {
+            background: linear-gradient(135deg, var(--blood), var(--blood-deep));
+            transform: rotate(-5deg) scale(1.05);
+            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
         .location-name {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }
 
         .location-desc {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 0.9rem;
             line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* ===== MECHANICS ===== */
+        /* ========================================
+           MECHANICS
+        ======================================== */
         .mechanics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: var(--space-sm);
         }
 
         .mechanic-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius);
-            padding: 32px;
-            transition: all var(--transition);
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: var(--space-md);
             position: relative;
             overflow: hidden;
+            transition: all var(--t-base) var(--ease-out);
         }
 
-        .mechanic-card::after {
+        .mechanic-card::before {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            background: linear-gradient(90deg, transparent, var(--blood), transparent);
             transform: scaleX(0);
-            transition: transform var(--transition);
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        .mechanic-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(168, 32, 26, 0.08) 0%,
+                transparent 50%);
+            opacity: 0;
+            transition: opacity var(--t-base);
+            pointer-events: none;
         }
 
         .mechanic-card:hover {
-            border-color: rgba(231, 76, 60, 0.3);
+            border-color: rgba(168, 32, 26, 0.3);
             transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--glass-2);
         }
 
-        .mechanic-card:hover::after { transform: scaleX(1); }
+        .mechanic-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mechanic-card:hover::after {
+            opacity: 1;
+        }
 
         .mechanic-icon {
             width: 56px;
             height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent-soft), transparent);
-            border: 1px solid rgba(231, 76, 60, 0.2);
+            border-radius: var(--r-md);
+            background: linear-gradient(135deg, var(--blood-soft), transparent);
+            border: 1px solid rgba(168, 32, 26, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-sm);
             font-size: 1.5rem;
-            transition: all var(--transition);
+            transition: all var(--t-base) var(--ease-out);
         }
 
         .mechanic-card:hover .mechanic-icon {
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            background: linear-gradient(135deg, var(--blood), var(--blood-deep));
             transform: rotate(-5deg) scale(1.05);
+            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
         .mechanic-title {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }
 
         .mechanic-desc {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 0.9rem;
             line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* ===== REVELATION SECTION ===== */
+        /* ========================================
+           REVELATION SECTION
+        ======================================== */
         .revelation-section {
-            padding: 120px 24px;
+            padding: var(--space-2xl) var(--space-md);
             position: relative;
             z-index: 2;
             text-align: center;
         }
 
         .revelation-box {
-            max-width: 800px;
+            max-width: 880px;
             margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-lg);
-            padding: 60px 40px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-xl);
+            padding: var(--space-xl) var(--space-lg);
             position: relative;
             overflow: hidden;
         }
@@ -968,102 +1649,173 @@ in<!DOCTYPE html>
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 0%,
+                var(--blood-soft) 0%,
+                transparent 60%);
+            pointer-events: none;
+        }
+
+        .revelation-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--r-xl);
+            padding: 1px;
+            background: linear-gradient(135deg,
+                rgba(168, 32, 26, 0.3),
+                transparent 50%,
+                rgba(201, 169, 97, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
             pointer-events: none;
         }
 
         .revelation-number {
-            font-size: clamp(6rem, 15vw, 12rem);
-            font-weight: 900;
-            line-height: 1;
+            font-family: var(--font-mono);
+            font-size: clamp(6rem, 18vw, 14rem);
+            font-weight: 700;
+            line-height: 0.8;
             color: transparent;
-            -webkit-text-stroke: 2px var(--accent);
+            -webkit-text-stroke: 1px var(--blood);
             opacity: 0.3;
-            margin-bottom: 24px;
+            margin-bottom: var(--space-md);
             position: relative;
+            letter-spacing: -0.05em;
+            animation: numberPulse 4s ease-in-out infinite;
         }
 
         .revelation-title {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 900;
-            margin-bottom: 24px;
-            line-height: 1.3;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
             position: relative;
+            letter-spacing: -0.02em;
         }
 
         .revelation-text {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 1.05rem;
             line-height: 2;
-            max-width: 600px;
-            margin: 0 auto 32px;
+            max-width: 640px;
+            margin: 0 auto var(--space-md);
             position: relative;
+            font-weight: 300;
         }
 
         .revelation-quote {
             display: inline-block;
-            padding: 20px 32px;
-            background: linear-gradient(90deg, var(--accent-soft), transparent, var(--accent-soft));
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
+            padding: 24px 40px;
+            background: linear-gradient(90deg,
+                transparent,
+                var(--blood-soft),
+                transparent);
+            border-radius: var(--r-md);
+            color: var(--bone);
             font-style: italic;
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            font-weight: 400;
             position: relative;
+            letter-spacing: 0.02em;
         }
 
-        /* ===== FOOTER ===== */
+        .revelation-quote::before,
+        .revelation-quote::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: var(--blood);
+        }
+
+        .revelation-quote::before {
+            inset-inline-start: -60px;
+        }
+
+        .revelation-quote::after {
+            inset-inline-end: -60px;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
         .footer {
-            padding: 80px 24px 40px;
-            background: var(--bg-void);
-            border-top: 1px solid var(--border-glass);
+            padding: var(--space-xl) var(--space-md) var(--space-md);
+            background: var(--void);
+            border-top: 1px solid var(--glass-border);
             text-align: center;
             position: relative;
             z-index: 2;
         }
 
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent,
+                var(--blood),
+                transparent);
+        }
+
         .footer-brand {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 16px;
-            background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-muted) 100%);
+            font-family: var(--font-mono);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            background: linear-gradient(180deg,
+                var(--bone) 0%,
+                var(--stone) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.03em;
         }
 
         .footer-quote {
-            color: var(--text-secondary);
+            color: var(--paper);
             font-size: 1.1rem;
             font-style: italic;
-            margin-bottom: 40px;
+            margin-bottom: var(--space-lg);
             max-width: 500px;
             margin-inline: auto;
             line-height: 1.8;
+            font-weight: 300;
         }
 
         .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--border-glass);
-            color: var(--text-muted);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
+            color: var(--dust);
             font-size: 0.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 16px;
-            max-width: 1200px;
+            gap: var(--space-sm);
+            max-width: 1280px;
             margin: 0 auto;
+            font-family: var(--font-mono);
+            letter-spacing: 0.05em;
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* ========================================
+           REVEAL ANIMATIONS
+        ======================================== */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+            transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
         }
 
-        .reveal.visible {
+        .reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1071,25 +1823,29 @@ in<!DOCTYPE html>
         .reveal-stagger > * {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
         }
 
-        .reveal-stagger.visible > * {
+        .reveal-stagger.is-visible > * {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
-        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
-        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
-        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
-        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
-        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
-        .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+        .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
+        .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
+        .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
+        .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
+        .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+        .reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.47s; }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .nav { padding: 12px 16px; }
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 968px) {
+            .nav {
+                padding: var(--space-sm);
+            }
 
             .nav-links {
                 display: none;
@@ -1097,33 +1853,60 @@ in<!DOCTYPE html>
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(6, 6, 9, 0.98);
+                background: rgba(4, 4, 10, 0.98);
                 backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 16px;
-                border-bottom: 1px solid var(--border-glass);
+                padding: var(--space-sm);
+                border-bottom: 1px solid var(--glass-border);
                 gap: 4px;
             }
 
-            .nav-links.open { display: flex; }
-            .nav-link { width: 100%; padding: 12px 16px; }
-            .mobile-toggle { display: flex; }
+            .nav-links.open {
+                display: flex;
+            }
 
-            .timeline::before { left: 20px; }
+            .nav-link {
+                width: 100%;
+                padding: 14px 16px;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            [dir="rtl"] .timeline::before {
+                left: auto;
+                right: 20px;
+            }
 
             .timeline-item {
                 grid-template-columns: 1fr;
-                padding-inline-start: 50px;
+                padding-inline-start: 56px;
                 gap: 0;
+            }
+
+            [dir="rtl"] .timeline-item {
+                padding-inline-start: 0;
+                padding-inline-end: 56px;
             }
 
             .timeline-dot {
                 position: absolute;
-                left: 12px;
+                left: 13px;
                 top: 32px;
                 grid-column: auto;
                 grid-row: auto;
                 margin: 0;
+            }
+
+            [dir="rtl"] .timeline-dot {
+                left: auto;
+                right: 13px;
             }
 
             .timeline-item:nth-child(odd) .timeline-content,
@@ -1131,116 +1914,207 @@ in<!DOCTYPE html>
                 grid-column: 1;
             }
 
-            .timeline-spacer { display: none; }
+            .timeline-spacer {
+                display: none;
+            }
 
-            .section { padding: 80px 20px; }
-            .section-header { margin-bottom: 50px; }
+            .section {
+                padding: var(--space-xl) var(--space-sm);
+            }
+
+            .section-header {
+                margin-bottom: var(--space-lg);
+            }
         }
 
-        @media (max-width: 600px) {
-            .hero { padding: 100px 20px 60px; }
+        @media (max-width: 640px) {
+            .hero {
+                padding: var(--space-xl) var(--space-sm) var(--space-md);
+            }
 
             .hero-cta {
                 flex-direction: column;
                 width: 100%;
             }
 
-            .btn { width: 100%; justify-content: center; }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
 
-            .timeline-content { padding: 24px; }
-            .timeline-title { font-size: 1.2rem; }
+            .timeline-content {
+                padding: var(--space-sm);
+            }
 
-            .character-card { padding: 24px; min-height: auto; }
-            .character-number { font-size: 4rem; }
+            .timeline-title {
+                font-size: 1.25rem;
+            }
 
-            .revelation-box { padding: 40px 24px; }
+            .character-card {
+                padding: var(--space-sm);
+                min-height: auto;
+            }
+
+            .character-number {
+                font-size: 4rem;
+            }
+
+            .revelation-box {
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .revelation-quote {
+                padding: 20px 24px;
+                font-size: 1.05rem;
+            }
+
+            .revelation-quote::before,
+            .revelation-quote::after {
+                display: none;
+            }
 
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
+
+            .footer-brand {
+                font-size: 2.5rem;
+            }
         }
 
+        /* ========================================
+           REDUCED MOTION
+        ======================================== */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+
+            .ambient-mesh,
+            .ambient-grid,
+            .particle,
+            .ambient-grain {
+                animation: none !important;
+            }
+        }
+
+        /* Focus states */
+        :focus-visible {
+            outline: 2px solid var(--blood-light);
+            outline-offset: 4px;
+            border-radius: var(--r-sm);
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            padding: 12px 24px;
+            background: var(--blood);
+            color: var(--bone);
+            z-index: 10001;
+            transition: top var(--t-fast);
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
     </style>
 </head>
-<body>
+<body class="is-loading">
+
+    <!-- Skip Link -->
+    <a href="#story" class="skip-link" data-fa="پرش به محتوا" data-en="Skip to content">پرش به محتوا</a>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
 
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-number">7</div>
-        <div class="preloader-bar"></div>
+        <div class="preloader-meta">
+            <span data-fa="در حال بارگذاری" data-en="Loading">در حال بارگذاری</span>
+            <div class="preloader-bar"></div>
+        </div>
     </div>
 
-    <!-- 3D Chess Background -->
-    <div class="chess-bg"></div>
-    <div class="chess-bg-overlay"></div>
-    <div class="arch-column"></div>
-    <div class="arch-column"></div>
-    <div class="arch-column"></div>
-    <div class="arch-column"></div>
-    <div class="arch-column"></div>
+    <!-- Ambient Background -->
+    <div class="ambient" aria-hidden="true">
+        <div class="ambient-mesh"></div>
+        <div class="ambient-grid"></div>
+        <div class="ambient-particles" id="ambientParticles"></div>
+        <div class="ambient-grain"></div>
+        <div class="ambient-lines"></div>
+        <div class="ambient-vignette"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-brand">
+    <nav class="nav" id="nav" role="navigation">
+        <a href="#" class="nav-brand" aria-label="No.7 Home">
             <div class="nav-brand-mark">7</div>
             <span>No.7</span>
-        </div>
+        </a>
 
         <div class="nav-links" id="navLinks">
-            <a href="#story" class="nav-link" data-fa="داستان" data-en="Story">داستان</a>
-            <a href="#characters" class="nav-link" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</a>
-            <a href="#locations" class="nav-link" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</a>
-            <a href="#mechanics" class="nav-link" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</a>
-            <a href="#revelation" class="nav-link" data-fa="حقیقت" data-en="Truth">حقیقت</a>
+            <a href="#story" class="nav-link" data-fa="داستان" data-en="Story"><span class="nav-link-text" data-fa="داستان" data-en="Story">داستان</span></a>
+            <a href="#characters" class="nav-link" data-fa="شخصیت‌ها" data-en="Characters"><span class="nav-link-text" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span></a>
+            <a href="#locations" class="nav-link" data-fa="مکان‌ها" data-en="Locations"><span class="nav-link-text" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span></a>
+            <a href="#mechanics" class="nav-link" data-fa="مکانیک‌ها" data-en="Mechanics"><span class="nav-link-text" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</span></a>
+            <a href="#revelation" class="nav-link" data-fa="حقیقت" data-en="Truth"><span class="nav-link-text" data-fa="حقیقت" data-en="Truth">حقیقت</span></a>
         </div>
 
         <div class="nav-actions">
-            <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
-                <span class="pulse"></span>
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                <span class="lang-indicator"></span>
                 <span id="langLabel">EN</span>
             </button>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
             </button>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-bg-number" aria-hidden="true">7</div>
         <div class="hero-content">
-            <div class="hero-eyebrow" data-fa="بازی روایی روان‌شناختی" data-en="Narrative Psychological Game">بازی روایی روان‌شناختی</div>
-            <h1 class="hero-title">
+            <div class="hero-eyebrow" data-fa="تجربه‌ی روایی روان‌شناختی" data-en="Psychological Narrative Experience">تجربه‌ی روایی روان‌شناختی</div>
+            <h1 class="hero-title" id="heroTitle">
                 <span class="hero-title-main">No.7</span>
             </h1>
             <p class="hero-subtitle" data-fa="هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است." data-en="Seven people. Seven memories. One truth no one is ready to hear. In a city that isn't real, you must find Number 1 before sunset — but every salvation is a loss.">هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است.</p>
             <div class="hero-cta">
                 <a href="#story" class="btn btn-primary">
-                    <span data-fa="شروع سفر" data-en="Begin the Journey">شروع سفر</span>
+                    <span class="btn-text" data-fa="شروع سفر" data-en="Begin the Journey">شروع سفر</span>
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#characters" class="btn btn-secondary">
-                    <span data-fa="ملاقات با هفت نفر" data-en="Meet the Seven">ملاقات با هفت نفر</span>
+                    <span class="btn-text" data-fa="ملاقات با هفت نفر" data-en="Meet the Seven">ملاقات با هفت نفر</span>
                 </a>
             </div>
         </div>
-        <div class="hero-scroll">
+        <div class="hero-scroll" aria-hidden="true">
             <span data-fa="اسکرول" data-en="Scroll">اسکرول</span>
             <div class="hero-scroll-line"></div>
         </div>
     </section>
 
     <!-- Story -->
-    <section class="section story-section" id="story">
+    <section class="section story-section" id="story" aria-labelledby="storyTitle">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="لور کامل بازی" data-en="Complete Game Lore">لور کامل بازی</span>
-                <h2 class="section-title" data-fa="داستان <span class='accent'>شماره ۷</span>" data-en="The Story of <span class='accent'>No.7</span>">داستان <span class="accent">شماره ۷</span></h2>
+                <h2 class="section-title" id="storyTitle" data-fa="داستان <span class='accent'>شماره ۷</span>" data-en="The Story of <span class='accent'>No.7</span>">داستان <span class="accent">شماره ۷</span></h2>
                 <p class="section-desc" data-fa="روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند." data-en="A tale of awakening, searching, and a truth that changes everything. Six chapters that will forever change your mind.">روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند.</p>
             </div>
 
@@ -1251,7 +2125,7 @@ in<!DOCTYPE html>
                         <h3 class="timeline-title" data-fa="صبحی بدون خاطره" data-en="A Morning Without Memory">صبحی بدون خاطره</h3>
                         <p class="timeline-text">
                             <span data-fa="شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:" data-en="The protagonist is a 16-year-old boy. He wakes up one morning in an unfamiliar room. He has no memory — doesn't know his name, where he came from, or why he's here. On his wrist, there's only a cold metal bracelet engraved with:">شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:</span>
-                            <span class="timeline-quote" data-fa="«اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.»" data-en=""If you want to survive, find Number 1 before sunset."">«اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.»</span>
+                            <span class="timeline-quote" data-fa="اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن." data-en="If you want to survive, find Number 1 before sunset.">اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.</span>
                             <span data-fa="یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب." data-en="A recorded voice. That's all. No other explanation. Just a big city, seven people with numbers on their wrists, and a deadline: before sunset.">یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب.</span>
                         </p>
                     </div>
@@ -1271,7 +2145,7 @@ in<!DOCTYPE html>
                             <span data-fa="بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد." data-en="The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them. Feels like they've finally found something worth fighting for.">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد.</span>
                             <br><br>
                             <span class="timeline-highlight" data-fa="اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود." data-en="But... every time you find one of them, they disappear.">اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود.</span>
-                            <span class="timeline-quote" data-fa="«بالاخره پیدام کردی...»" data-en=""You finally found me..."">«بالاخره پیدام کردی...»</span>
+                            <span class="timeline-quote" data-fa="بالاخره پیدام کردی..." data-en="You finally found me...">بالاخره پیدام کردی...</span>
                             <span data-fa="فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند." data-en="Just one sentence. And then they vanish. As if they never existed.">فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند.</span>
                         </p>
                     </div>
@@ -1301,9 +2175,9 @@ in<!DOCTYPE html>
                         <h3 class="timeline-title" data-fa="شماره ۱" data-en="Number 1">شماره ۱</h3>
                         <p class="timeline-text">
                             <span data-fa="نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند." data-en="Near the end, only Number 1 remains. The player finds them. Number 1 smiles.">نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند.</span>
-                            <span class="timeline-quote" data-fa="«خیلی طول کشید.»" data-en=""It took long enough."">«خیلی طول کشید.»</span>
-                            <span data-fa="بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:" data-en="The player is confused. "What?" Number 1 continues:">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
-                            <span class="timeline-quote" data-fa="«ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.»" data-en=""We are not seven people. We are your seven memories."">«ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.»</span>
+                            <span class="timeline-quote" data-fa="خیلی طول کشید." data-en="It took long enough.">خیلی طول کشید.</span>
+                            <span data-fa="بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:" data-en="The player is confused. &quot;What?&quot; Number 1 continues:">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
+                            <span class="timeline-quote" data-fa="ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم." data-en="We are not seven people. We are your seven memories.">ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.</span>
                             <br><br>
                             <span class="timeline-highlight" data-fa="سکوت مطلق." data-en="Absolute silence.">سکوت مطلق.</span>
                             <br><br>
@@ -1318,7 +2192,7 @@ in<!DOCTYPE html>
                         <h3 class="timeline-title" data-fa="اتاق عمل" data-en="The Operating Room">اتاق عمل</h3>
                         <p class="timeline-text">
                             <span data-fa="صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:" data-en="The screen goes black. The beeping of hospital machines. Then a doctor's voice:">صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:</span>
-                            <span class="timeline-quote" data-fa="«عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.»" data-en=""The surgery was successful... but their long-term memory is almost completely gone."">«عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.»</span>
+                            <span class="timeline-quote" data-fa="عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته." data-en="The surgery was successful... but their long-term memory is almost completely gone.">عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.</span>
                             <br><br>
                             <span data-fa="حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود." data-en="The truth is revealed: that city, those people, that adventure... all happened inside the mind of a 16-year-old boy lying on a hospital bed. He had suffered severe psychological trauma — an accident that took his family from him. And he himself, before the surgery, had requested selective deletion of painful memories.">حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود.</span>
                             <br><br>
@@ -1338,8 +2212,8 @@ in<!DOCTYPE html>
                         <p class="timeline-text">
                             <span data-fa="وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند." data-en="When you restart the game, everything has changed. Hints you missed before are now obvious. Dialogues you thought were ordinary now carry a different meaning.">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند.</span>
                             <br><br>
-                            <span data-fa="انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است." data-en="The player's motivation throughout the game was completely natural: "Find everyone and save them." But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
-                            <span class="timeline-quote" data-fa="«گاهی نجات دادن، همان از دست دادن است.»" data-en=""Sometimes saving is the same as losing."">«گاهی نجات دادن، همان از دست دادن است.»</span>
+                            <span data-fa="انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است." data-en="The player's motivation throughout the game was completely natural: &quot;Find everyone and save them.&quot; But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
+                            <span class="timeline-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</span>
                         </p>
                     </div>
                 </div>
@@ -1348,195 +2222,195 @@ in<!DOCTYPE html>
     </section>
 
     <!-- Characters -->
-    <section class="section" id="characters">
+    <section class="section" id="characters" aria-labelledby="charactersTitle">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span>
-                <h2 class="section-title" data-fa="هفت خاطره، <span class='accent'>هفت چهره</span>" data-en="Seven Memories, <span class='accent'>Seven Faces</span>">هفت خاطره، <span class="accent">هفت چهره</span></h2>
+                <h2 class="section-title" id="charactersTitle" data-fa="هفت خاطره، <span class='accent'>هفت چهره</span>" data-en="Seven Memories, <span class='accent'>Seven Faces</span>">هفت خاطره، <span class="accent">هفت چهره</span></h2>
                 <p class="section-desc" data-fa="هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی." data-en="Each one is a part of someone who no longer remembers themselves. They aren't real — but their pain is the realest thing you'll feel.">هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی.</p>
             </div>
 
             <div class="characters-grid reveal-stagger">
-                <div class="character-card">
-                    <span class="character-number">01</span>
-                    <div class="character-avatar">۱</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">01</span>
+                    <div class="character-avatar" aria-hidden="true">۱</div>
                     <h3 class="character-name" data-fa="شماره ۱ — مادر" data-en="No.1 — Mother">شماره ۱ — مادر</h3>
                     <div class="character-role" data-fa="آخرین خاطره" data-en="The Last Memory">آخرین خاطره</div>
-                    <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»" data-en="The last thing erased from their mind. The warmest and most painful memory. When you find them, they smile and say: "It took long enough."">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»</p>
-                    <p class="character-quote" data-fa="«حالا دیگه هیچ دردی یادت نیست...»" data-en=""Now you don't remember any pain anymore..."">«حالا دیگه هیچ دردی یادت نیست...»</p>
-                </div>
+                    <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»" data-en="The last thing erased from their mind. The warmest and most painful memory. When you find them, they smile and say: &quot;It took long enough.&quot;">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»</p>
+                    <p class="character-quote" data-fa="حالا دیگه هیچ دردی یادت نیست..." data-en="Now you don't remember any pain anymore...">حالا دیگه هیچ دردی یادت نیست...</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">02</span>
-                    <div class="character-avatar">۲</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">02</span>
+                    <div class="character-avatar" aria-hidden="true">۲</div>
                     <h3 class="character-name" data-fa="شماره ۲ — خنده‌ها" data-en="No.2 — Laughter">شماره ۲ — خنده‌ها</h3>
                     <div class="character-role" data-fa="شادی از دست رفته" data-en="Lost Joy">شادی از دست رفته</div>
                     <p class="character-desc" data-fa="کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود." data-en="A playful, energetic child. When they vanish, the city's colors fade and the cheerful music stops forever.">کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود.</p>
-                    <p class="character-quote" data-fa="«یادت میاد چقدر می‌خندیدیم؟»" data-en=""Remember how much we used to laugh?"">«یادت میاد چقدر می‌خندیدیم؟»</p>
-                </div>
+                    <p class="character-quote" data-fa="یادت میاد چقدر می‌خندیدیم؟" data-en="Remember how much we used to laugh?">یادت میاد چقدر می‌خندیدیم؟</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">03</span>
-                    <div class="character-avatar">۳</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">03</span>
+                    <div class="character-avatar" aria-hidden="true">۳</div>
                     <h3 class="character-name" data-fa="شماره ۳ — شجاعت" data-en="No.3 — Courage">شماره ۳ — شجاعت</h3>
                     <div class="character-role" data-fa="قدرت درونی" data-en="Inner Strength">قدرت درونی</div>
                     <p class="character-desc" data-fa="شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد." data-en="A fearless, determined character. When they vanish, the player can no longer pass through dark areas or overcome large obstacles.">شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد.</p>
-                    <p class="character-quote" data-fa="«نترس. من اینجام.»" data-en=""Don't be afraid. I'm here."">«نترس. من اینجام.»</p>
-                </div>
+                    <p class="character-quote" data-fa="نترس. من اینجام." data-en="Don't be afraid. I'm here.">نترس. من اینجام.</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">04</span>
-                    <div class="character-avatar">۴</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">04</span>
+                    <div class="character-avatar" aria-hidden="true">۴</div>
                     <h3 class="character-name" data-fa="شماره ۴ — پدر" data-en="No.4 — Father">شماره ۴ — پدر</h3>
                     <div class="character-role" data-fa="تکیه‌گاه" data-en="The Support">تکیه‌گاه</div>
                     <p class="character-desc" data-fa="مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست." data-en="A quiet but kind man. Has the exact same nervous tic the protagonist shows in mirrors. A hint that's not obvious at first glance.">مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست.</p>
-                    <p class="character-quote" data-fa="«قوی باش. مثل من.»" data-en=""Be strong. Like me."">«قوی باش. مثل من.»</p>
-                </div>
+                    <p class="character-quote" data-fa="قوی باش. مثل من." data-en="Be strong. Like me.">قوی باش. مثل من.</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">05</span>
-                    <div class="character-avatar">۵</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">05</span>
+                    <div class="character-avatar" aria-hidden="true">۵</div>
                     <h3 class="character-name" data-fa="شماره ۵ — اولین دوست" data-en="No.5 — First Friend">شماره ۵ — اولین دوست</h3>
                     <div class="character-role" data-fa="پیوند انسانی" data-en="Human Bond">پیوند انسانی</div>
                     <p class="character-desc" data-fa="تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند." data-en="The only one who knows the childhood song. When they vanish, that song is erased from the player's mind and the door that opened with it stays closed forever.">تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند.</p>
-                    <p class="character-quote" data-fa="«یادت هست اون آهنگو؟»" data-en=""Remember that song?"">«یادت هست اون آهنگو؟»</p>
-                </div>
+                    <p class="character-quote" data-fa="یادت هست اون آهنگو؟" data-en="Remember that song?">یادت هست اون آهنگو؟</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">06</span>
-                    <div class="character-avatar">۶</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">06</span>
+                    <div class="character-avatar" aria-hidden="true">۶</div>
                     <h3 class="character-name" data-fa="شماره ۶ — رؤیاها" data-en="No.6 — Dreams">شماره ۶ — رؤیاها</h3>
                     <div class="character-role" data-fa="آینده‌ی نساخته" data-en="Unbuilt Future">آینده‌ی نساخته</div>
-                    <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست." data-en="A dreamy, vague character. Constantly says: "I wish I could wake up..." The player thinks they're talking about a nightmare, but they're actually in a coma.">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست.</p>
-                    <p class="character-quote" data-fa="«کاش می‌تونستم بیدار شم...»" data-en=""I wish I could wake up..."">«کاش می‌تونستم بیدار شم...»</p>
-                </div>
+                    <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست." data-en="A dreamy, vague character. Constantly says: &quot;I wish I could wake up...&quot; The player thinks they're talking about a nightmare, but they're actually in a coma.">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست.</p>
+                    <p class="character-quote" data-fa="کاش می‌تونستم بیدار شم..." data-en="I wish I could wake up...">کاش می‌تونستم بیدار شم...</p>
+                </article>
 
-                <div class="character-card">
-                    <span class="character-number">07</span>
-                    <div class="character-avatar">۷</div>
+                <article class="character-card">
+                    <span class="character-number" aria-hidden="true">07</span>
+                    <div class="character-avatar" aria-hidden="true">۷</div>
                     <h3 class="character-name" data-fa="شماره ۷ — کودکی" data-en="No.7 — Childhood">شماره ۷ — کودکی</h3>
                     <div class="character-role" data-fa="خودِ بازیکن" data-en="The Player">خودِ بازیکن</div>
                     <p class="character-desc" data-fa="همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست." data-en="The same boy who awakens at the start of the game. The last piece of identity. When the others vanish, they remain — but no longer know who they are.">همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست.</p>
-                    <p class="character-quote" data-fa="«من کی‌ام؟»" data-en=""Who am I?"">«من کی‌ام؟»</p>
-                </div>
+                    <p class="character-quote" data-fa="من کی‌ام؟" data-en="Who am I?">من کی‌ام؟</p>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Locations -->
-    <section class="section" id="locations">
+    <section class="section" id="locations" aria-labelledby="locationsTitle">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span>
-                <h2 class="section-title" data-fa="شهری که <span class='accent'>واقعیت ندارد</span>" data-en="A City That <span class='accent'>Isn't Real</span>">شهری که <span class="accent">واقعیت ندارد</span></h2>
+                <h2 class="section-title" id="locationsTitle" data-fa="شهری که <span class='accent'>واقعیت ندارد</span>" data-en="A City That <span class='accent'>Isn't Real</span>">شهری که <span class="accent">واقعیت ندارد</span></h2>
                 <p class="section-desc" data-fa="هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی." data-en="Every location is a reflection of a hospital room or a buried memory. When you look closely, you'll see the signs.">هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی.</p>
             </div>
 
             <div class="locations-grid reveal-stagger">
-                <div class="location-card">
-                    <div class="location-icon">🏠</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">🏠</div>
                     <h3 class="location-name" data-fa="اتاق بیداری" data-en="The Awakening Room">اتاق بیداری</h3>
                     <p class="location-desc" data-fa="جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده." data-en="Where the game begins. A simple room with a window letting in morning light. Actually a reflection of the hospital room that the mind has transformed into a bedroom.">جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده.</p>
-                </div>
+                </article>
 
-                <div class="location-card">
-                    <div class="location-icon">🌆</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">🌆</div>
                     <h3 class="location-name" data-fa="خیابان‌های بی‌پایان" data-en="The Endless Streets">خیابان‌های بی‌پایان</h3>
                     <p class="location-desc" data-fa="خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است." data-en="City streets that feel familiar but are empty. An ambulance siren is heard in the distance — actually the sound of the heart monitor.">خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است.</p>
-                </div>
+                </article>
 
-                <div class="location-card">
-                    <div class="location-icon">🌳</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">🌳</div>
                     <h3 class="location-name" data-fa="پارک خاطرات" data-en="Memory Park">پارک خاطرات</h3>
                     <p class="location-desc" data-fa="پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند." data-en="A park with empty swings and trees whose leaves slowly fall. Where No.2 (Laughter) is found. When they vanish, the leaves turn black forever.">پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند.</p>
-                </div>
+                </article>
 
-                <div class="location-card">
-                    <div class="location-icon">🏚️</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">🏚️</div>
                     <h3 class="location-name" data-fa="خانه‌ی قدیمی" data-en="The Old House">خانه‌ی قدیمی</h3>
                     <p class="location-desc" data-fa="خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده." data-en="An abandoned house that smells of childhood. Photos on the wall have no faces. Where No.4 (Father) waits.">خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده.</p>
-                </div>
+                </article>
 
-                <div class="location-card">
-                    <div class="location-icon">🌑</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">🌑</div>
                     <h3 class="location-name" data-fa="غروب ابدی" data-en="The Eternal Sunset">غروب ابدی</h3>
                     <p class="location-desc" data-fa="هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود." data-en="As you approach the end, the sky grows darker. Sunset is actually the time of full anesthesia or surgery. The environment becomes more abstract and terrifying.">هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود.</p>
-                </div>
+                </article>
 
-                <div class="location-card">
-                    <div class="location-icon">⬛</div>
+                <article class="location-card">
+                    <div class="location-icon" aria-hidden="true">⬛</div>
                     <h3 class="location-name" data-fa="تهی‌گاه" data-en="The Void">تهی‌گاه</h3>
                     <p class="location-desc" data-fa="جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است." data-en="Where it appears at the end of the game. A black, infinite space where only No.1 waits. This is the border between mind and reality.">جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Mechanics -->
-    <section class="section" id="mechanics">
+    <section class="section" id="mechanics" aria-labelledby="mechanicsTitle">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="مکانیک‌های بازی" data-en="Game Mechanics">مکانیک‌های بازی</span>
-                <h2 class="section-title" data-fa="وقتی <span class='accent'>گیم‌پلی</span> خودش داستان است" data-en="When <span class='accent'>Gameplay</span> Is the Story">وقتی <span class="accent">گیم‌پلی</span> خودش داستان است</h2>
+                <h2 class="section-title" id="mechanicsTitle" data-fa="وقتی <span class='accent'>گیم‌پلی</span> خودش داستان است" data-en="When <span class='accent'>Gameplay</span> Is the Story">وقتی <span class="accent">گیم‌پلی</span> خودش داستان است</h2>
                 <p class="section-desc" data-fa="در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی." data-en="In No.7, every mechanic is a reflection of loss. You don't play to win — you play to see what you lose.">در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی.</p>
             </div>
 
             <div class="mechanics-grid reveal-stagger">
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">💀</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">💀</div>
                     <h3 class="mechanic-title" data-fa="محو شدن" data-en="Disappearance">محو شدن</h3>
                     <p class="mechanic-desc" data-fa="هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت." data-en="Every time a character is found, they vanish forever. Only one sentence remains, and silence.">هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت.</p>
-                </div>
+                </article>
 
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">⭐</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">⭐</div>
                     <h3 class="mechanic-title" data-fa="از دست دادن توانایی" data-en="Losing Abilities">از دست دادن توانایی</h3>
                     <p class="mechanic-desc" data-fa="با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا." data-en="With each character's disappearance, an ability is taken from the player. Jumping, dark vision, or even the color of the world.">با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا.</p>
-                </div>
+                </article>
 
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">⌚</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">⌚</div>
                     <h3 class="mechanic-title" data-fa="دستبند شمارش معکوس" data-en="Bracelet Countdown">دستبند شمارش معکوس</h3>
                     <p class="mechanic-desc" data-fa="دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود." data-en="The No.7 bracelet is on the HUD. With each disappearance, one of its numbers is erased.">دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود.</p>
-                </div>
+                </article>
 
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">🧩</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">🧩</div>
                     <h3 class="mechanic-title" data-fa="معماهای خاطره‌ای" data-en="Memory Puzzles">معماهای خاطره‌ای</h3>
                     <p class="mechanic-desc" data-fa="معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود." data-en="Puzzles are solved with memories. When a memory vanishes, the solution is lost forever.">معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود.</p>
-                </div>
+                </article>
 
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">🌅</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">🌅</div>
                     <h3 class="mechanic-title" data-fa="غروب پیش‌رونده" data-en="Progressive Sunset">غروب پیش‌رونده</h3>
                     <p class="mechanic-desc" data-fa="با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر." data-en="As the game progresses, the sky darkens. Sunset = surgery time. The closer, the more abstract the environment.">با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر.</p>
-                </div>
+                </article>
 
-                <div class="mechanic-card">
-                    <div class="mechanic-icon">🔄</div>
+                <article class="mechanic-card">
+                    <div class="mechanic-icon" aria-hidden="true">🔄</div>
                     <h3 class="mechanic-title" data-fa="تکرار با آگاهی" data-en="Replay with Awareness">تکرار با آگاهی</h3>
                     <p class="mechanic-desc" data-fa="در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند." data-en="In the second playthrough, you see hints that were invisible the first time. Dialogues take on new meaning.">در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Revelation -->
-    <section class="revelation-section" id="revelation">
+    <section class="revelation-section" id="revelation" aria-labelledby="revelationTitle">
         <div class="container">
             <div class="revelation-box reveal">
-                <div class="revelation-number">7</div>
-                <h2 class="revelation-title" data-fa="حقیقت نهایی" data-en="The Final Truth">حقیقت نهایی</h2>
-                <p class="revelation-text" data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت." data-en="Throughout the game, the player thought they were saving people. But in reality, every time they found one, they were losing one of their own memories forever. The player's motivation was completely natural: "Find everyone and save them." But the very thing they thought was right caused them to lose what was most valuable.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت.</p>
-                <div class="revelation-quote" data-fa="«گاهی نجات دادن، همان از دست دادن است.»" data-en=""Sometimes saving is the same as losing."">«گاهی نجات دادن، همان از دست دادن است.»</div>
+                <div class="revelation-number" aria-hidden="true">7</div>
+                <h2 class="revelation-title" id="revelationTitle" data-fa="حقیقت نهایی" data-en="The Final Truth">حقیقت نهایی</h2>
+                <p class="revelation-text" data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت." data-en="Throughout the game, the player thought they were saving people. But in reality, every time they found one, they were losing one of their own memories forever. The player's motivation was completely natural: &quot;Find everyone and save them.&quot; But the very thing they thought was right caused them to lose what was most valuable.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت.</p>
+                <div class="revelation-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-brand">No.7</div>
+            <div class="footer-brand" aria-hidden="true">No.7</div>
             <p class="footer-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</p>
             <div class="footer-bottom">
                 <span data-fa="© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی" data-en="© 2025 No.7 — A Narrative Experience">© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی</span>
@@ -1546,41 +2420,134 @@ in<!DOCTYPE html>
     </footer>
 
     <script>
-        // Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 1800);
-        });
+        'use strict';
 
-        // Language Toggle
-        const langToggle = document.getElementById('langToggle');
-        const langLabel = document.getElementById('langLabel');
-        const htmlEl = document.documentElement;
-        const bodyEl = document.body;
-        let currentLang = 'fa';
+        /* ========================================
+           APPLICATION STATE
+        ======================================== */
+        const state = {
+            lang: 'fa',
+            mouseX: 0,
+            mouseY: 0,
+            targetX: 0,
+            targetY: 0,
+            cursorX: 0,
+            cursorY: 0,
+            isHovering: false,
+            scrollY: 0,
+            ticking: false
+        };
 
+        /* ========================================
+           DOM CACHE
+        ======================================== */
+        const dom = {
+            html: document.documentElement,
+            body: document.body,
+            preloader: document.getElementById('preloader'),
+            nav: document.getElementById('nav'),
+            navLinks: document.getElementById('navLinks'),
+            langToggle: document.getElementById('langToggle'),
+            langLabel: document.getElementById('langLabel'),
+            mobileToggle: document.getElementById('mobileToggle'),
+            scrollProgress: document.getElementById('scrollProgress'),
+            cursorDot: document.querySelector('.cursor-dot'),
+            cursorRing: document.querySelector('.cursor-ring'),
+            particlesContainer: document.getElementById('ambientParticles')
+        };
+
+        /* ========================================
+           PRELOADER
+        ======================================== */
+        function initPreloader() {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    dom.preloader.classList.add('hidden');
+                    dom.body.classList.remove('is-loading');
+                }, 1800);
+            });
+        }
+
+        /* ========================================
+           CUSTOM CURSOR
+        ======================================== */
+        function initCursor() {
+            if (window.matchMedia('(hover: none)').matches) return;
+
+            document.addEventListener('mousemove', (e) => {
+                state.targetX = e.clientX;
+                state.targetY = e.clientY;
+            }, { passive: true });
+
+            // Hover detection for interactive elements
+            const hoverTargets = 'a, button, .character-card, .location-card, .mechanic-card, .timeline-content';
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dom.body.classList.add('cursor-hover');
+                }
+            });
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dom.body.classList.remove('cursor-hover');
+                }
+            });
+
+            // Animation loop for smooth cursor
+            function animateCursor() {
+                state.cursorX += (state.targetX - state.cursorX) * 0.2;
+                state.cursorY += (state.targetY - state.cursorY) * 0.2;
+
+                dom.cursorDot.style.transform = `translate(${state.targetX}px, ${state.targetY}px) translate(-50%, -50%)`;
+                dom.cursorRing.style.transform = `translate(${state.cursorX}px, ${state.cursorY}px) translate(-50%, -50%)`;
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+        }
+
+        /* ========================================
+           AMBIENT PARTICLES
+        ======================================== */
+        function initParticles() {
+            const count = window.innerWidth < 768 ? 12 : 24;
+            const fragment = document.createDocumentFragment();
+
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 8 + 10) + 's';
+                fragment.appendChild(particle);
+            }
+
+            dom.particlesContainer.appendChild(fragment);
+        }
+
+        /* ========================================
+           LANGUAGE SWITCHER
+        ======================================== */
         function switchLanguage() {
-            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+            state.lang = state.lang === 'fa' ? 'en' : 'fa';
 
-            if (currentLang === 'en') {
-                htmlEl.setAttribute('dir', 'ltr');
-                htmlEl.setAttribute('lang', 'en');
-                bodyEl.classList.add('lang-en');
-                bodyEl.classList.remove('lang-fa');
-                langLabel.textContent = 'FA';
+            if (state.lang === 'en') {
+                dom.html.setAttribute('dir', 'ltr');
+                dom.html.setAttribute('lang', 'en');
+                dom.body.classList.add('lang-en');
+                dom.body.classList.remove('lang-fa');
+                dom.langLabel.textContent = 'FA';
             } else {
-                htmlEl.setAttribute('dir', 'rtl');
-                htmlEl.setAttribute('lang', 'fa');
-                bodyEl.classList.add('lang-fa');
-                bodyEl.classList.remove('lang-en');
-                langLabel.textContent = 'EN';
+                dom.html.setAttribute('dir', 'rtl');
+                dom.html.setAttribute('lang', 'fa');
+                dom.body.classList.add('lang-fa');
+                dom.body.classList.remove('lang-en');
+                dom.langLabel.textContent = 'EN';
             }
 
             document.querySelectorAll('[data-fa][data-en]').forEach(el => {
-                const text = el.getAttribute(`data-${currentLang}`);
+                const text = el.getAttribute(`data-${state.lang}`);
                 if (text !== null && text !== '') {
-                    if (text.includes('<')) {
+                    if (text.includes('<') || text.includes('&')) {
                         el.innerHTML = text;
                     } else {
                         el.textContent = text;
@@ -1589,70 +2556,188 @@ in<!DOCTYPE html>
             });
         }
 
-        langToggle.addEventListener('click', switchLanguage);
-
-        // Mobile Nav
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('open');
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+        function initNavigation() {
+            // Mobile toggle
+            dom.mobileToggle.addEventListener('click', () => {
+                const isOpen = dom.navLinks.classList.toggle('open');
+                dom.mobileToggle.classList.toggle('active', isOpen);
+                dom.mobileToggle.setAttribute('aria-expanded', isOpen);
             });
-        });
 
-        // Nav Scroll
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        }, { passive: true });
+            // Close on link click
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    dom.navLinks.classList.remove('open');
+                    dom.mobileToggle.classList.remove('active');
+                    dom.mobileToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#' || targetId.length < 2) return;
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    const navHeight = nav.offsetHeight;
-                    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
-                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || targetId.length < 2) return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const navHeight = dom.nav.offsetHeight;
+                        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    dom.navLinks.classList.remove('open');
+                    dom.mobileToggle.classList.remove('active');
+                    dom.mobileToggle.setAttribute('aria-expanded', 'false');
                 }
             });
-        });
+        }
 
-        // Scroll Reveal
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
+        /* ========================================
+           SCROLL HANDLERS
+        ======================================== */
+        function initScroll() {
+            function onScroll() {
+                state.scrollY = window.pageYOffset;
+
+                if (!state.ticking) {
+                    requestAnimationFrame(() => {
+                        // Nav scroll state
+                        dom.nav.classList.toggle('scrolled', state.scrollY > 50);
+
+                        // Scroll progress
+                        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        const progress = (state.scrollY / docHeight) * 100;
+                        dom.scrollProgress.style.width = progress + '%';
+
+                        state.ticking = false;
+                    });
+                    state.ticking = true;
                 }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -80px 0px'
-        });
-
-        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
-            revealObserver.observe(el);
-        });
-
-        // Keyboard
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                navLinks.classList.remove('open');
             }
-        });
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+
+        /* ========================================
+           REVEAL ANIMATIONS
+        ======================================== */
+        function initReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+
+                        // Animate section title accent underline
+                        const title = entry.target.querySelector('.section-title');
+                        if (title) {
+                            setTimeout(() => title.classList.add('is-visible'), 300);
+                        }
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -80px 0px'
+            });
+
+            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        /* ========================================
+           CARD MOUSE TRACKING (Spotlight effect)
+        ======================================== */
+        function initCardSpotlight() {
+            const cards = document.querySelectorAll('.character-card, .location-card, .mechanic-card, .timeline-content');
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    card.style.setProperty('--mouse-x', x + '%');
+                    card.style.setProperty('--mouse-y', y + '%');
+                });
+            });
+        }
+
+        /* ========================================
+           MAGNETIC BUTTONS
+        ======================================== */
+        function initMagneticButtons() {
+            if (window.matchMedia('(hover: none)').matches) return;
+
+            const buttons = document.querySelectorAll('.btn, .lang-toggle');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15 - 3}px)`;
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+        }
+
+        /* ========================================
+           HERO PARALLAX
+        ======================================== */
+        function initHeroParallax() {
+            const bgNumber = document.querySelector('.hero-bg-number');
+            if (!bgNumber) return;
+
+            window.addEventListener('scroll', () => {
+                if (!state.ticking) {
+                    requestAnimationFrame(() => {
+                        const scrolled = window.pageYOffset;
+                        if (scrolled < window.innerHeight) {
+                            bgNumber.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
+                            bgNumber.style.opacity = Math.max(0, 1 - scrolled / window.innerHeight);
+                        }
+                    });
+                }
+            }, { passive: true });
+        }
+
+        /* ========================================
+           INITIALIZATION
+        ======================================== */
+        function init() {
+            initPreloader();
+            initCursor();
+            initParticles();
+            initNavigation();
+            initScroll();
+            initReveal();
+            initCardSpotlight();
+            initMagneticButtons();
+            initHeroParallax();
+
+            dom.langToggle.addEventListener('click', switchLanguage);
+        }
+
+        // Start when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
     </script>
 </body>
 </html>
