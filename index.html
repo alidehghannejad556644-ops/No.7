@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No.7 | شماره ۷ — A Psychological Narrative Experience</title>
-    <meta name="description" content="Seven people. Seven memories. One truth no one is ready to hear. A psychological narrative experience where every salvation is a loss.">
-    <meta name="keywords" content="No.7, psychological game, narrative game, indie game, memory, trauma">
+    <meta name="description" content="Seven people. Seven memories. One truth no one is ready to hear.">
     <meta name="theme-color" content="#060609">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="No.7 | شماره ۷">
     <meta property="og:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1519608487953-e999c86e7a2d?w=1200">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="No.7 | شماره ۷">
     <meta name="twitter:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
@@ -32,18 +28,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-400-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-700-normal.css">
 
     <style>
         /* ========================================
            DESIGN TOKENS
         ======================================== */
         :root {
-            /* Typography */
-            --font-fa: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-            --font-en: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-fa: 'Vazirmatn', system-ui, sans-serif;
+            --font-en: 'Inter', system-ui, sans-serif;
             --font-mono: 'Space Grotesk', monospace;
+            --font-serif: 'Cormorant Garamond', serif;
 
-            /* Colors - Deep Cinematic Palette */
             --void: #04040a;
             --void-2: #080812;
             --ink: #0c0c18;
@@ -53,28 +50,25 @@
 
             --bone: #f4f1ea;
             --paper: #d8d4c8;
+            --paper-dark: #b8b4a8;
             --stone: #8a8694;
             --dust: #5a5666;
             --shadow: #3a3644;
 
-            /* Accent - Blood Red */
             --blood: #a8201a;
             --blood-light: #d63031;
             --blood-deep: #6b1510;
             --blood-glow: rgba(214, 48, 49, 0.4);
             --blood-soft: rgba(168, 32, 26, 0.08);
 
-            /* Gold - Memory */
             --gold: #c9a961;
             --gold-soft: rgba(201, 169, 97, 0.15);
 
-            /* Glass */
             --glass: rgba(255, 255, 255, 0.03);
             --glass-2: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-border-2: rgba(255, 255, 255, 0.12);
 
-            /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 2rem;
@@ -82,24 +76,22 @@
             --space-xl: 8rem;
             --space-2xl: 12rem;
 
-            /* Radii */
             --r-sm: 4px;
             --r-md: 12px;
             --r-lg: 24px;
             --r-xl: 40px;
             --r-full: 9999px;
 
-            /* Easing */
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
             --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-cinematic: cubic-bezier(0.77, 0, 0.175, 1);
 
-            /* Transitions */
             --t-fast: 200ms;
             --t-base: 400ms;
             --t-slow: 800ms;
-            --t-glacial: 1600ms;
+            --t-cinematic: 1800ms;
         }
 
         /* ========================================
@@ -124,7 +116,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: "kern" 1, "liga" 1;
             cursor: none;
         }
 
@@ -161,27 +152,15 @@
             cursor: none;
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--void);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--blood-deep);
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--blood);
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--void); }
+        ::-webkit-scrollbar-thumb { background: var(--blood-deep); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--blood); }
 
         /* ========================================
            CUSTOM CURSOR
         ======================================== */
-        .cursor-dot,
-        .cursor-ring {
+        .cursor-dot, .cursor-ring {
             position: fixed;
             top: 0;
             left: 0;
@@ -197,7 +176,7 @@
             background: var(--bone);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), background 0.3s;
+            transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring);
         }
 
         .cursor-ring {
@@ -206,7 +185,7 @@
             border: 1px solid rgba(244, 241, 234, 0.5);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), border-color 0.4s, opacity 0.4s;
+            transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), border-color 0.4s;
         }
 
         .cursor-hover .cursor-ring {
@@ -227,7 +206,7 @@
         }
 
         /* ========================================
-           AMBIENT BACKGROUND LAYERS
+           AMBIENT BACKGROUND
         ======================================== */
         .ambient {
             position: fixed;
@@ -237,7 +216,6 @@
             overflow: hidden;
         }
 
-        /* Layer 1: Deep gradient mesh */
         .ambient-mesh {
             position: absolute;
             inset: -20%;
@@ -255,7 +233,6 @@
             100% { transform: translate(3%, -2%) scale(0.98); }
         }
 
-        /* Layer 2: Perspective grid floor */
         .ambient-grid {
             position: absolute;
             width: 200%;
@@ -268,16 +245,8 @@
             background-size: 60px 60px;
             transform: perspective(800px) rotateX(68deg);
             transform-origin: center top;
-            mask-image: linear-gradient(to bottom,
-                transparent 0%,
-                black 10%,
-                black 50%,
-                transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom,
-                transparent 0%,
-                black 10%,
-                black 50%,
-                transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 50%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 50%, transparent 100%);
             animation: gridFlow 40s linear infinite;
             opacity: 0.6;
         }
@@ -287,7 +256,6 @@
             100% { background-position: 60px 60px, 60px 60px; }
         }
 
-        /* Layer 3: Floating particles */
         .ambient-particles {
             position: absolute;
             inset: 0;
@@ -305,19 +273,12 @@
         }
 
         @keyframes particleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) translateX(0);
-            }
+            0% { opacity: 0; transform: translateY(100vh) translateX(0); }
             10% { opacity: 0.6; }
             90% { opacity: 0.6; }
-            100% {
-                opacity: 0;
-                transform: translateY(-20vh) translateX(40px);
-            }
+            100% { opacity: 0; transform: translateY(-20vh) translateX(40px); }
         }
 
-        /* Layer 4: Film grain */
         .ambient-grain {
             position: absolute;
             inset: -50%;
@@ -334,17 +295,12 @@
             75% { transform: translate(-1%, 2%); }
         }
 
-        /* Layer 5: Vignette */
         .ambient-vignette {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center,
-                transparent 30%,
-                rgba(4, 4, 10, 0.4) 70%,
-                rgba(4, 4, 10, 0.9) 100%);
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(4, 4, 10, 0.4) 70%, rgba(4, 4, 10, 0.9) 100%);
         }
 
-        /* Layer 6: Vertical architectural lines */
         .ambient-lines {
             position: absolute;
             inset: 0;
@@ -358,18 +314,11 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(180deg,
-                transparent 0%,
-                rgba(168, 32, 26, 0.2) 20%,
-                rgba(168, 32, 26, 0.2) 80%,
-                transparent 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(168, 32, 26, 0.2) 20%, rgba(168, 32, 26, 0.2) 80%, transparent 100%);
         }
 
         .ambient-lines::before { left: 8%; }
         .ambient-lines::after { right: 8%; }
-
-        [dir="ltr"] .ambient-lines::before { left: 8%; right: auto; }
-        [dir="ltr"] .ambient-lines::after { right: 8%; left: auto; }
 
         /* ========================================
            PRELOADER
@@ -454,9 +403,6 @@
             animation: barFill 2s var(--ease-out) forwards;
         }
 
-        [dir="ltr"] .preloader-bar::after { transform-origin: left; }
-        [dir="rtl"] .preloader-bar::after { transform-origin: right; }
-
         @keyframes barFill {
             from { transform: scaleX(0); }
             to { transform: scaleX(1); }
@@ -480,13 +426,8 @@
             height: 100%;
             background: linear-gradient(90deg, var(--blood-deep), var(--blood-light));
             width: 0%;
-            transform-origin: left;
             transition: width 0.1s linear;
             box-shadow: 0 0 10px var(--blood-glow);
-        }
-
-        [dir="rtl"] .scroll-progress-bar {
-            transform-origin: right;
         }
 
         /* ========================================
@@ -589,20 +530,8 @@
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        [dir="ltr"] .nav-link::before { transform-origin: left; }
-
-        .nav-link:hover::before {
-            transform: scaleX(1);
-        }
-
-        .nav-link:hover {
-            color: var(--bone);
-        }
-
-        .nav-link-text {
-            position: relative;
-            z-index: 1;
-        }
+        .nav-link:hover::before { transform: scaleX(1); }
+        .nav-link:hover { color: var(--bone); }
 
         .nav-actions {
             display: flex;
@@ -636,14 +565,8 @@
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        .lang-toggle:hover::before {
-            transform: translateY(0);
-        }
-
-        .lang-toggle > * {
-            position: relative;
-            z-index: 1;
-        }
+        .lang-toggle:hover::before { transform: translateY(0); }
+        .lang-toggle > * { position: relative; z-index: 1; }
 
         .lang-toggle:hover {
             border-color: var(--blood);
@@ -673,7 +596,6 @@
             border: 1px solid var(--glass-border);
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         .mobile-toggle span {
@@ -698,19 +620,9 @@
         .mobile-toggle span::before { top: -6px; }
         .mobile-toggle span::after { top: 6px; }
 
-        .mobile-toggle.active span {
-            background: transparent;
-        }
-
-        .mobile-toggle.active span::before {
-            top: 0;
-            transform: rotate(45deg);
-        }
-
-        .mobile-toggle.active span::after {
-            top: 0;
-            transform: rotate(-45deg);
-        }
+        .mobile-toggle.active span { background: transparent; }
+        .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+        .mobile-toggle.active span::after { top: 0; transform: rotate(-45deg); }
 
         /* ========================================
            HERO SECTION
@@ -757,7 +669,6 @@
             padding: 10px 24px;
             background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-full);
             font-family: var(--font-mono);
@@ -795,33 +706,11 @@
 
         .hero-title-main {
             display: block;
-            background: linear-gradient(180deg,
-                var(--bone) 0%,
-                var(--paper) 50%,
-                var(--stone) 100%);
+            background: linear-gradient(180deg, var(--bone) 0%, var(--paper) 50%, var(--stone) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
-        }
-
-        .hero-title-main::after {
-            content: 'No.7';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, var(--blood-light), var(--blood));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-            animation: titleGlitch 6s ease-in-out infinite;
-        }
-
-        @keyframes titleGlitch {
-            0%, 92%, 100% { opacity: 0; transform: translate(0, 0); }
-            93% { opacity: 0.8; transform: translate(-4px, 2px); }
-            95% { opacity: 0; transform: translate(4px, -2px); }
-            97% { opacity: 0.6; transform: translate(-2px, 3px); }
         }
 
         .hero-subtitle {
@@ -845,17 +734,10 @@
         }
 
         @keyframes heroReveal {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Buttons */
         .btn {
             position: relative;
             padding: 16px 36px;
@@ -886,13 +768,10 @@
             transition: opacity var(--t-base);
         }
 
-        .btn-primary:hover::before {
-            opacity: 1;
-        }
-
+        .btn-primary:hover::before { opacity: 1; }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 16px 48px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+            box-shadow: 0 16px 48px var(--blood-glow);
         }
 
         .btn-secondary {
@@ -900,7 +779,6 @@
             color: var(--bone);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
         }
 
         .btn-secondary::before {
@@ -912,34 +790,18 @@
             transition: opacity var(--t-base);
         }
 
-        .btn-secondary:hover::before {
-            opacity: 1;
-        }
-
+        .btn-secondary:hover::before { opacity: 1; }
         .btn-secondary:hover {
             transform: translateY(-3px);
             border-color: var(--glass-border-2);
         }
 
-        .btn-text {
-            position: relative;
-            z-index: 1;
-        }
+        .btn-text { position: relative; z-index: 1; }
 
         .btn-arrow {
             position: relative;
             z-index: 1;
             transition: transform var(--t-base) var(--ease-out);
-        }
-
-        [dir="rtl"] .btn-arrow { transform: rotate(180deg); }
-
-        .btn:hover .btn-arrow {
-            transform: translateX(4px);
-        }
-
-        [dir="rtl"] .btn:hover .btn-arrow {
-            transform: rotate(180deg) translateX(4px);
         }
 
         .hero-scroll {
@@ -1041,32 +903,7 @@
             letter-spacing: -0.02em;
         }
 
-        .section-title .accent {
-            color: var(--blood-light);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title .accent::after {
-            content: '';
-            position: absolute;
-            bottom: 0.1em;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--blood);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 1s var(--ease-out);
-        }
-
-        [dir="rtl"] .section-title .accent::after {
-            transform-origin: right;
-        }
-
-        .section-title.is-visible .accent::after {
-            transform: scaleX(1);
-        }
+        .section-title .accent { color: var(--blood-light); }
 
         .section-desc {
             color: var(--paper);
@@ -1076,196 +913,508 @@
         }
 
         /* ========================================
-           STORY TIMELINE
+           CINEMATIC STORY EXPERIENCE
         ======================================== */
-        .story-section {
-            background: linear-gradient(180deg,
-                transparent 0%,
-                rgba(12, 12, 24, 0.6) 10%,
-                rgba(12, 12, 24, 0.6) 90%,
-                transparent 100%);
-        }
-
-        .timeline {
+        .cinematic-story {
             position: relative;
-            padding: var(--space-lg) 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 1px;
-            background: linear-gradient(180deg,
-                transparent 0%,
-                var(--glass-border) 10%,
-                var(--blood) 50%,
-                var(--glass-border) 90%,
-                transparent 100%);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: var(--space-lg);
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: var(--space-lg);
-            align-items: start;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--void);
-            border: 2px solid var(--blood);
-            position: relative;
-            z-index: 2;
-            grid-column: 2;
-            grid-row: 1;
-            align-self: start;
-            margin-top: 32px;
-            transition: all var(--t-base) var(--ease-out);
-            box-shadow: 0 0 0 4px var(--void), 0 0 20px var(--blood-glow);
-        }
-
-        .timeline-dot::after {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 1px solid var(--blood);
-            opacity: 0;
-            animation: dotPulse 2s ease-out infinite;
-        }
-
-        @keyframes dotPulse {
-            0% { transform: scale(0.8); opacity: 0.8; }
-            100% { transform: scale(1.8); opacity: 0; }
-        }
-
-        .timeline-item:hover .timeline-dot {
-            background: var(--blood);
-            transform: scale(1.3);
-        }
-
-        .timeline-content {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--r-lg);
-            padding: var(--space-md);
-            position: relative;
+            width: 100%;
+            height: 100vh;
             overflow: hidden;
-            transition: all var(--t-base) var(--ease-out);
+            background: var(--void);
+            z-index: 2;
         }
 
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--blood), transparent);
-            opacity: 0;
-            transition: opacity var(--t-base);
-        }
-
-        .timeline-content::after {
-            content: '';
+        /* Scene Container */
+        .scene-container {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(168, 32, 26, 0.08) 0%,
-                transparent 50%);
+            perspective: 1500px;
+            perspective-origin: 50% 50%;
+        }
+
+        /* Individual Scene */
+        .scene {
+            position: absolute;
+            inset: 0;
             opacity: 0;
-            transition: opacity var(--t-base);
-            pointer-events: none;
+            visibility: hidden;
+            transform: scale(1.08);
+            filter: blur(20px) brightness(0.3);
+            transition:
+                opacity var(--t-cinematic) var(--ease-cinematic),
+                transform var(--t-cinematic) var(--ease-cinematic),
+                filter var(--t-cinematic) var(--ease-cinematic),
+                visibility 0s linear var(--t-cinematic);
+            will-change: opacity, transform, filter;
         }
 
-        .timeline-item:hover .timeline-content {
-            border-color: rgba(168, 32, 26, 0.3);
-            transform: translateY(-4px);
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
-        }
-
-        .timeline-item:hover .timeline-content::before,
-        .timeline-item:hover .timeline-content::after {
+        .scene.active {
             opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            filter: blur(0) brightness(1);
+            transition:
+                opacity var(--t-cinematic) var(--ease-cinematic),
+                transform var(--t-cinematic) var(--ease-cinematic),
+                filter var(--t-cinematic) var(--ease-cinematic),
+                visibility 0s linear 0s;
+            z-index: 2;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; }
-        .timeline-item:nth-child(even) .timeline-content { grid-column: 3; }
-        .timeline-item:nth-child(odd) .timeline-spacer { grid-column: 3; }
-        .timeline-item:nth-child(even) .timeline-spacer { grid-column: 1; }
+        .scene.exiting {
+            opacity: 0;
+            visibility: visible;
+            transform: scale(0.92);
+            filter: blur(30px) brightness(0);
+            z-index: 1;
+        }
 
-        .timeline-chapter {
-            display: inline-block;
+        /* Scene Background - unique per chapter */
+        .scene-bg {
+            position: absolute;
+            inset: -10%;
+            z-index: 0;
+            animation: bgBreathing 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgBreathing {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.05) translate(-1%, 1%); }
+            100% { transform: scale(1.02) translate(1%, -1%); }
+        }
+
+        /* Chapter-specific atmospheres */
+        .scene[data-chapter="1"] .scene-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 30% 40%, rgba(120, 150, 200, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 70% 70%, rgba(180, 200, 230, 0.08) 0%, transparent 60%),
+                linear-gradient(180deg, #0a0f1a 0%, #141a2a 50%, #0a0f1a 100%);
+        }
+
+        .scene[data-chapter="2"] .scene-bg {
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(140, 120, 100, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(100, 90, 80, 0.1) 0%, transparent 60%),
+                linear-gradient(180deg, #1a1815 0%, #201d18 50%, #0f0e0c 100%);
+        }
+
+        .scene[data-chapter="3"] .scene-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(168, 32, 26, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(107, 21, 16, 0.15) 0%, transparent 60%),
+                linear-gradient(180deg, #1a0505 0%, #200808 50%, #0a0202 100%);
+        }
+
+        .scene[data-chapter="4"] .scene-bg {
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201, 169, 97, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 30% 70%, rgba(168, 32, 26, 0.12) 0%, transparent 60%),
+                linear-gradient(180deg, #1a1408 0%, #201808 50%, #0a0804 100%);
+        }
+
+        .scene[data-chapter="5"] .scene-bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220, 230, 240, 0.1) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 70% 30%, rgba(180, 200, 220, 0.08) 0%, transparent 60%),
+                linear-gradient(180deg, #0f1418 0%, #141a20 50%, #080c10 100%);
+        }
+
+        .scene[data-chapter="6"] .scene-bg {
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100, 60, 140, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 20% 30%, rgba(168, 32, 26, 0.1) 0%, transparent 60%),
+                linear-gradient(180deg, #120a1a 0%, #180e20 50%, #08050f 100%);
+        }
+
+        /* Scene Fog */
+        .scene-fog {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .scene-fog::before,
+        .scene-fog::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 50%);
+            filter: blur(60px);
+        }
+
+        .scene-fog::before {
+            top: -25%;
+            left: -25%;
+            animation: fogDrift1 40s ease-in-out infinite alternate;
+        }
+
+        .scene-fog::after {
+            bottom: -25%;
+            right: -25%;
+            animation: fogDrift2 50s ease-in-out infinite alternate;
+        }
+
+        @keyframes fogDrift1 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(10%, 5%) rotate(5deg); }
+        }
+
+        @keyframes fogDrift2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-10%, -5%) rotate(-5deg); }
+        }
+
+        /* Scene Particles */
+        .scene-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .scene-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(244, 241, 234, 0.5);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 4px currentColor;
+            animation: sceneParticleFloat linear infinite;
+        }
+
+        @keyframes sceneParticleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0) scale(0.5);
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% {
+                opacity: 0;
+                transform: translateY(-20vh) translateX(30px) scale(1);
+            }
+        }
+
+        /* Light Rays */
+        .scene-rays {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            opacity: 0.3;
+            background:
+                linear-gradient(115deg,
+                    transparent 0%,
+                    transparent 40%,
+                    rgba(255, 255, 255, 0.03) 50%,
+                    transparent 60%,
+                    transparent 100%);
+            animation: raysShift 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes raysShift {
+            0% { transform: translateX(-10%) translateY(-5%); opacity: 0.2; }
+            100% { transform: translateX(10%) translateY(5%); opacity: 0.4; }
+        }
+
+        /* Giant Chapter Number */
+        .scene-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-mono);
+            font-size: clamp(20rem, 50vw, 45rem);
+            font-weight: 700;
+            line-height: 0.8;
+            color: transparent;
+            -webkit-text-stroke: 1px currentColor;
+            opacity: 0.04;
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            user-select: none;
+            z-index: 4;
+            animation: numberFloat 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes numberFloat {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -52%) scale(1.02); }
+        }
+
+        .scene[data-chapter="1"] .scene-number { color: #7896c8; }
+        .scene[data-chapter="2"] .scene-number { color: #8c7864; }
+        .scene[data-chapter="3"] .scene-number { color: #a8201a; }
+        .scene[data-chapter="4"] .scene-number { color: #c9a961; }
+        .scene[data-chapter="5"] .scene-number { color: #dce6f0; }
+        .scene[data-chapter="6"] .scene-number { color: #643c8c; }
+
+        /* Scene Content */
+        .scene-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 160px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .scene-chapter-label {
             font-family: var(--font-mono);
             font-size: 0.7rem;
             font-weight: 500;
-            color: var(--blood-light);
-            letter-spacing: 0.2em;
+            letter-spacing: 0.4em;
             text-transform: uppercase;
+            color: var(--blood-light);
             margin-bottom: var(--space-sm);
-            padding: 4px 12px;
-            background: var(--blood-soft);
-            border-radius: var(--r-sm);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s var(--ease-out) 0.3s, transform 1s var(--ease-out) 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        .timeline-title {
-            font-size: 1.5rem;
+        .scene-chapter-label::before,
+        .scene-chapter-label::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--blood-light), transparent);
+        }
+
+        .scene-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 700;
-            margin-bottom: var(--space-sm);
-            line-height: 1.3;
-            letter-spacing: -0.01em;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+            color: var(--bone);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s var(--ease-out) 0.5s, transform 1.2s var(--ease-out) 0.5s;
+            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .timeline-text {
+        .scene-text {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 2.2;
             color: var(--paper);
-            font-size: 0.95rem;
-            line-height: 2;
             font-weight: 300;
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.4s var(--ease-out) 0.8s, transform 1.4s var(--ease-out) 0.8s;
         }
 
-        .timeline-quote {
+        .scene.active .scene-chapter-label,
+        .scene.active .scene-title,
+        .scene.active .scene-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scene-quote {
             display: block;
-            margin: var(--space-sm) 0;
-            padding: 16px 24px;
-            background: linear-gradient(90deg, var(--blood-soft), transparent);
+            margin: 24px auto;
+            padding: 20px 32px;
+            max-width: 600px;
+            background: linear-gradient(90deg, transparent, rgba(168, 32, 26, 0.08), transparent);
             border-inline-start: 2px solid var(--blood);
             border-radius: 0 var(--r-sm) var(--r-sm) 0;
             color: var(--bone);
             font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             position: relative;
+            font-family: var(--font-serif);
         }
 
-        .timeline-quote::before {
+        .scene-quote::before {
             content: '"';
             position: absolute;
-            top: -8px;
-            inset-inline-start: 12px;
+            top: -10px;
+            inset-inline-start: 16px;
             font-family: Georgia, serif;
-            font-size: 3rem;
+            font-size: 4rem;
             color: var(--blood);
-            opacity: 0.3;
+            opacity: 0.4;
             line-height: 1;
         }
 
-        .timeline-highlight {
+        .scene-highlight {
             color: var(--blood-light);
             font-weight: 500;
+            text-shadow: 0 0 20px rgba(214, 48, 49, 0.3);
+        }
+
+        .scene-text p {
+            margin-bottom: 1em;
+        }
+
+        .scene-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Line-by-line reveal */
+        .scene-text .line {
+            display: block;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+        }
+
+        .scene.active .scene-text .line {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scene.active .scene-text .line:nth-child(1) { transition-delay: 1s; }
+        .scene.active .scene-text .line:nth-child(2) { transition-delay: 1.2s; }
+        .scene.active .scene-text .line:nth-child(3) { transition-delay: 1.4s; }
+        .scene.active .scene-text .line:nth-child(4) { transition-delay: 1.6s; }
+        .scene.active .scene-text .line:nth-child(5) { transition-delay: 1.8s; }
+        .scene.active .scene-text .line:nth-child(6) { transition-delay: 2s; }
+        .scene.active .scene-text .line:nth-child(7) { transition-delay: 2.2s; }
+        .scene.active .scene-text .line:nth-child(8) { transition-delay: 2.4s; }
+
+        /* Cinematic Navigation */
+        .cinematic-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            background: linear-gradient(180deg, transparent 0%, rgba(4, 4, 10, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .cinematic-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-full);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--bone);
+            letter-spacing: 0.05em;
+            transition: all var(--t-base) var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cinematic-nav-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--blood);
+            transform: translateY(100%);
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        .cinematic-nav-btn:hover:not(:disabled)::before {
+            transform: translateY(0);
+        }
+
+        .cinematic-nav-btn > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cinematic-nav-btn:hover:not(:disabled) {
+            border-color: var(--blood);
+            box-shadow: 0 8px 24px var(--blood-glow);
+            transform: translateY(-2px);
+        }
+
+        .cinematic-nav-btn:disabled {
+            opacity: 0.25;
+            cursor: not-allowed;
+        }
+
+        .cinematic-nav-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform var(--t-base) var(--ease-out);
+        }
+
+        .cinematic-nav-btn:hover:not(:disabled) svg {
+            transform: translateX(-3px);
+        }
+
+        [dir="rtl"] .cinematic-nav-btn:hover:not(:disabled) svg {
+            transform: translateX(3px);
+        }
+
+        .cinematic-nav-btn.prev svg {
+            transform: rotate(180deg);
+        }
+
+        .cinematic-indicator {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--stone);
+            letter-spacing: 0.2em;
+        }
+
+        .cinematic-progress {
+            width: 80px;
+            height: 1px;
+            background: var(--ash);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cinematic-progress-bar {
+            position: absolute;
+            inset: 0;
+            background: var(--blood);
+            transform-origin: left;
+            transition: transform 0.8s var(--ease-out);
+            box-shadow: 0 0 8px var(--blood-glow);
+        }
+
+        [dir="rtl"] .cinematic-progress-bar {
+            transform-origin: right;
+        }
+
+        /* Transition Overlay */
+        .transition-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 50;
+            pointer-events: none;
+            background: var(--void);
+            opacity: 0;
+            transition: opacity 0.8s var(--ease-cinematic);
+        }
+
+        .transition-overlay.active {
+            opacity: 1;
         }
 
         /* ========================================
@@ -1280,7 +1429,6 @@
         .character-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
@@ -1290,8 +1438,6 @@
             min-height: 320px;
             display: flex;
             flex-direction: column;
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
 
         .character-card::before {
@@ -1299,26 +1445,9 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
-                rgba(168, 32, 26, 0.12) 0%,
-                transparent 60%);
+                rgba(168, 32, 26, 0.12) 0%, transparent 60%);
             opacity: 0;
             transition: opacity var(--t-base);
-            pointer-events: none;
-        }
-
-        .character-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg,
-                transparent 30%,
-                rgba(255, 255, 255, 0.03) 50%,
-                transparent 70%);
-            transform: translateX(-100%) translateY(-100%) rotate(25deg);
-            transition: transform 1s var(--ease-out);
             pointer-events: none;
         }
 
@@ -1328,13 +1457,7 @@
             box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
         }
 
-        .character-card:hover::before {
-            opacity: 1;
-        }
-
-        .character-card:hover::after {
-            transform: translateX(100%) translateY(100%) rotate(25deg);
-        }
+        .character-card:hover::before { opacity: 1; }
 
         .character-number {
             position: absolute;
@@ -1354,7 +1477,6 @@
         .character-card:hover .character-number {
             opacity: 0.5;
             transform: scale(1.1);
-            -webkit-text-stroke-color: var(--blood-light);
         }
 
         .character-avatar {
@@ -1372,22 +1494,7 @@
             margin-bottom: var(--space-sm);
             position: relative;
             z-index: 1;
-            box-shadow: 0 8px 24px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.15);
-        }
-
-        .character-avatar::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            border: 1px solid var(--blood-light);
-            opacity: 0;
-            transition: all var(--t-base) var(--ease-out);
-        }
-
-        .character-card:hover .character-avatar::after {
-            opacity: 0.5;
-            inset: -6px;
+            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
         .character-name {
@@ -1396,7 +1503,6 @@
             margin-bottom: 6px;
             position: relative;
             z-index: 1;
-            letter-spacing: -0.01em;
         }
 
         .character-role {
@@ -1433,11 +1539,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: color var(--t-base);
-        }
-
-        .character-card:hover .character-quote {
-            color: var(--paper);
         }
 
         .character-quote::before {
@@ -1445,11 +1546,6 @@
             width: 24px;
             height: 1px;
             background: var(--blood);
-            transition: width var(--t-base) var(--ease-out);
-        }
-
-        .character-card:hover .character-quote::before {
-            width: 40px;
         }
 
         /* ========================================
@@ -1464,7 +1560,6 @@
         .location-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
@@ -1473,26 +1568,10 @@
             transition: all var(--t-base) var(--ease-out);
         }
 
-        .location-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(168, 32, 26, 0.1) 0%,
-                transparent 50%);
-            opacity: 0;
-            transition: opacity var(--t-base);
-            pointer-events: none;
-        }
-
         .location-card:hover {
             border-color: rgba(168, 32, 26, 0.3);
             transform: translateY(-4px);
             box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-        }
-
-        .location-card:hover::before {
-            opacity: 1;
         }
 
         .location-icon {
@@ -1512,14 +1591,12 @@
         .location-card:hover .location-icon {
             background: linear-gradient(135deg, var(--blood), var(--blood-deep));
             transform: rotate(-5deg) scale(1.05);
-            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
         .location-name {
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 10px;
-            letter-spacing: -0.01em;
         }
 
         .location-desc {
@@ -1541,7 +1618,6 @@
         .mechanic-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
@@ -1550,7 +1626,7 @@
             transition: all var(--t-base) var(--ease-out);
         }
 
-        .mechanic-card::before {
+        .mechanic-card::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1562,31 +1638,12 @@
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        .mechanic-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                rgba(168, 32, 26, 0.08) 0%,
-                transparent 50%);
-            opacity: 0;
-            transition: opacity var(--t-base);
-            pointer-events: none;
-        }
-
         .mechanic-card:hover {
             border-color: rgba(168, 32, 26, 0.3);
             transform: translateY(-4px);
-            background: var(--glass-2);
         }
 
-        .mechanic-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .mechanic-card:hover::after {
-            opacity: 1;
-        }
+        .mechanic-card:hover::after { transform: scaleX(1); }
 
         .mechanic-icon {
             width: 56px;
@@ -1605,14 +1662,12 @@
         .mechanic-card:hover .mechanic-icon {
             background: linear-gradient(135deg, var(--blood), var(--blood-deep));
             transform: rotate(-5deg) scale(1.05);
-            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
         .mechanic-title {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 10px;
-            letter-spacing: -0.01em;
         }
 
         .mechanic-desc {
@@ -1623,7 +1678,7 @@
         }
 
         /* ========================================
-           REVELATION SECTION
+           REVELATION
         ======================================== */
         .revelation-section {
             padding: var(--space-2xl) var(--space-md);
@@ -1637,7 +1692,6 @@
             margin: 0 auto;
             background: var(--glass);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-xl);
             padding: var(--space-xl) var(--space-lg);
@@ -1649,26 +1703,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%,
-                var(--blood-soft) 0%,
-                transparent 60%);
-            pointer-events: none;
-        }
-
-        .revelation-box::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: var(--r-xl);
-            padding: 1px;
-            background: linear-gradient(135deg,
-                rgba(168, 32, 26, 0.3),
-                transparent 50%,
-                rgba(201, 169, 97, 0.2));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+            background: radial-gradient(circle at 50% 0%, var(--blood-soft) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -1681,9 +1716,7 @@
             -webkit-text-stroke: 1px var(--blood);
             opacity: 0.3;
             margin-bottom: var(--space-md);
-            position: relative;
             letter-spacing: -0.05em;
-            animation: numberPulse 4s ease-in-out infinite;
         }
 
         .revelation-title {
@@ -1691,8 +1724,6 @@
             font-weight: 700;
             margin-bottom: var(--space-md);
             line-height: 1.2;
-            position: relative;
-            letter-spacing: -0.02em;
         }
 
         .revelation-text {
@@ -1701,42 +1732,18 @@
             line-height: 2;
             max-width: 640px;
             margin: 0 auto var(--space-md);
-            position: relative;
             font-weight: 300;
         }
 
         .revelation-quote {
             display: inline-block;
             padding: 24px 40px;
-            background: linear-gradient(90deg,
-                transparent,
-                var(--blood-soft),
-                transparent);
+            background: linear-gradient(90deg, transparent, var(--blood-soft), transparent);
             border-radius: var(--r-md);
             color: var(--bone);
             font-style: italic;
             font-size: 1.25rem;
             font-weight: 400;
-            position: relative;
-            letter-spacing: 0.02em;
-        }
-
-        .revelation-quote::before,
-        .revelation-quote::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 1px;
-            background: var(--blood);
-        }
-
-        .revelation-quote::before {
-            inset-inline-start: -60px;
-        }
-
-        .revelation-quote::after {
-            inset-inline-end: -60px;
         }
 
         /* ========================================
@@ -1751,32 +1758,15 @@
             z-index: 2;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg,
-                transparent,
-                var(--blood),
-                transparent);
-        }
-
         .footer-brand {
             font-family: var(--font-mono);
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: var(--space-sm);
-            background: linear-gradient(180deg,
-                var(--bone) 0%,
-                var(--stone) 100%);
+            background: linear-gradient(180deg, var(--bone) 0%, var(--stone) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.03em;
         }
 
         .footer-quote {
@@ -1803,7 +1793,6 @@
             max-width: 1280px;
             margin: 0 auto;
             font-family: var(--font-mono);
-            letter-spacing: 0.05em;
         }
 
         /* ========================================
@@ -1843,9 +1832,7 @@
            RESPONSIVE
         ======================================== */
         @media (max-width: 968px) {
-            .nav {
-                padding: var(--space-sm);
-            }
+            .nav { padding: var(--space-sm); }
 
             .nav-links {
                 display: none;
@@ -1855,160 +1842,111 @@
                 right: 0;
                 background: rgba(4, 4, 10, 0.98);
                 backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: var(--space-sm);
                 border-bottom: 1px solid var(--glass-border);
-                gap: 4px;
             }
 
-            .nav-links.open {
-                display: flex;
+            .nav-links.open { display: flex; }
+            .nav-link { width: 100%; padding: 14px 16px; }
+            .mobile-toggle { display: flex; }
+
+            .scene-content {
+                padding: 100px 20px 140px;
             }
 
-            .nav-link {
-                width: 100%;
-                padding: 14px 16px;
+            .cinematic-nav {
+                gap: 12px;
+                padding: 16px;
             }
 
-            .mobile-toggle {
-                display: flex;
+            .cinematic-nav-btn {
+                padding: 10px 16px;
+                font-size: 0.75rem;
             }
 
-            .timeline::before {
-                left: 20px;
+            .cinematic-indicator {
+                gap: 10px;
+                font-size: 0.7rem;
             }
 
-            [dir="rtl"] .timeline::before {
-                left: auto;
-                right: 20px;
+            .cinematic-progress {
+                width: 50px;
             }
 
-            .timeline-item {
-                grid-template-columns: 1fr;
-                padding-inline-start: 56px;
-                gap: 0;
-            }
-
-            [dir="rtl"] .timeline-item {
-                padding-inline-start: 0;
-                padding-inline-end: 56px;
-            }
-
-            .timeline-dot {
-                position: absolute;
-                left: 13px;
-                top: 32px;
-                grid-column: auto;
-                grid-row: auto;
-                margin: 0;
-            }
-
-            [dir="rtl"] .timeline-dot {
-                left: auto;
-                right: 13px;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                grid-column: 1;
-            }
-
-            .timeline-spacer {
-                display: none;
-            }
-
-            .section {
-                padding: var(--space-xl) var(--space-sm);
-            }
-
-            .section-header {
-                margin-bottom: var(--space-lg);
-            }
+            .section { padding: var(--space-xl) var(--space-sm); }
+            .section-header { margin-bottom: var(--space-lg); }
         }
 
         @media (max-width: 640px) {
-            .hero {
-                padding: var(--space-xl) var(--space-sm) var(--space-md);
-            }
+            .hero { padding: var(--space-xl) var(--space-sm) var(--space-md); }
 
             .hero-cta {
                 flex-direction: column;
                 width: 100%;
             }
 
-            .btn {
+            .btn { width: 100%; justify-content: center; }
+
+            .scene-number {
+                font-size: 15rem;
+            }
+
+            .scene-title {
+                font-size: 2rem;
+            }
+
+            .scene-text {
+                font-size: 0.95rem;
+                line-height: 2;
+            }
+
+            .scene-quote {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+
+            .cinematic-nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .cinematic-nav-btn {
+                flex: 1;
+                min-width: 100px;
+                justify-content: center;
+            }
+
+            .cinematic-indicator {
+                order: -1;
                 width: 100%;
                 justify-content: center;
             }
 
-            .timeline-content {
-                padding: var(--space-sm);
-            }
+            .character-card { padding: var(--space-sm); min-height: auto; }
+            .character-number { font-size: 4rem; }
 
-            .timeline-title {
-                font-size: 1.25rem;
-            }
-
-            .character-card {
-                padding: var(--space-sm);
-                min-height: auto;
-            }
-
-            .character-number {
-                font-size: 4rem;
-            }
-
-            .revelation-box {
-                padding: var(--space-lg) var(--space-sm);
-            }
-
-            .revelation-quote {
-                padding: 20px 24px;
-                font-size: 1.05rem;
-            }
-
-            .revelation-quote::before,
-            .revelation-quote::after {
-                display: none;
-            }
+            .revelation-box { padding: var(--space-lg) var(--space-sm); }
 
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
-
-            .footer-brand {
-                font-size: 2.5rem;
-            }
         }
 
-        /* ========================================
-           REDUCED MOTION
-        ======================================== */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
-            }
-
-            .ambient-mesh,
-            .ambient-grid,
-            .particle,
-            .ambient-grain {
-                animation: none !important;
             }
         }
 
-        /* Focus states */
         :focus-visible {
             outline: 2px solid var(--blood-light);
             outline-offset: 4px;
             border-radius: var(--r-sm);
         }
 
-        /* Skip link */
         .skip-link {
             position: absolute;
             top: -100px;
@@ -2020,21 +1958,16 @@
             transition: top var(--t-fast);
         }
 
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
     </style>
 </head>
 <body class="is-loading">
 
-    <!-- Skip Link -->
     <a href="#story" class="skip-link" data-fa="پرش به محتوا" data-en="Skip to content">پرش به محتوا</a>
 
-    <!-- Custom Cursor -->
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
 
-    <!-- Preloader -->
     <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-number">7</div>
         <div class="preloader-meta">
@@ -2043,7 +1976,6 @@
         </div>
     </div>
 
-    <!-- Ambient Background -->
     <div class="ambient" aria-hidden="true">
         <div class="ambient-mesh"></div>
         <div class="ambient-grid"></div>
@@ -2053,12 +1985,10 @@
         <div class="ambient-vignette"></div>
     </div>
 
-    <!-- Scroll Progress -->
     <div class="scroll-progress" aria-hidden="true">
         <div class="scroll-progress-bar" id="scrollProgress"></div>
     </div>
 
-    <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation">
         <a href="#" class="nav-brand" aria-label="No.7 Home">
             <div class="nav-brand-mark">7</div>
@@ -2066,11 +1996,11 @@
         </a>
 
         <div class="nav-links" id="navLinks">
-            <a href="#story" class="nav-link" data-fa="داستان" data-en="Story"><span class="nav-link-text" data-fa="داستان" data-en="Story">داستان</span></a>
-            <a href="#characters" class="nav-link" data-fa="شخصیت‌ها" data-en="Characters"><span class="nav-link-text" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span></a>
-            <a href="#locations" class="nav-link" data-fa="مکان‌ها" data-en="Locations"><span class="nav-link-text" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span></a>
-            <a href="#mechanics" class="nav-link" data-fa="مکانیک‌ها" data-en="Mechanics"><span class="nav-link-text" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</span></a>
-            <a href="#revelation" class="nav-link" data-fa="حقیقت" data-en="Truth"><span class="nav-link-text" data-fa="حقیقت" data-en="Truth">حقیقت</span></a>
+            <a href="#story" class="nav-link"><span class="nav-link-text" data-fa="داستان" data-en="Story">داستان</span></a>
+            <a href="#characters" class="nav-link"><span class="nav-link-text" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span></a>
+            <a href="#locations" class="nav-link"><span class="nav-link-text" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span></a>
+            <a href="#mechanics" class="nav-link"><span class="nav-link-text" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</span></a>
+            <a href="#revelation" class="nav-link"><span class="nav-link-text" data-fa="حقیقت" data-en="Truth">حقیقت</span></a>
         </div>
 
         <div class="nav-actions">
@@ -2084,7 +2014,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero" aria-labelledby="heroTitle">
         <div class="hero-bg-number" aria-hidden="true">7</div>
         <div class="hero-content">
@@ -2109,115 +2038,32 @@
         </div>
     </section>
 
-    <!-- Story -->
-    <section class="section story-section" id="story" aria-labelledby="storyTitle">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-eyebrow" data-fa="لور کامل بازی" data-en="Complete Game Lore">لور کامل بازی</span>
-                <h2 class="section-title" id="storyTitle" data-fa="داستان <span class='accent'>شماره ۷</span>" data-en="The Story of <span class='accent'>No.7</span>">داستان <span class="accent">شماره ۷</span></h2>
-                <p class="section-desc" data-fa="روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند." data-en="A tale of awakening, searching, and a truth that changes everything. Six chapters that will forever change your mind.">روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند.</p>
+    <!-- CINEMATIC STORY EXPERIENCE -->
+    <section class="cinematic-story" id="story" aria-labelledby="storyTitle">
+        <div class="scene-container" id="sceneContainer">
+            <!-- Scenes will be generated by JavaScript -->
+        </div>
+
+        <div class="transition-overlay" id="transitionOverlay"></div>
+
+        <div class="cinematic-nav">
+            <button class="cinematic-nav-btn prev" id="prevScene" aria-label="Previous chapter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span data-fa="قبلی" data-en="Previous">قبلی</span>
+            </button>
+
+            <div class="cinematic-indicator">
+                <span id="currentScene">01</span>
+                <div class="cinematic-progress">
+                    <div class="cinematic-progress-bar" id="cinematicProgress"></div>
+                </div>
+                <span id="totalScenes">06</span>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل اول — بیداری" data-en="Chapter I — Awakening">فصل اول — بیداری</span>
-                        <h3 class="timeline-title" data-fa="صبحی بدون خاطره" data-en="A Morning Without Memory">صبحی بدون خاطره</h3>
-                        <p class="timeline-text">
-                            <span data-fa="شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:" data-en="The protagonist is a 16-year-old boy. He wakes up one morning in an unfamiliar room. He has no memory — doesn't know his name, where he came from, or why he's here. On his wrist, there's only a cold metal bracelet engraved with:">شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:</span>
-                            <span class="timeline-quote" data-fa="اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن." data-en="If you want to survive, find Number 1 before sunset.">اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.</span>
-                            <span data-fa="یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب." data-en="A recorded voice. That's all. No other explanation. Just a big city, seven people with numbers on their wrists, and a deadline: before sunset.">یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب.</span>
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-spacer"></div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-spacer"></div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل دوم — جستجو" data-en="Chapter II — The Search">فصل دوم — جستجو</span>
-                        <h3 class="timeline-title" data-fa="شهر هفت نفر" data-en="The City of Seven">شهر هفت نفر</h3>
-                        <p class="timeline-text">
-                            <span data-fa="شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷. هر کدام شخصیت، گذشته و داستان خاص خودشان را دارند." data-en="The protagonist enters a vast, two-dimensional city. A city that feels both familiar and alien. In this city, there are seven people. Each has a number on their wrist: from No.1 to No.7. Each has their own personality, past, and story.">شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷. هر کدام شخصیت، گذشته و داستان خاص خودشان را دارند.</span>
-                            <br><br>
-                            <span data-fa="بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد." data-en="The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them. Feels like they've finally found something worth fighting for.">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد.</span>
-                            <br><br>
-                            <span class="timeline-highlight" data-fa="اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود." data-en="But... every time you find one of them, they disappear.">اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود.</span>
-                            <span class="timeline-quote" data-fa="بالاخره پیدام کردی..." data-en="You finally found me...">بالاخره پیدام کردی...</span>
-                            <span data-fa="فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند." data-en="Just one sentence. And then they vanish. As if they never existed.">فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل سوم — وحشت" data-en="Chapter III — Terror">فصل سوم — وحشت</span>
-                        <h3 class="timeline-title" data-fa="شمارش معکوس" data-en="The Countdown">شمارش معکوس</h3>
-                        <p class="timeline-text">
-                            <span data-fa="وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد." data-en="Midway through the game, only three remain. The player panics. Wants to save everyone. Tries to run faster, find sooner, hold tighter.">وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد.</span>
-                            <br><br>
-                            <span data-fa="اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند." data-en="But fails. One by one, they too disappear. The city grows darker. Colors fade. The cheerful music stops. The abilities the player had vanish one by one.">اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند.</span>
-                            <br><br>
-                            <span class="timeline-highlight" data-fa="بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد." data-en="The player thinks someone is killing them. Thinks there's an enemy.">بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد.</span>
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-spacer"></div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-spacer"></div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل چهارم — حقیقت" data-en="Chapter IV — The Truth">فصل چهارم — حقیقت</span>
-                        <h3 class="timeline-title" data-fa="شماره ۱" data-en="Number 1">شماره ۱</h3>
-                        <p class="timeline-text">
-                            <span data-fa="نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند." data-en="Near the end, only Number 1 remains. The player finds them. Number 1 smiles.">نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند.</span>
-                            <span class="timeline-quote" data-fa="خیلی طول کشید." data-en="It took long enough.">خیلی طول کشید.</span>
-                            <span data-fa="بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:" data-en="The player is confused. &quot;What?&quot; Number 1 continues:">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
-                            <span class="timeline-quote" data-fa="ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم." data-en="We are not seven people. We are your seven memories.">ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.</span>
-                            <br><br>
-                            <span class="timeline-highlight" data-fa="سکوت مطلق." data-en="Absolute silence.">سکوت مطلق.</span>
-                            <br><br>
-                            <span data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش." data-en="Throughout the game, the player thought they were saving people. In reality... every time they found one, they were losing one of their own memories forever. Number 1 is the last memory. The memory of their mother.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل پنجم — بیداری واقعی" data-en="Chapter V — The Real Awakening">فصل پنجم — بیداری واقعی</span>
-                        <h3 class="timeline-title" data-fa="اتاق عمل" data-en="The Operating Room">اتاق عمل</h3>
-                        <p class="timeline-text">
-                            <span data-fa="صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:" data-en="The screen goes black. The beeping of hospital machines. Then a doctor's voice:">صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:</span>
-                            <span class="timeline-quote" data-fa="عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته." data-en="The surgery was successful... but their long-term memory is almost completely gone.">عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.</span>
-                            <br><br>
-                            <span data-fa="حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود." data-en="The truth is revealed: that city, those people, that adventure... all happened inside the mind of a 16-year-old boy lying on a hospital bed. He had suffered severe psychological trauma — an accident that took his family from him. And he himself, before the surgery, had requested selective deletion of painful memories.">حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود.</span>
-                            <br><br>
-                            <span class="timeline-highlight" data-fa="آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش." data-en="Those seven people were seven aspects of his existence: his courage, his laughter, his childhood, his father, his mother, his first friend, his dreams.">آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش.</span>
-                        </p>
-                    </div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-spacer"></div>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <div class="timeline-spacer"></div>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-chapter" data-fa="فصل ششم — تکرار" data-en="Chapter VI — The Loop">فصل ششم — تکرار</span>
-                        <h3 class="timeline-title" data-fa="وقتی بازی را دوباره شروع می‌کنی..." data-en="When You Restart the Game...">وقتی بازی را دوباره شروع می‌کنی...</h3>
-                        <p class="timeline-text">
-                            <span data-fa="وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند." data-en="When you restart the game, everything has changed. Hints you missed before are now obvious. Dialogues you thought were ordinary now carry a different meaning.">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند.</span>
-                            <br><br>
-                            <span data-fa="انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است." data-en="The player's motivation throughout the game was completely natural: &quot;Find everyone and save them.&quot; But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
-                            <span class="timeline-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <button class="cinematic-nav-btn next" id="nextScene" aria-label="Next chapter">
+                <span data-fa="ادامه" data-en="Continue">ادامه</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </section>
 
@@ -2227,7 +2073,7 @@
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span>
                 <h2 class="section-title" id="charactersTitle" data-fa="هفت خاطره، <span class='accent'>هفت چهره</span>" data-en="Seven Memories, <span class='accent'>Seven Faces</span>">هفت خاطره، <span class="accent">هفت چهره</span></h2>
-                <p class="section-desc" data-fa="هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی." data-en="Each one is a part of someone who no longer remembers themselves. They aren't real — but their pain is the realest thing you'll feel.">هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی.</p>
+                <p class="section-desc" data-fa="هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد." data-en="Each one is a part of someone who no longer remembers themselves.">هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد.</p>
             </div>
 
             <div class="characters-grid reveal-stagger">
@@ -2236,7 +2082,7 @@
                     <div class="character-avatar" aria-hidden="true">۱</div>
                     <h3 class="character-name" data-fa="شماره ۱ — مادر" data-en="No.1 — Mother">شماره ۱ — مادر</h3>
                     <div class="character-role" data-fa="آخرین خاطره" data-en="The Last Memory">آخرین خاطره</div>
-                    <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»" data-en="The last thing erased from their mind. The warmest and most painful memory. When you find them, they smile and say: &quot;It took long enough.&quot;">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»</p>
+                    <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره." data-en="The last thing erased from their mind. The warmest and most painful memory.">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره.</p>
                     <p class="character-quote" data-fa="حالا دیگه هیچ دردی یادت نیست..." data-en="Now you don't remember any pain anymore...">حالا دیگه هیچ دردی یادت نیست...</p>
                 </article>
 
@@ -2245,7 +2091,7 @@
                     <div class="character-avatar" aria-hidden="true">۲</div>
                     <h3 class="character-name" data-fa="شماره ۲ — خنده‌ها" data-en="No.2 — Laughter">شماره ۲ — خنده‌ها</h3>
                     <div class="character-role" data-fa="شادی از دست رفته" data-en="Lost Joy">شادی از دست رفته</div>
-                    <p class="character-desc" data-fa="کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود." data-en="A playful, energetic child. When they vanish, the city's colors fade and the cheerful music stops forever.">کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود.</p>
+                    <p class="character-desc" data-fa="کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند." data-en="A playful, energetic child. When they vanish, the city's colors fade.">کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند.</p>
                     <p class="character-quote" data-fa="یادت میاد چقدر می‌خندیدیم؟" data-en="Remember how much we used to laugh?">یادت میاد چقدر می‌خندیدیم؟</p>
                 </article>
 
@@ -2254,7 +2100,7 @@
                     <div class="character-avatar" aria-hidden="true">۳</div>
                     <h3 class="character-name" data-fa="شماره ۳ — شجاعت" data-en="No.3 — Courage">شماره ۳ — شجاعت</h3>
                     <div class="character-role" data-fa="قدرت درونی" data-en="Inner Strength">قدرت درونی</div>
-                    <p class="character-desc" data-fa="شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد." data-en="A fearless, determined character. When they vanish, the player can no longer pass through dark areas or overcome large obstacles.">شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد.</p>
+                    <p class="character-desc" data-fa="شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند." data-en="A fearless, determined character. When they vanish, the player can no longer pass through dark areas.">شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند.</p>
                     <p class="character-quote" data-fa="نترس. من اینجام." data-en="Don't be afraid. I'm here.">نترس. من اینجام.</p>
                 </article>
 
@@ -2263,7 +2109,7 @@
                     <div class="character-avatar" aria-hidden="true">۴</div>
                     <h3 class="character-name" data-fa="شماره ۴ — پدر" data-en="No.4 — Father">شماره ۴ — پدر</h3>
                     <div class="character-role" data-fa="تکیه‌گاه" data-en="The Support">تکیه‌گاه</div>
-                    <p class="character-desc" data-fa="مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست." data-en="A quiet but kind man. Has the exact same nervous tic the protagonist shows in mirrors. A hint that's not obvious at first glance.">مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست.</p>
+                    <p class="character-desc" data-fa="مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد." data-en="A quiet but kind man. Has the exact same nervous tic the protagonist shows in mirrors.">مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد.</p>
                     <p class="character-quote" data-fa="قوی باش. مثل من." data-en="Be strong. Like me.">قوی باش. مثل من.</p>
                 </article>
 
@@ -2272,7 +2118,7 @@
                     <div class="character-avatar" aria-hidden="true">۵</div>
                     <h3 class="character-name" data-fa="شماره ۵ — اولین دوست" data-en="No.5 — First Friend">شماره ۵ — اولین دوست</h3>
                     <div class="character-role" data-fa="پیوند انسانی" data-en="Human Bond">پیوند انسانی</div>
-                    <p class="character-desc" data-fa="تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند." data-en="The only one who knows the childhood song. When they vanish, that song is erased from the player's mind and the door that opened with it stays closed forever.">تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند.</p>
+                    <p class="character-desc" data-fa="تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود." data-en="The only one who knows the childhood song. When they vanish, that song is erased from the player's mind.">تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود.</p>
                     <p class="character-quote" data-fa="یادت هست اون آهنگو؟" data-en="Remember that song?">یادت هست اون آهنگو؟</p>
                 </article>
 
@@ -2281,7 +2127,7 @@
                     <div class="character-avatar" aria-hidden="true">۶</div>
                     <h3 class="character-name" data-fa="شماره ۶ — رؤیاها" data-en="No.6 — Dreams">شماره ۶ — رؤیاها</h3>
                     <div class="character-role" data-fa="آینده‌ی نساخته" data-en="Unbuilt Future">آینده‌ی نساخته</div>
-                    <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست." data-en="A dreamy, vague character. Constantly says: &quot;I wish I could wake up...&quot; The player thinks they're talking about a nightmare, but they're actually in a coma.">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست.</p>
+                    <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...»" data-en="A dreamy, vague character. Constantly says: &quot;I wish I could wake up...&quot;">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...»</p>
                     <p class="character-quote" data-fa="کاش می‌تونستم بیدار شم..." data-en="I wish I could wake up...">کاش می‌تونستم بیدار شم...</p>
                 </article>
 
@@ -2290,7 +2136,7 @@
                     <div class="character-avatar" aria-hidden="true">۷</div>
                     <h3 class="character-name" data-fa="شماره ۷ — کودکی" data-en="No.7 — Childhood">شماره ۷ — کودکی</h3>
                     <div class="character-role" data-fa="خودِ بازیکن" data-en="The Player">خودِ بازیکن</div>
-                    <p class="character-desc" data-fa="همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست." data-en="The same boy who awakens at the start of the game. The last piece of identity. When the others vanish, they remain — but no longer know who they are.">همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست.</p>
+                    <p class="character-desc" data-fa="همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت." data-en="The same boy who awakens at the start of the game. The last piece of identity.">همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت.</p>
                     <p class="character-quote" data-fa="من کی‌ام؟" data-en="Who am I?">من کی‌ام؟</p>
                 </article>
             </div>
@@ -2303,44 +2149,44 @@
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span>
                 <h2 class="section-title" id="locationsTitle" data-fa="شهری که <span class='accent'>واقعیت ندارد</span>" data-en="A City That <span class='accent'>Isn't Real</span>">شهری که <span class="accent">واقعیت ندارد</span></h2>
-                <p class="section-desc" data-fa="هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی." data-en="Every location is a reflection of a hospital room or a buried memory. When you look closely, you'll see the signs.">هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی.</p>
+                <p class="section-desc" data-fa="هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است." data-en="Every location is a reflection of a hospital room or a buried memory.">هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است.</p>
             </div>
 
             <div class="locations-grid reveal-stagger">
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🏠</div>
                     <h3 class="location-name" data-fa="اتاق بیداری" data-en="The Awakening Room">اتاق بیداری</h3>
-                    <p class="location-desc" data-fa="جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده." data-en="Where the game begins. A simple room with a window letting in morning light. Actually a reflection of the hospital room that the mind has transformed into a bedroom.">جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده.</p>
+                    <p class="location-desc" data-fa="جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود." data-en="Where the game begins. A simple room with a window letting in morning light.">جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود.</p>
                 </article>
 
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌆</div>
                     <h3 class="location-name" data-fa="خیابان‌های بی‌پایان" data-en="The Endless Streets">خیابان‌های بی‌پایان</h3>
-                    <p class="location-desc" data-fa="خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است." data-en="City streets that feel familiar but are empty. An ambulance siren is heard in the distance — actually the sound of the heart monitor.">خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است.</p>
+                    <p class="location-desc" data-fa="خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست." data-en="City streets that feel familiar but are empty.">خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست.</p>
                 </article>
 
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌳</div>
                     <h3 class="location-name" data-fa="پارک خاطرات" data-en="Memory Park">پارک خاطرات</h3>
-                    <p class="location-desc" data-fa="پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند." data-en="A park with empty swings and trees whose leaves slowly fall. Where No.2 (Laughter) is found. When they vanish, the leaves turn black forever.">پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند.</p>
+                    <p class="location-desc" data-fa="پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد." data-en="A park with empty swings and trees whose leaves slowly fall.">پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد.</p>
                 </article>
 
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🏚️</div>
                     <h3 class="location-name" data-fa="خانه‌ی قدیمی" data-en="The Old House">خانه‌ی قدیمی</h3>
-                    <p class="location-desc" data-fa="خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده." data-en="An abandoned house that smells of childhood. Photos on the wall have no faces. Where No.4 (Father) waits.">خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده.</p>
+                    <p class="location-desc" data-fa="خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند." data-en="An abandoned house that smells of childhood. Photos on the wall have no faces.">خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند.</p>
                 </article>
 
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌑</div>
                     <h3 class="location-name" data-fa="غروب ابدی" data-en="The Eternal Sunset">غروب ابدی</h3>
-                    <p class="location-desc" data-fa="هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود." data-en="As you approach the end, the sky grows darker. Sunset is actually the time of full anesthesia or surgery. The environment becomes more abstract and terrifying.">هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود.</p>
+                    <p class="location-desc" data-fa="هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود." data-en="As you approach the end, the sky grows darker.">هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود.</p>
                 </article>
 
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">⬛</div>
                     <h3 class="location-name" data-fa="تهی‌گاه" data-en="The Void">تهی‌گاه</h3>
-                    <p class="location-desc" data-fa="جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است." data-en="Where it appears at the end of the game. A black, infinite space where only No.1 waits. This is the border between mind and reality.">جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است.</p>
+                    <p class="location-desc" data-fa="جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها." data-en="Where it appears at the end of the game. A black, infinite space.">جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها.</p>
                 </article>
             </div>
         </div>
@@ -2352,20 +2198,20 @@
             <div class="section-header reveal">
                 <span class="section-eyebrow" data-fa="مکانیک‌های بازی" data-en="Game Mechanics">مکانیک‌های بازی</span>
                 <h2 class="section-title" id="mechanicsTitle" data-fa="وقتی <span class='accent'>گیم‌پلی</span> خودش داستان است" data-en="When <span class='accent'>Gameplay</span> Is the Story">وقتی <span class="accent">گیم‌پلی</span> خودش داستان است</h2>
-                <p class="section-desc" data-fa="در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی." data-en="In No.7, every mechanic is a reflection of loss. You don't play to win — you play to see what you lose.">در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی.</p>
+                <p class="section-desc" data-fa="در شماره ۷، هر مکانیک بازتابی از از دست دادن است." data-en="In No.7, every mechanic is a reflection of loss.">در شماره ۷، هر مکانیک بازتابی از از دست دادن است.</p>
             </div>
 
             <div class="mechanics-grid reveal-stagger">
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">💀</div>
                     <h3 class="mechanic-title" data-fa="محو شدن" data-en="Disappearance">محو شدن</h3>
-                    <p class="mechanic-desc" data-fa="هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت." data-en="Every time a character is found, they vanish forever. Only one sentence remains, and silence.">هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت.</p>
+                    <p class="mechanic-desc" data-fa="هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود." data-en="Every time a character is found, they vanish forever.">هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود.</p>
                 </article>
 
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">⭐</div>
                     <h3 class="mechanic-title" data-fa="از دست دادن توانایی" data-en="Losing Abilities">از دست دادن توانایی</h3>
-                    <p class="mechanic-desc" data-fa="با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا." data-en="With each character's disappearance, an ability is taken from the player. Jumping, dark vision, or even the color of the world.">با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا.</p>
+                    <p class="mechanic-desc" data-fa="با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود." data-en="With each character's disappearance, an ability is taken from the player.">با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود.</p>
                 </article>
 
                 <article class="mechanic-card">
@@ -2383,13 +2229,13 @@
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">🌅</div>
                     <h3 class="mechanic-title" data-fa="غروب پیش‌رونده" data-en="Progressive Sunset">غروب پیش‌رونده</h3>
-                    <p class="mechanic-desc" data-fa="با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر." data-en="As the game progresses, the sky darkens. Sunset = surgery time. The closer, the more abstract the environment.">با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر.</p>
+                    <p class="mechanic-desc" data-fa="با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی." data-en="As the game progresses, the sky darkens. Sunset = surgery time.">با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی.</p>
                 </article>
 
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">🔄</div>
                     <h3 class="mechanic-title" data-fa="تکرار با آگاهی" data-en="Replay with Awareness">تکرار با آگاهی</h3>
-                    <p class="mechanic-desc" data-fa="در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند." data-en="In the second playthrough, you see hints that were invisible the first time. Dialogues take on new meaning.">در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند.</p>
+                    <p class="mechanic-desc" data-fa="در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند." data-en="In the second playthrough, you see hints that were invisible the first time.">در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند.</p>
                 </article>
             </div>
         </div>
@@ -2401,7 +2247,7 @@
             <div class="revelation-box reveal">
                 <div class="revelation-number" aria-hidden="true">7</div>
                 <h2 class="revelation-title" id="revelationTitle" data-fa="حقیقت نهایی" data-en="The Final Truth">حقیقت نهایی</h2>
-                <p class="revelation-text" data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت." data-en="Throughout the game, the player thought they were saving people. But in reality, every time they found one, they were losing one of their own memories forever. The player's motivation was completely natural: &quot;Find everyone and save them.&quot; But the very thing they thought was right caused them to lose what was most valuable.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت.</p>
+                <p class="revelation-text" data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد." data-en="Throughout the game, the player thought they were saving people. But in reality, every time they found one, they were losing one of their own memories forever.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد.</p>
                 <div class="revelation-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</div>
             </div>
         </div>
@@ -2423,17 +2269,131 @@
         'use strict';
 
         /* ========================================
+           CINEMATIC STORY DATA
+        ======================================== */
+        const storyData = {
+            fa: [
+                {
+                    chapter: 'فصل اول',
+                    title: 'صبحی بدون خاطره',
+                    content: `<span class="line">شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست.</span>
+                    <span class="line">روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:</span>
+                    <span class="line"><span class="scene-quote">اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.</span></span>
+                    <span class="line">یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب.</span>`
+                },
+                {
+                    chapter: 'فصل دوم',
+                    title: 'شهر هفت نفر',
+                    content: `<span class="line">شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷.</span>
+                    <span class="line">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد.</span>
+                    <span class="line"><span class="scene-highlight">اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود.</span></span>
+                    <span class="line"><span class="scene-quote">بالاخره پیدام کردی...</span></span>
+                    <span class="line">فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند.</span>`
+                },
+                {
+                    chapter: 'فصل سوم',
+                    title: 'شمارش معکوس',
+                    content: `<span class="line">وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد.</span>
+                    <span class="line">اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند.</span>
+                    <span class="line"><span class="scene-highlight">بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد.</span></span>`
+                },
+                {
+                    chapter: 'فصل چهارم',
+                    title: 'شماره ۱',
+                    content: `<span class="line">نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند.</span>
+                    <span class="line"><span class="scene-quote">خیلی طول کشید.</span></span>
+                    <span class="line">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
+                    <span class="line"><span class="scene-quote">ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.</span></span>
+                    <span class="line"><span class="scene-highlight">سکوت مطلق.</span></span>
+                    <span class="line">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش.</span>`
+                },
+                {
+                    chapter: 'فصل پنجم',
+                    title: 'اتاق عمل',
+                    content: `<span class="line">صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:</span>
+                    <span class="line"><span class="scene-quote">عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.</span></span>
+                    <span class="line">حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده.</span>
+                    <span class="line">او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود.</span>
+                    <span class="line"><span class="scene-highlight">آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش.</span></span>`
+                },
+                {
+                    chapter: 'فصل ششم',
+                    title: 'وقتی بازی را دوباره شروع می‌کنی...',
+                    content: `<span class="line">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند.</span>
+                    <span class="line">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.»</span>
+                    <span class="line">اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
+                    <span class="line"><span class="scene-quote">گاهی نجات دادن، همان از دست دادن است.</span></span>`
+                }
+            ],
+            en: [
+                {
+                    chapter: 'Chapter I',
+                    title: 'A Morning Without Memory',
+                    content: `<span class="line">The protagonist is a 16-year-old boy. He wakes up one morning in an unfamiliar room. He has no memory — doesn't know his name, where he came from, or why he's here.</span>
+                    <span class="line">On his wrist, there's only a cold metal bracelet engraved with:</span>
+                    <span class="line"><span class="scene-quote">If you want to survive, find Number 1 before sunset.</span></span>
+                    <span class="line">A recorded voice. That's all. No other explanation. Just a big city, seven people with numbers on their wrists, and a deadline: before sunset.</span>`
+                },
+                {
+                    chapter: 'Chapter II',
+                    title: 'The City of Seven',
+                    content: `<span class="line">The protagonist enters a vast, two-dimensional city. A city that feels both familiar and alien. In this city, there are seven people. Each has a number on their wrist: from No.1 to No.7.</span>
+                    <span class="line">The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them. Feels like they've finally found something worth fighting for.</span>
+                    <span class="line"><span class="scene-highlight">But... every time you find one of them, they disappear.</span></span>
+                    <span class="line"><span class="scene-quote">You finally found me...</span></span>
+                    <span class="line">Just one sentence. And then they vanish. As if they never existed.</span>`
+                },
+                {
+                    chapter: 'Chapter III',
+                    title: 'The Countdown',
+                    content: `<span class="line">Midway through the game, only three remain. The player panics. Wants to save everyone. Tries to run faster, find sooner, hold tighter.</span>
+                    <span class="line">But fails. One by one, they too disappear. The city grows darker. Colors fade. The cheerful music stops. The abilities the player had vanish one by one.</span>
+                    <span class="line"><span class="scene-highlight">The player thinks someone is killing them. Thinks there's an enemy.</span></span>`
+                },
+                {
+                    chapter: 'Chapter IV',
+                    title: 'Number 1',
+                    content: `<span class="line">Near the end, only Number 1 remains. The player finds them. Number 1 smiles.</span>
+                    <span class="line"><span class="scene-quote">It took long enough.</span></span>
+                    <span class="line">The player is confused. "What?" Number 1 continues:</span>
+                    <span class="line"><span class="scene-quote">We are not seven people. We are your seven memories.</span></span>
+                    <span class="line"><span class="scene-highlight">Absolute silence.</span></span>
+                    <span class="line">Throughout the game, the player thought they were saving people. In reality... every time they found one, they were losing one of their own memories forever. Number 1 is the last memory. The memory of their mother.</span>`
+                },
+                {
+                    chapter: 'Chapter V',
+                    title: 'The Operating Room',
+                    content: `<span class="line">The screen goes black. The beeping of hospital machines. Then a doctor's voice:</span>
+                    <span class="line"><span class="scene-quote">The surgery was successful... but their long-term memory is almost completely gone.</span></span>
+                    <span class="line">The truth is revealed: that city, those people, that adventure... all happened inside the mind of a 16-year-old boy lying on a hospital bed.</span>
+                    <span class="line">He had suffered severe psychological trauma — an accident that took his family from him. And he himself, before the surgery, had requested selective deletion of painful memories.</span>
+                    <span class="line"><span class="scene-highlight">Those seven people were seven aspects of his existence: his courage, his laughter, his childhood, his father, his mother, his first friend, his dreams.</span></span>`
+                },
+                {
+                    chapter: 'Chapter VI',
+                    title: 'When You Restart the Game...',
+                    content: `<span class="line">When you restart the game, everything has changed. Hints you missed before are now obvious. Dialogues you thought were ordinary now carry a different meaning.</span>
+                    <span class="line">The player's motivation throughout the game was completely natural: "Find everyone and save them."</span>
+                    <span class="line">But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.</span>
+                    <span class="line"><span class="scene-quote">Sometimes saving is the same as losing.</span></span>`
+                }
+            ]
+        };
+
+        /* ========================================
            APPLICATION STATE
         ======================================== */
         const state = {
             lang: 'fa',
+            currentScene: 0,
+            totalScenes: 6,
+            isTransitioning: false,
             mouseX: 0,
             mouseY: 0,
             targetX: 0,
             targetY: 0,
             cursorX: 0,
             cursorY: 0,
-            isHovering: false,
             scrollY: 0,
             ticking: false
         };
@@ -2453,8 +2413,158 @@
             scrollProgress: document.getElementById('scrollProgress'),
             cursorDot: document.querySelector('.cursor-dot'),
             cursorRing: document.querySelector('.cursor-ring'),
-            particlesContainer: document.getElementById('ambientParticles')
+            particlesContainer: document.getElementById('ambientParticles'),
+            sceneContainer: document.getElementById('sceneContainer'),
+            prevBtn: document.getElementById('prevScene'),
+            nextBtn: document.getElementById('nextScene'),
+            currentSceneEl: document.getElementById('currentScene'),
+            totalScenesEl: document.getElementById('totalScenes'),
+            progressBar: document.getElementById('cinematicProgress'),
+            transitionOverlay: document.getElementById('transitionOverlay')
         };
+
+        /* ========================================
+           CINEMATIC STORY INITIALIZATION
+        ======================================== */
+        function initCinematicStory() {
+            renderScenes();
+            updateSceneNavigation();
+            activateScene(0);
+        }
+
+        function renderScenes() {
+            const scenes = storyData[state.lang];
+            dom.sceneContainer.innerHTML = '';
+
+            scenes.forEach((scene, index) => {
+                const sceneEl = document.createElement('div');
+                sceneEl.className = 'scene';
+                sceneEl.setAttribute('data-chapter', index + 1);
+                sceneEl.setAttribute('data-index', index);
+
+                // Generate particles for this scene
+                const particlesHTML = generateSceneParticles(index);
+
+                sceneEl.innerHTML = `
+                    <div class="scene-bg"></div>
+                    <div class="scene-fog"></div>
+                    <div class="scene-particles">${particlesHTML}</div>
+                    <div class="scene-rays"></div>
+                    <div class="scene-number">${String(index + 1).padStart(2, '0')}</div>
+                    <div class="scene-content">
+                        <div class="scene-chapter-label">${scene.chapter}</div>
+                        <h2 class="scene-title">${scene.title}</h2>
+                        <div class="scene-text">${scene.content}</div>
+                    </div>
+                `;
+
+                dom.sceneContainer.appendChild(sceneEl);
+            });
+
+            dom.totalScenesEl.textContent = String(scenes.length).padStart(2, '0');
+        }
+
+        function generateSceneParticles(chapterIndex) {
+            const particleCount = 20;
+            let html = '';
+
+            // Different particle colors per chapter
+            const colors = [
+                'rgba(120, 150, 200, 0.6)',  // Chapter 1: cold blue
+                'rgba(180, 160, 140, 0.5)',  // Chapter 2: dusty
+                'rgba(214, 48, 49, 0.7)',    // Chapter 3: blood red
+                'rgba(201, 169, 97, 0.6)',   // Chapter 4: gold
+                'rgba(220, 230, 240, 0.5)',  // Chapter 5: cold white
+                'rgba(140, 100, 180, 0.6)'   // Chapter 6: purple
+            ];
+
+            const color = colors[chapterIndex] || colors[0];
+
+            for (let i = 0; i < particleCount; i++) {
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                const size = Math.random() * 2 + 1;
+
+                html += `<div class="scene-particle" style="
+                    left: ${left}%;
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: ${color};
+                    animation-delay: ${delay}s;
+                    animation-duration: ${duration}s;
+                "></div>`;
+            }
+
+            return html;
+        }
+
+        function activateScene(index) {
+            const scenes = dom.sceneContainer.querySelectorAll('.scene');
+
+            scenes.forEach((scene, i) => {
+                scene.classList.remove('active', 'exiting');
+                if (i === index) {
+                    scene.classList.add('active');
+                }
+            });
+
+            state.currentScene = index;
+            updateSceneNavigation();
+        }
+
+        function transitionToScene(direction) {
+            if (state.isTransitioning) return;
+
+            const scenes = storyData[state.lang];
+            const targetIndex = direction === 'next'
+                ? state.currentScene + 1
+                : state.currentScene - 1;
+
+            if (targetIndex < 0 || targetIndex >= scenes.length) return;
+
+            state.isTransitioning = true;
+
+            const currentScene = dom.sceneContainer.querySelector('.scene.active');
+            const targetScene = dom.sceneContainer.querySelectorAll('.scene')[targetIndex];
+
+            // Phase 1: Overlay fade in
+            dom.transitionOverlay.classList.add('active');
+
+            setTimeout(() => {
+                // Phase 2: Switch scenes
+                if (currentScene) {
+                    currentScene.classList.remove('active');
+                    currentScene.classList.add('exiting');
+                }
+                targetScene.classList.add('active');
+                state.currentScene = targetIndex;
+                updateSceneNavigation();
+
+                // Phase 3: Overlay fade out
+                setTimeout(() => {
+                    dom.transitionOverlay.classList.remove('active');
+
+                    setTimeout(() => {
+                        if (currentScene) {
+                            currentScene.classList.remove('exiting');
+                        }
+                        state.isTransitioning = false;
+                    }, 800);
+                }, 200);
+            }, 600);
+        }
+
+        function updateSceneNavigation() {
+            const scenes = storyData[state.lang];
+            dom.currentSceneEl.textContent = String(state.currentScene + 1).padStart(2, '0');
+            dom.prevBtn.disabled = state.currentScene === 0;
+            dom.nextBtn.disabled = state.currentScene === scenes.length - 1;
+
+            // Update progress bar
+            const progress = (state.currentScene + 1) / scenes.length;
+            dom.progressBar.style.transform = `scaleX(${progress})`;
+        }
 
         /* ========================================
            PRELOADER
@@ -2479,8 +2589,7 @@
                 state.targetY = e.clientY;
             }, { passive: true });
 
-            // Hover detection for interactive elements
-            const hoverTargets = 'a, button, .character-card, .location-card, .mechanic-card, .timeline-content';
+            const hoverTargets = 'a, button, .character-card, .location-card, .mechanic-card';
             document.addEventListener('mouseover', (e) => {
                 if (e.target.closest(hoverTargets)) {
                     dom.body.classList.add('cursor-hover');
@@ -2492,7 +2601,6 @@
                 }
             });
 
-            // Animation loop for smooth cursor
             function animateCursor() {
                 state.cursorX += (state.targetX - state.cursorX) * 0.2;
                 state.cursorY += (state.targetY - state.cursorY) * 0.2;
@@ -2506,7 +2614,7 @@
         }
 
         /* ========================================
-           AMBIENT PARTICLES
+           PARTICLES
         ======================================== */
         function initParticles() {
             const count = window.innerWidth < 768 ? 12 : 24;
@@ -2544,6 +2652,7 @@
                 dom.langLabel.textContent = 'EN';
             }
 
+            // Update all translatable elements
             document.querySelectorAll('[data-fa][data-en]').forEach(el => {
                 const text = el.getAttribute(`data-${state.lang}`);
                 if (text !== null && text !== '') {
@@ -2554,20 +2663,23 @@
                     }
                 }
             });
+
+            // Re-render cinematic scenes
+            state.currentScene = 0;
+            renderScenes();
+            activateScene(0);
         }
 
         /* ========================================
            NAVIGATION
         ======================================== */
         function initNavigation() {
-            // Mobile toggle
             dom.mobileToggle.addEventListener('click', () => {
                 const isOpen = dom.navLinks.classList.toggle('open');
                 dom.mobileToggle.classList.toggle('active', isOpen);
                 dom.mobileToggle.setAttribute('aria-expanded', isOpen);
             });
 
-            // Close on link click
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     dom.navLinks.classList.remove('open');
@@ -2576,7 +2688,6 @@
                 });
             });
 
-            // Smooth scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
@@ -2591,7 +2702,6 @@
                 });
             });
 
-            // Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     dom.navLinks.classList.remove('open');
@@ -2602,7 +2712,7 @@
         }
 
         /* ========================================
-           SCROLL HANDLERS
+           SCROLL
         ======================================== */
         function initScroll() {
             function onScroll() {
@@ -2610,10 +2720,8 @@
 
                 if (!state.ticking) {
                     requestAnimationFrame(() => {
-                        // Nav scroll state
                         dom.nav.classList.toggle('scrolled', state.scrollY > 50);
 
-                        // Scroll progress
                         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                         const progress = (state.scrollY / docHeight) * 100;
                         dom.scrollProgress.style.width = progress + '%';
@@ -2629,20 +2737,13 @@
         }
 
         /* ========================================
-           REVEAL ANIMATIONS
+           REVEAL
         ======================================== */
         function initReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-
-                        // Animate section title accent underline
-                        const title = entry.target.querySelector('.section-title');
-                        if (title) {
-                            setTimeout(() => title.classList.add('is-visible'), 300);
-                        }
-
                         observer.unobserve(entry.target);
                     }
                 });
@@ -2657,10 +2758,10 @@
         }
 
         /* ========================================
-           CARD MOUSE TRACKING (Spotlight effect)
+           CARD SPOTLIGHT
         ======================================== */
         function initCardSpotlight() {
-            const cards = document.querySelectorAll('.character-card, .location-card, .mechanic-card, .timeline-content');
+            const cards = document.querySelectorAll('.character-card, .location-card, .mechanic-card');
 
             cards.forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -2674,48 +2775,6 @@
         }
 
         /* ========================================
-           MAGNETIC BUTTONS
-        ======================================== */
-        function initMagneticButtons() {
-            if (window.matchMedia('(hover: none)').matches) return;
-
-            const buttons = document.querySelectorAll('.btn, .lang-toggle');
-
-            buttons.forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15 - 3}px)`;
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = '';
-                });
-            });
-        }
-
-        /* ========================================
-           HERO PARALLAX
-        ======================================== */
-        function initHeroParallax() {
-            const bgNumber = document.querySelector('.hero-bg-number');
-            if (!bgNumber) return;
-
-            window.addEventListener('scroll', () => {
-                if (!state.ticking) {
-                    requestAnimationFrame(() => {
-                        const scrolled = window.pageYOffset;
-                        if (scrolled < window.innerHeight) {
-                            bgNumber.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.3}px))`;
-                            bgNumber.style.opacity = Math.max(0, 1 - scrolled / window.innerHeight);
-                        }
-                    });
-                }
-            }, { passive: true });
-        }
-
-        /* ========================================
            INITIALIZATION
         ======================================== */
         function init() {
@@ -2726,13 +2785,27 @@
             initScroll();
             initReveal();
             initCardSpotlight();
-            initMagneticButtons();
-            initHeroParallax();
+            initCinematicStory();
 
             dom.langToggle.addEventListener('click', switchLanguage);
+            dom.prevBtn.addEventListener('click', () => transitionToScene('prev'));
+            dom.nextBtn.addEventListener('click', () => transitionToScene('next'));
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                const storySection = document.getElementById('story');
+                const rect = storySection.getBoundingClientRect();
+                const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+                if (!isInView) return;
+
+                if (e.key === 'ArrowLeft' && state.lang === 'en') transitionToScene('prev');
+                else if (e.key === 'ArrowRight' && state.lang === 'en') transitionToScene('next');
+                else if (e.key === 'ArrowRight' && state.lang === 'fa') transitionToScene('prev');
+                else if (e.key === 'ArrowLeft' && state.lang === 'fa') transitionToScene('next');
+            });
         }
 
-        // Start when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
         } else {
