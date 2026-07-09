@@ -6,107 +6,75 @@
     <title>No.7 | شماره ۷ — A Psychological Narrative Experience</title>
     <meta name="description" content="Seven people. Seven memories. One truth no one is ready to hear.">
     <meta name="theme-color" content="#060609">
-
     <meta property="og:type" content="website">
     <meta property="og:title" content="No.7 | شماره ۷">
     <meta property="og:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="No.7 | شماره ۷">
     <meta name="twitter:description" content="Seven people. Seven memories. One truth no one is ready to hear.">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-300-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-400-normal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-500-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-700-normal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-900-normal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-300-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-400-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-400-normal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/cormorant-garamond@latest/latin-700-normal.css">
 
     <style>
-        /* ========================================
-           DESIGN TOKENS
-        ======================================== */
         :root {
             --font-fa: 'Vazirmatn', system-ui, sans-serif;
             --font-en: 'Inter', system-ui, sans-serif;
             --font-mono: 'Space Grotesk', monospace;
             --font-serif: 'Cormorant Garamond', serif;
-
             --void: #04040a;
             --void-2: #080812;
             --ink: #0c0c18;
             --ink-2: #14141f;
             --smoke: #1c1c2a;
             --ash: #2a2a3d;
-
             --bone: #f4f1ea;
             --paper: #d8d4c8;
             --paper-dark: #b8b4a8;
             --stone: #8a8694;
             --dust: #5a5666;
             --shadow: #3a3644;
-
             --blood: #a8201a;
             --blood-light: #d63031;
             --blood-deep: #6b1510;
             --blood-glow: rgba(214, 48, 49, 0.4);
             --blood-soft: rgba(168, 32, 26, 0.08);
-
             --gold: #c9a961;
             --gold-soft: rgba(201, 169, 97, 0.15);
-
             --glass: rgba(255, 255, 255, 0.03);
             --glass-2: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-border-2: rgba(255, 255, 255, 0.12);
-
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 2rem;
             --space-lg: 4rem;
             --space-xl: 8rem;
             --space-2xl: 12rem;
-
             --r-sm: 4px;
             --r-md: 12px;
             --r-lg: 24px;
             --r-xl: 40px;
             --r-full: 9999px;
-
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
             --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
             --ease-cinematic: cubic-bezier(0.77, 0, 0.175, 1);
-
             --t-fast: 200ms;
             --t-base: 400ms;
             --t-slow: 800ms;
             --t-cinematic: 1800ms;
         }
 
-        /* ========================================
-           RESET & BASE
-        ======================================== */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
         body {
             font-family: var(--font-fa);
@@ -116,50 +84,23 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            cursor: none;
         }
 
-        body.lang-en {
-            font-family: var(--font-en);
-        }
+        body.has-cursor { cursor: none; }
+        body.has-cursor a, body.has-cursor button { cursor: none; }
+        body.lang-en { font-family: var(--font-en); }
+        body.is-loading { overflow: hidden; height: 100vh; }
 
-        body.is-loading {
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        ::selection {
-            background: var(--blood);
-            color: var(--bone);
-        }
-
-        img, svg {
-            display: block;
-            max-width: 100%;
-        }
-
-        button {
-            font: inherit;
-            color: inherit;
-            background: none;
-            border: none;
-            cursor: none;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            cursor: none;
-        }
+        ::selection { background: var(--blood); color: var(--bone); }
+        img, svg { display: block; max-width: 100%; }
+        button { font: inherit; color: inherit; background: none; border: none; }
+        a { color: inherit; text-decoration: none; }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--void); }
         ::-webkit-scrollbar-thumb { background: var(--blood-deep); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--blood); }
 
-        /* ========================================
-           CUSTOM CURSOR
-        ======================================== */
+        /* ===== CUSTOM CURSOR (Desktop Only) ===== */
         .cursor-dot, .cursor-ring {
             position: fixed;
             top: 0;
@@ -168,52 +109,38 @@
             z-index: 9999;
             will-change: transform;
             mix-blend-mode: difference;
+            display: none;
         }
 
+        body.has-cursor .cursor-dot,
+        body.has-cursor .cursor-ring { display: block; }
+
         .cursor-dot {
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             background: var(--bone);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring);
         }
 
         .cursor-ring {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border: 1px solid rgba(244, 241, 234, 0.5);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), border-color 0.4s;
         }
 
-        .cursor-hover .cursor-ring {
-            width: 64px;
-            height: 64px;
-            border-color: var(--blood-light);
-        }
+        .cursor-hover .cursor-ring { width: 64px; height: 64px; border-color: var(--blood-light); }
+        .cursor-hover .cursor-dot { width: 0; height: 0; }
 
-        .cursor-hover .cursor-dot {
-            width: 0;
-            height: 0;
-        }
-
-        @media (hover: none) {
-            body { cursor: auto; }
-            body a, body button { cursor: pointer; }
-            .cursor-dot, .cursor-ring { display: none; }
-        }
-
-        /* ========================================
-           AMBIENT BACKGROUND
-        ======================================== */
+        /* ===== AMBIENT BACKGROUND (Optimized) ===== */
         .ambient {
             position: fixed;
             inset: 0;
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
+            contain: strict;
         }
 
         .ambient-mesh {
@@ -224,21 +151,17 @@
                 radial-gradient(ellipse 50% 60% at 80% 70%, rgba(107, 21, 16, 0.1) 0%, transparent 50%),
                 radial-gradient(ellipse 70% 40% at 50% 90%, rgba(201, 169, 97, 0.04) 0%, transparent 60%);
             animation: meshDrift 30s ease-in-out infinite alternate;
-            filter: blur(40px);
         }
 
         @keyframes meshDrift {
             0% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-5%, 3%) scale(1.05); }
             100% { transform: translate(3%, -2%) scale(0.98); }
         }
 
         .ambient-grid {
             position: absolute;
-            width: 200%;
-            height: 100%;
-            left: -50%;
-            top: 40%;
+            width: 200%; height: 100%;
+            left: -50%; top: 40%;
             background-image:
                 linear-gradient(rgba(168, 32, 26, 0.08) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(168, 32, 26, 0.08) 1px, transparent 1px);
@@ -256,29 +179,25 @@
             100% { background-position: 60px 60px, 60px 60px; }
         }
 
-        .ambient-particles {
-            position: absolute;
-            inset: 0;
-        }
+        .ambient-particles { position: absolute; inset: 0; }
 
         .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
+            width: 2px; height: 2px;
             background: var(--blood-light);
             border-radius: 50%;
             opacity: 0;
-            box-shadow: 0 0 8px var(--blood-glow);
             animation: particleFloat linear infinite;
         }
 
         @keyframes particleFloat {
-            0% { opacity: 0; transform: translateY(100vh) translateX(0); }
+            0% { opacity: 0; transform: translateY(100vh); }
             10% { opacity: 0.6; }
             90% { opacity: 0.6; }
             100% { opacity: 0; transform: translateY(-20vh) translateX(40px); }
         }
 
+        /* Grain removed on mobile via media query */
         .ambient-grain {
             position: absolute;
             inset: -50%;
@@ -290,9 +209,7 @@
 
         @keyframes grainShift {
             0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(-2%, 1%); }
             50% { transform: translate(1%, -2%); }
-            75% { transform: translate(-1%, 2%); }
         }
 
         .ambient-vignette {
@@ -301,18 +218,13 @@
             background: radial-gradient(ellipse at center, transparent 30%, rgba(4, 4, 10, 0.4) 70%, rgba(4, 4, 10, 0.9) 100%);
         }
 
-        .ambient-lines {
-            position: absolute;
-            inset: 0;
-            opacity: 0.3;
-        }
+        .ambient-lines { position: absolute; inset: 0; opacity: 0.3; }
 
         .ambient-lines::before,
         .ambient-lines::after {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
+            top: 0; bottom: 0;
             width: 1px;
             background: linear-gradient(180deg, transparent 0%, rgba(168, 32, 26, 0.2) 20%, rgba(168, 32, 26, 0.2) 80%, transparent 100%);
         }
@@ -320,9 +232,7 @@
         .ambient-lines::before { left: 8%; }
         .ambient-lines::after { right: 8%; }
 
-        /* ========================================
-           PRELOADER
-        ======================================== */
+        /* ===== PRELOADER ===== */
         .preloader {
             position: fixed;
             inset: 0;
@@ -336,10 +246,7 @@
             transition: opacity 1s var(--ease-out), visibility 1s var(--ease-out);
         }
 
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
+        .preloader.hidden { opacity: 0; visibility: hidden; }
 
         .preloader-number {
             font-family: var(--font-mono);
@@ -349,30 +256,12 @@
             color: transparent;
             -webkit-text-stroke: 1px var(--blood);
             letter-spacing: -0.05em;
-            position: relative;
             animation: numberPulse 2s var(--ease-in-out) infinite;
-        }
-
-        .preloader-number::after {
-            content: '7';
-            position: absolute;
-            inset: 0;
-            color: var(--blood);
-            -webkit-text-stroke: 0;
-            opacity: 0;
-            animation: numberGlitch 2s var(--ease-in-out) infinite;
         }
 
         @keyframes numberPulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
-        }
-
-        @keyframes numberGlitch {
-            0%, 85%, 100% { opacity: 0; transform: translate(0, 0); }
-            88% { opacity: 0.8; transform: translate(-3px, 2px); }
-            92% { opacity: 0; transform: translate(3px, -1px); }
-            95% { opacity: 0.6; transform: translate(-2px, -2px); }
         }
 
         .preloader-meta {
@@ -387,8 +276,7 @@
         }
 
         .preloader-bar {
-            width: 120px;
-            height: 1px;
+            width: 120px; height: 1px;
             background: var(--ash);
             position: relative;
             overflow: hidden;
@@ -403,21 +291,13 @@
             animation: barFill 2s var(--ease-out) forwards;
         }
 
-        @keyframes barFill {
-            from { transform: scaleX(0); }
-            to { transform: scaleX(1); }
-        }
+        @keyframes barFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-        /* ========================================
-           SCROLL PROGRESS
-        ======================================== */
+        /* ===== SCROLL PROGRESS ===== */
         .scroll-progress {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 2px;
-            background: transparent;
             z-index: 999;
             pointer-events: none;
         }
@@ -426,25 +306,20 @@
             height: 100%;
             background: linear-gradient(90deg, var(--blood-deep), var(--blood-light));
             width: 0%;
-            transition: width 0.1s linear;
-            box-shadow: 0 0 10px var(--blood-glow);
+            transition: width 0.15s linear;
         }
 
-        /* ========================================
-           NAVIGATION
-        ======================================== */
+        /* ===== NAVIGATION ===== */
         .nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: var(--space-sm) var(--space-md);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: var(--space-md);
-            transition: all var(--t-base) var(--ease-out);
+            transition: background var(--t-base);
         }
 
         .nav::before {
@@ -452,29 +327,17 @@
             position: absolute;
             inset: 0;
             background: rgba(4, 4, 10, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid transparent;
             transition: border-color var(--t-base);
             z-index: -1;
         }
 
-        .nav.scrolled::before {
-            border-bottom-color: var(--glass-border);
-        }
+        .nav.scrolled::before { border-bottom-color: var(--glass-border); }
 
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-        }
+        .nav-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 0.95rem; }
 
         .nav-brand-mark {
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, var(--blood-light), var(--blood-deep));
             display: flex;
@@ -484,29 +347,9 @@
             font-size: 0.9rem;
             font-weight: 700;
             color: var(--bone);
-            box-shadow: 0 0 24px var(--blood-glow), inset 0 0 12px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
         }
 
-        .nav-brand-mark::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { transform: translateX(-100%); }
-            50% { transform: translateX(100%); }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 4px; align-items: center; }
 
         .nav-link {
             position: relative;
@@ -516,7 +359,6 @@
             color: var(--paper);
             border-radius: var(--r-sm);
             transition: color var(--t-fast);
-            overflow: hidden;
         }
 
         .nav-link::before {
@@ -533,11 +375,7 @@
         .nav-link:hover::before { transform: scaleX(1); }
         .nav-link:hover { color: var(--bone); }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .nav-actions { display: flex; align-items: center; gap: 8px; }
 
         .lang-toggle {
             display: flex;
@@ -567,18 +405,12 @@
 
         .lang-toggle:hover::before { transform: translateY(0); }
         .lang-toggle > * { position: relative; z-index: 1; }
-
-        .lang-toggle:hover {
-            border-color: var(--blood);
-            box-shadow: 0 8px 24px var(--blood-glow);
-        }
+        .lang-toggle:hover { border-color: var(--blood); }
 
         .lang-indicator {
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--blood-light);
-            box-shadow: 0 0 8px var(--blood-glow);
             animation: pulseDot 2s ease-in-out infinite;
         }
 
@@ -589,8 +421,7 @@
 
         .mobile-toggle {
             display: none;
-            width: 44px;
-            height: 44px;
+            width: 44px; height: 44px;
             border-radius: var(--r-sm);
             background: var(--glass);
             border: 1px solid var(--glass-border);
@@ -600,8 +431,7 @@
 
         .mobile-toggle span {
             display: block;
-            width: 18px;
-            height: 1.5px;
+            width: 18px; height: 1.5px;
             background: var(--bone);
             position: relative;
             transition: all var(--t-base) var(--ease-out);
@@ -611,22 +441,18 @@
         .mobile-toggle span::after {
             content: '';
             position: absolute;
-            width: 18px;
-            height: 1.5px;
+            width: 18px; height: 1.5px;
             background: var(--bone);
             transition: all var(--t-base) var(--ease-out);
         }
 
         .mobile-toggle span::before { top: -6px; }
         .mobile-toggle span::after { top: 6px; }
-
         .mobile-toggle.active span { background: transparent; }
         .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
         .mobile-toggle.active span::after { top: 0; transform: rotate(-45deg); }
 
-        /* ========================================
-           HERO SECTION
-        ======================================== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             position: relative;
@@ -640,8 +466,7 @@
 
         .hero-bg-number {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             font-family: var(--font-mono);
             font-size: clamp(30rem, 80vw, 70rem);
@@ -655,12 +480,7 @@
             z-index: 0;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 1000px;
-            position: relative;
-            z-index: 2;
-        }
+        .hero-content { text-align: center; max-width: 1000px; position: relative; z-index: 2; }
 
         .hero-eyebrow {
             display: inline-flex;
@@ -668,7 +488,6 @@
             gap: 12px;
             padding: 10px 24px;
             background: var(--glass);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-full);
             font-family: var(--font-mono);
@@ -684,11 +503,9 @@
 
         .hero-eyebrow::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--blood-light);
-            box-shadow: 0 0 12px var(--blood-glow);
             animation: pulseDot 2s ease-in-out infinite;
         }
 
@@ -699,7 +516,6 @@
             line-height: 0.85;
             letter-spacing: -0.05em;
             margin-bottom: var(--space-md);
-            position: relative;
             opacity: 0;
             animation: heroReveal 1.2s var(--ease-out) 0.5s forwards;
         }
@@ -710,7 +526,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
         }
 
         .hero-subtitle {
@@ -750,13 +565,11 @@
             gap: 12px;
             overflow: hidden;
             transition: transform var(--t-base) var(--ease-out);
-            will-change: transform;
         }
 
         .btn-primary {
             background: var(--blood);
             color: var(--bone);
-            box-shadow: 0 8px 32px var(--blood-glow), inset 0 1px 0 rgba(255,255,255,0.1);
         }
 
         .btn-primary::before {
@@ -769,16 +582,12 @@
         }
 
         .btn-primary:hover::before { opacity: 1; }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 48px var(--blood-glow);
-        }
+        .btn-primary:hover { transform: translateY(-3px); }
 
         .btn-secondary {
             background: var(--glass);
             color: var(--bone);
             border: 1px solid var(--glass-border);
-            backdrop-filter: blur(12px);
         }
 
         .btn-secondary::before {
@@ -791,10 +600,7 @@
         }
 
         .btn-secondary:hover::before { opacity: 1; }
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            border-color: var(--glass-border-2);
-        }
+        .btn-secondary:hover { transform: translateY(-3px); border-color: var(--glass-border-2); }
 
         .btn-text { position: relative; z-index: 1; }
 
@@ -824,8 +630,7 @@
         }
 
         .hero-scroll-line {
-            width: 1px;
-            height: 50px;
+            width: 1px; height: 50px;
             background: linear-gradient(180deg, var(--dust), transparent);
             position: relative;
             overflow: hidden;
@@ -834,12 +639,9 @@
         .hero-scroll-line::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 12px;
             background: var(--blood-light);
-            box-shadow: 0 0 8px var(--blood-glow);
             animation: scrollLine 2.5s var(--ease-in-out) infinite;
         }
 
@@ -848,19 +650,9 @@
             100% { transform: translateY(500%); }
         }
 
-        /* ========================================
-           SECTION BASE
-        ======================================== */
-        .section {
-            padding: var(--space-2xl) var(--space-md);
-            position: relative;
-            z-index: 2;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
+        /* ===== SECTIONS ===== */
+        .section { padding: var(--space-2xl) var(--space-md); position: relative; z-index: 2; }
+        .container { max-width: 1280px; margin: 0 auto; }
 
         .section-header {
             text-align: center;
@@ -888,11 +680,9 @@
 
         .section-eyebrow::before {
             content: '';
-            width: 4px;
-            height: 4px;
+            width: 4px; height: 4px;
             border-radius: 50%;
             background: var(--blood-light);
-            box-shadow: 0 0 8px var(--blood-glow);
         }
 
         .section-title {
@@ -912,9 +702,7 @@
             font-weight: 300;
         }
 
-        /* ========================================
-           CINEMATIC STORY EXPERIENCE
-        ======================================== */
+        /* ===== CINEMATIC STORY ===== */
         .cinematic-story {
             position: relative;
             width: 100%;
@@ -922,42 +710,29 @@
             overflow: hidden;
             background: var(--void);
             z-index: 2;
+            contain: layout style;
         }
 
-        /* Scene Container */
         .scene-container {
             position: absolute;
             inset: 0;
-            perspective: 1500px;
-            perspective-origin: 50% 50%;
         }
 
-        /* Individual Scene */
         .scene {
             position: absolute;
             inset: 0;
             opacity: 0;
             visibility: hidden;
             transform: scale(1.08);
-            filter: blur(20px) brightness(0.3);
-            transition:
-                opacity var(--t-cinematic) var(--ease-cinematic),
-                transform var(--t-cinematic) var(--ease-cinematic),
-                filter var(--t-cinematic) var(--ease-cinematic),
-                visibility 0s linear var(--t-cinematic);
-            will-change: opacity, transform, filter;
+            transition: opacity var(--t-cinematic) var(--ease-cinematic), transform var(--t-cinematic) var(--ease-cinematic), visibility 0s linear var(--t-cinematic);
+            contain: layout style paint;
         }
 
         .scene.active {
             opacity: 1;
             visibility: visible;
             transform: scale(1);
-            filter: blur(0) brightness(1);
-            transition:
-                opacity var(--t-cinematic) var(--ease-cinematic),
-                transform var(--t-cinematic) var(--ease-cinematic),
-                filter var(--t-cinematic) var(--ease-cinematic),
-                visibility 0s linear 0s;
+            transition: opacity var(--t-cinematic) var(--ease-cinematic), transform var(--t-cinematic) var(--ease-cinematic), visibility 0s linear 0s;
             z-index: 2;
         }
 
@@ -965,11 +740,9 @@
             opacity: 0;
             visibility: visible;
             transform: scale(0.92);
-            filter: blur(30px) brightness(0);
             z-index: 1;
         }
 
-        /* Scene Background - unique per chapter */
         .scene-bg {
             position: absolute;
             inset: -10%;
@@ -978,96 +751,58 @@
         }
 
         @keyframes bgBreathing {
-            0% { transform: scale(1) translate(0, 0); }
-            50% { transform: scale(1.05) translate(-1%, 1%); }
-            100% { transform: scale(1.02) translate(1%, -1%); }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05) translate(-1%, 1%); }
         }
 
-        /* Chapter-specific atmospheres */
         .scene[data-chapter="1"] .scene-bg {
-            background:
-                radial-gradient(ellipse 80% 60% at 30% 40%, rgba(120, 150, 200, 0.15) 0%, transparent 60%),
+            background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(120, 150, 200, 0.15) 0%, transparent 60%),
                 radial-gradient(ellipse 60% 50% at 70% 70%, rgba(180, 200, 230, 0.08) 0%, transparent 60%),
                 linear-gradient(180deg, #0a0f1a 0%, #141a2a 50%, #0a0f1a 100%);
         }
-
         .scene[data-chapter="2"] .scene-bg {
-            background:
-                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(140, 120, 100, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(100, 90, 80, 0.1) 0%, transparent 60%),
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(140, 120, 100, 0.12) 0%, transparent 60%),
                 linear-gradient(180deg, #1a1815 0%, #201d18 50%, #0f0e0c 100%);
         }
-
         .scene[data-chapter="3"] .scene-bg {
-            background:
-                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(168, 32, 26, 0.2) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(107, 21, 16, 0.15) 0%, transparent 60%),
+            background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(168, 32, 26, 0.2) 0%, transparent 60%),
                 linear-gradient(180deg, #1a0505 0%, #200808 50%, #0a0202 100%);
         }
-
         .scene[data-chapter="4"] .scene-bg {
-            background:
-                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201, 169, 97, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 30% 70%, rgba(168, 32, 26, 0.12) 0%, transparent 60%),
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201, 169, 97, 0.15) 0%, transparent 60%),
                 linear-gradient(180deg, #1a1408 0%, #201808 50%, #0a0804 100%);
         }
-
         .scene[data-chapter="5"] .scene-bg {
-            background:
-                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220, 230, 240, 0.1) 0%, transparent 60%),
-                radial-gradient(ellipse 50% 40% at 70% 30%, rgba(180, 200, 220, 0.08) 0%, transparent 60%),
+            background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220, 230, 240, 0.1) 0%, transparent 60%),
                 linear-gradient(180deg, #0f1418 0%, #141a20 50%, #080c10 100%);
         }
-
         .scene[data-chapter="6"] .scene-bg {
-            background:
-                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100, 60, 140, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 20% 30%, rgba(168, 32, 26, 0.1) 0%, transparent 60%),
+            background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(100, 60, 140, 0.12) 0%, transparent 60%),
                 linear-gradient(180deg, #120a1a 0%, #180e20 50%, #08050f 100%);
         }
 
-        /* Scene Fog */
         .scene-fog {
             position: absolute;
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.6;
-        }
-
-        .scene-fog::before,
-        .scene-fog::after {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 50%);
-            filter: blur(60px);
+            opacity: 0.5;
         }
 
         .scene-fog::before {
-            top: -25%;
-            left: -25%;
+            content: '';
+            position: absolute;
+            width: 150%; height: 150%;
+            top: -25%; left: -25%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 50%);
             animation: fogDrift1 40s ease-in-out infinite alternate;
         }
 
-        .scene-fog::after {
-            bottom: -25%;
-            right: -25%;
-            animation: fogDrift2 50s ease-in-out infinite alternate;
-        }
-
         @keyframes fogDrift1 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(10%, 5%) rotate(5deg); }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(10%, 5%); }
         }
 
-        @keyframes fogDrift2 {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-10%, -5%) rotate(-5deg); }
-        }
-
-        /* Scene Particles */
         .scene-particles {
             position: absolute;
             inset: 0;
@@ -1078,55 +813,38 @@
 
         .scene-particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
+            width: 2px; height: 2px;
             background: rgba(244, 241, 234, 0.5);
             border-radius: 50%;
             opacity: 0;
-            box-shadow: 0 0 4px currentColor;
             animation: sceneParticleFloat linear infinite;
         }
 
         @keyframes sceneParticleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(100vh) translateX(0) scale(0.5);
-            }
+            0% { opacity: 0; transform: translateY(100vh); }
             10% { opacity: 0.8; }
             90% { opacity: 0.8; }
-            100% {
-                opacity: 0;
-                transform: translateY(-20vh) translateX(30px) scale(1);
-            }
+            100% { opacity: 0; transform: translateY(-20vh) translateX(30px); }
         }
 
-        /* Light Rays */
         .scene-rays {
             position: absolute;
             inset: 0;
             z-index: 3;
             pointer-events: none;
-            opacity: 0.3;
-            background:
-                linear-gradient(115deg,
-                    transparent 0%,
-                    transparent 40%,
-                    rgba(255, 255, 255, 0.03) 50%,
-                    transparent 60%,
-                    transparent 100%);
+            opacity: 0.2;
+            background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%);
             animation: raysShift 25s ease-in-out infinite alternate;
         }
 
         @keyframes raysShift {
-            0% { transform: translateX(-10%) translateY(-5%); opacity: 0.2; }
-            100% { transform: translateX(10%) translateY(5%); opacity: 0.4; }
+            0% { transform: translateX(-10%); opacity: 0.2; }
+            100% { transform: translateX(10%); opacity: 0.3; }
         }
 
-        /* Giant Chapter Number */
         .scene-number {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             font-family: var(--font-mono);
             font-size: clamp(20rem, 50vw, 45rem);
@@ -1139,12 +857,6 @@
             pointer-events: none;
             user-select: none;
             z-index: 4;
-            animation: numberFloat 15s ease-in-out infinite alternate;
-        }
-
-        @keyframes numberFloat {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            100% { transform: translate(-50%, -52%) scale(1.02); }
         }
 
         .scene[data-chapter="1"] .scene-number { color: #7896c8; }
@@ -1154,7 +866,6 @@
         .scene[data-chapter="5"] .scene-number { color: #dce6f0; }
         .scene[data-chapter="6"] .scene-number { color: #643c8c; }
 
-        /* Scene Content */
         .scene-content {
             position: relative;
             z-index: 10;
@@ -1188,8 +899,7 @@
         .scene-chapter-label::before,
         .scene-chapter-label::after {
             content: '';
-            width: 40px;
-            height: 1px;
+            width: 40px; height: 1px;
             background: linear-gradient(90deg, transparent, var(--blood-light), transparent);
         }
 
@@ -1204,7 +914,6 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1.2s var(--ease-out) 0.5s, transform 1.2s var(--ease-out) 0.5s;
-            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
         }
 
         .scene-text {
@@ -1221,10 +930,7 @@
 
         .scene.active .scene-chapter-label,
         .scene.active .scene-title,
-        .scene.active .scene-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .scene.active .scene-text { opacity: 1; transform: translateY(0); }
 
         .scene-quote {
             display: block;
@@ -1254,21 +960,10 @@
             line-height: 1;
         }
 
-        .scene-highlight {
-            color: var(--blood-light);
-            font-weight: 500;
-            text-shadow: 0 0 20px rgba(214, 48, 49, 0.3);
-        }
+        .scene-highlight { color: var(--blood-light); font-weight: 500; }
+        .scene-text p { margin-bottom: 1em; }
+        .scene-text p:last-child { margin-bottom: 0; }
 
-        .scene-text p {
-            margin-bottom: 1em;
-        }
-
-        .scene-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Line-by-line reveal */
         .scene-text .line {
             display: block;
             opacity: 0;
@@ -1276,26 +971,18 @@
             transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
         }
 
-        .scene.active .scene-text .line {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .scene.active .scene-text .line { opacity: 1; transform: translateY(0); }
         .scene.active .scene-text .line:nth-child(1) { transition-delay: 1s; }
         .scene.active .scene-text .line:nth-child(2) { transition-delay: 1.2s; }
         .scene.active .scene-text .line:nth-child(3) { transition-delay: 1.4s; }
         .scene.active .scene-text .line:nth-child(4) { transition-delay: 1.6s; }
         .scene.active .scene-text .line:nth-child(5) { transition-delay: 1.8s; }
         .scene.active .scene-text .line:nth-child(6) { transition-delay: 2s; }
-        .scene.active .scene-text .line:nth-child(7) { transition-delay: 2.2s; }
-        .scene.active .scene-text .line:nth-child(8) { transition-delay: 2.4s; }
 
-        /* Cinematic Navigation */
+        /* Cinematic Nav */
         .cinematic-nav {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             z-index: 100;
             padding: 24px 32px;
             display: flex;
@@ -1303,8 +990,6 @@
             justify-content: center;
             gap: 32px;
             background: linear-gradient(180deg, transparent 0%, rgba(4, 4, 10, 0.8) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .cinematic-nav-btn {
@@ -1333,43 +1018,19 @@
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        .cinematic-nav-btn:hover:not(:disabled)::before {
-            transform: translateY(0);
-        }
-
-        .cinematic-nav-btn > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cinematic-nav-btn:hover:not(:disabled) {
-            border-color: var(--blood);
-            box-shadow: 0 8px 24px var(--blood-glow);
-            transform: translateY(-2px);
-        }
-
-        .cinematic-nav-btn:disabled {
-            opacity: 0.25;
-            cursor: not-allowed;
-        }
+        .cinematic-nav-btn:hover:not(:disabled)::before { transform: translateY(0); }
+        .cinematic-nav-btn > * { position: relative; z-index: 1; }
+        .cinematic-nav-btn:hover:not(:disabled) { border-color: var(--blood); transform: translateY(-2px); }
+        .cinematic-nav-btn:disabled { opacity: 0.25; }
 
         .cinematic-nav-btn svg {
-            width: 14px;
-            height: 14px;
+            width: 14px; height: 14px;
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        .cinematic-nav-btn:hover:not(:disabled) svg {
-            transform: translateX(-3px);
-        }
-
-        [dir="rtl"] .cinematic-nav-btn:hover:not(:disabled) svg {
-            transform: translateX(3px);
-        }
-
-        .cinematic-nav-btn.prev svg {
-            transform: rotate(180deg);
-        }
+        .cinematic-nav-btn:hover:not(:disabled) svg { transform: translateX(-3px); }
+        [dir="rtl"] .cinematic-nav-btn:hover:not(:disabled) svg { transform: translateX(3px); }
+        .cinematic-nav-btn.prev svg { transform: rotate(180deg); }
 
         .cinematic-indicator {
             display: flex;
@@ -1382,8 +1043,7 @@
         }
 
         .cinematic-progress {
-            width: 80px;
-            height: 1px;
+            width: 80px; height: 1px;
             background: var(--ash);
             position: relative;
             overflow: hidden;
@@ -1395,14 +1055,10 @@
             background: var(--blood);
             transform-origin: left;
             transition: transform 0.8s var(--ease-out);
-            box-shadow: 0 0 8px var(--blood-glow);
         }
 
-        [dir="rtl"] .cinematic-progress-bar {
-            transform-origin: right;
-        }
+        [dir="rtl"] .cinematic-progress-bar { transform-origin: right; }
 
-        /* Transition Overlay */
         .transition-overlay {
             position: absolute;
             inset: 0;
@@ -1413,51 +1069,29 @@
             transition: opacity 0.8s var(--ease-cinematic);
         }
 
-        .transition-overlay.active {
-            opacity: 1;
-        }
+        .transition-overlay.active { opacity: 1; }
 
-        /* ========================================
-           CHARACTERS
-        ======================================== */
-        .characters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-md);
-        }
+        /* ===== CARDS (Optimized - no backdrop-filter on mobile) ===== */
+        .characters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); }
 
         .character-card {
             background: var(--glass);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
             position: relative;
             overflow: hidden;
-            transition: all var(--t-base) var(--ease-out);
+            transition: transform var(--t-base) var(--ease-out), border-color var(--t-base);
             min-height: 320px;
             display: flex;
             flex-direction: column;
-        }
-
-        .character-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
-                rgba(168, 32, 26, 0.12) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity var(--t-base);
-            pointer-events: none;
+            contain: layout style;
         }
 
         .character-card:hover {
             border-color: rgba(168, 32, 26, 0.4);
             transform: translateY(-8px);
-            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
         }
-
-        .character-card:hover::before { opacity: 1; }
 
         .character-number {
             position: absolute;
@@ -1470,18 +1104,14 @@
             color: transparent;
             -webkit-text-stroke: 1px var(--blood);
             opacity: 0.25;
-            transition: all var(--t-base) var(--ease-out);
+            transition: opacity var(--t-base);
             letter-spacing: -0.05em;
         }
 
-        .character-card:hover .character-number {
-            opacity: 0.5;
-            transform: scale(1.1);
-        }
+        .character-card:hover .character-number { opacity: 0.5; }
 
         .character-avatar {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--blood), var(--blood-deep));
             display: flex;
@@ -1494,16 +1124,9 @@
             margin-bottom: var(--space-sm);
             position: relative;
             z-index: 1;
-            box-shadow: 0 8px 24px var(--blood-glow);
         }
 
-        .character-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            position: relative;
-            z-index: 1;
-        }
+        .character-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; position: relative; z-index: 1; }
 
         .character-role {
             font-family: var(--font-mono);
@@ -1541,42 +1164,26 @@
             gap: 10px;
         }
 
-        .character-quote::before {
-            content: '';
-            width: 24px;
-            height: 1px;
-            background: var(--blood);
-        }
+        .character-quote::before { content: ''; width: 24px; height: 1px; background: var(--blood); }
 
-        /* ========================================
-           LOCATIONS
-        ======================================== */
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-md);
-        }
+        /* Locations */
+        .locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-md); }
 
         .location-card {
             background: var(--glass);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
             position: relative;
             overflow: hidden;
-            transition: all var(--t-base) var(--ease-out);
+            transition: transform var(--t-base) var(--ease-out), border-color var(--t-base);
+            contain: layout style;
         }
 
-        .location-card:hover {
-            border-color: rgba(168, 32, 26, 0.3);
-            transform: translateY(-4px);
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-        }
+        .location-card:hover { border-color: rgba(168, 32, 26, 0.3); transform: translateY(-4px); }
 
         .location-icon {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: var(--r-md);
             background: linear-gradient(135deg, var(--blood-soft), transparent);
             border: 1px solid rgba(168, 32, 26, 0.2);
@@ -1585,69 +1192,44 @@
             justify-content: center;
             margin-bottom: var(--space-sm);
             font-size: 1.5rem;
-            transition: all var(--t-base) var(--ease-out);
+            transition: transform var(--t-base) var(--ease-out);
         }
 
-        .location-card:hover .location-icon {
-            background: linear-gradient(135deg, var(--blood), var(--blood-deep));
-            transform: rotate(-5deg) scale(1.05);
-        }
+        .location-card:hover .location-icon { transform: rotate(-5deg) scale(1.05); }
 
-        .location-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+        .location-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
 
-        .location-desc {
-            color: var(--paper);
-            font-size: 0.9rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
+        .location-desc { color: var(--paper); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
 
-        /* ========================================
-           MECHANICS
-        ======================================== */
-        .mechanics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-sm);
-        }
+        /* Mechanics */
+        .mechanics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-sm); }
 
         .mechanic-card {
             background: var(--glass);
-            backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-lg);
             padding: var(--space-md);
             position: relative;
             overflow: hidden;
-            transition: all var(--t-base) var(--ease-out);
+            transition: transform var(--t-base) var(--ease-out), border-color var(--t-base);
+            contain: layout style;
         }
 
         .mechanic-card::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--blood), transparent);
             transform: scaleX(0);
             transition: transform var(--t-base) var(--ease-out);
         }
 
-        .mechanic-card:hover {
-            border-color: rgba(168, 32, 26, 0.3);
-            transform: translateY(-4px);
-        }
-
+        .mechanic-card:hover { border-color: rgba(168, 32, 26, 0.3); transform: translateY(-4px); }
         .mechanic-card:hover::after { transform: scaleX(1); }
 
         .mechanic-icon {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             border-radius: var(--r-md);
             background: linear-gradient(135deg, var(--blood-soft), transparent);
             border: 1px solid rgba(168, 32, 26, 0.2);
@@ -1656,42 +1238,22 @@
             justify-content: center;
             margin-bottom: var(--space-sm);
             font-size: 1.5rem;
-            transition: all var(--t-base) var(--ease-out);
+            transition: transform var(--t-base) var(--ease-out);
         }
 
-        .mechanic-card:hover .mechanic-icon {
-            background: linear-gradient(135deg, var(--blood), var(--blood-deep));
-            transform: rotate(-5deg) scale(1.05);
-        }
+        .mechanic-card:hover .mechanic-icon { transform: rotate(-5deg) scale(1.05); }
 
-        .mechanic-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+        .mechanic-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
 
-        .mechanic-desc {
-            color: var(--paper);
-            font-size: 0.9rem;
-            line-height: 1.8;
-            font-weight: 300;
-        }
+        .mechanic-desc { color: var(--paper); font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
 
-        /* ========================================
-           REVELATION
-        ======================================== */
-        .revelation-section {
-            padding: var(--space-2xl) var(--space-md);
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
+        /* Revelation */
+        .revelation-section { padding: var(--space-2xl) var(--space-md); position: relative; z-index: 2; text-align: center; }
 
         .revelation-box {
             max-width: 880px;
             margin: 0 auto;
             background: var(--glass);
-            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: var(--r-xl);
             padding: var(--space-xl) var(--space-lg);
@@ -1719,21 +1281,9 @@
             letter-spacing: -0.05em;
         }
 
-        .revelation-title {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-            line-height: 1.2;
-        }
+        .revelation-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: var(--space-md); line-height: 1.2; }
 
-        .revelation-text {
-            color: var(--paper);
-            font-size: 1.05rem;
-            line-height: 2;
-            max-width: 640px;
-            margin: 0 auto var(--space-md);
-            font-weight: 300;
-        }
+        .revelation-text { color: var(--paper); font-size: 1.05rem; line-height: 2; max-width: 640px; margin: 0 auto var(--space-md); font-weight: 300; }
 
         .revelation-quote {
             display: inline-block;
@@ -1746,9 +1296,7 @@
             font-weight: 400;
         }
 
-        /* ========================================
-           FOOTER
-        ======================================== */
+        /* Footer */
         .footer {
             padding: var(--space-xl) var(--space-md) var(--space-md);
             background: var(--void);
@@ -1795,19 +1343,28 @@
             font-family: var(--font-mono);
         }
 
-        /* ========================================
-           REVEAL ANIMATIONS
-        ======================================== */
+        .footer-author {
+            color: var(--stone);
+            font-size: 0.75rem;
+            margin-top: var(--space-sm);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-author a {
+            color: var(--blood-light);
+            transition: color var(--t-fast);
+        }
+
+        .footer-author a:hover { color: var(--bone); }
+
+        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
         }
 
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
         .reveal-stagger > * {
             opacity: 0;
@@ -1815,11 +1372,7 @@
             transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
         }
 
-        .reveal-stagger.is-visible > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
         .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
         .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
         .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
@@ -1828,20 +1381,15 @@
         .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
         .reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.47s; }
 
-        /* ========================================
-           RESPONSIVE
-        ======================================== */
+        /* ===== MOBILE OPTIMIZATIONS ===== */
         @media (max-width: 968px) {
             .nav { padding: var(--space-sm); }
 
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
+                top: 100%; left: 0; right: 0;
                 background: rgba(4, 4, 10, 0.98);
-                backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: var(--space-sm);
                 border-bottom: 1px solid var(--glass-border);
@@ -1851,106 +1399,79 @@
             .nav-link { width: 100%; padding: 14px 16px; }
             .mobile-toggle { display: flex; }
 
-            .scene-content {
-                padding: 100px 20px 140px;
-            }
+            /* Remove backdrop-filter on mobile */
+            .nav::before { backdrop-filter: none; -webkit-backdrop-filter: none; }
 
-            .cinematic-nav {
-                gap: 12px;
-                padding: 16px;
-            }
+            .scene-content { padding: 100px 20px 140px; }
 
-            .cinematic-nav-btn {
-                padding: 10px 16px;
-                font-size: 0.75rem;
-            }
-
-            .cinematic-indicator {
-                gap: 10px;
-                font-size: 0.7rem;
-            }
-
-            .cinematic-progress {
-                width: 50px;
-            }
+            .cinematic-nav { gap: 12px; padding: 16px; }
+            .cinematic-nav-btn { padding: 10px 16px; font-size: 0.75rem; }
+            .cinematic-indicator { gap: 10px; font-size: 0.7rem; }
+            .cinematic-progress { width: 50px; }
 
             .section { padding: var(--space-xl) var(--space-sm); }
             .section-header { margin-bottom: var(--space-lg); }
+
+            /* Disable heavy effects on mobile */
+            .ambient-grid { display: none; }
+            .ambient-grain { display: none; }
+            .ambient-lines { display: none; }
+            .scene-fog::before { display: none; }
+            .scene-rays { display: none; }
+
+            /* Reduce mesh animation on mobile */
+            .ambient-mesh { animation: none; }
+
+            /* Simplify shadows */
+            .character-card:hover { box-shadow: none; }
+            .location-card:hover { box-shadow: none; }
         }
 
         @media (max-width: 640px) {
             .hero { padding: var(--space-xl) var(--space-sm) var(--space-md); }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-            }
-
+            .hero-cta { flex-direction: column; width: 100%; }
             .btn { width: 100%; justify-content: center; }
 
-            .scene-number {
-                font-size: 15rem;
-            }
+            .scene-number { font-size: 15rem; }
+            .scene-title { font-size: 2rem; }
+            .scene-text { font-size: 0.95rem; line-height: 2; }
+            .scene-quote { padding: 16px 20px; font-size: 1rem; }
 
-            .scene-title {
-                font-size: 2rem;
-            }
-
-            .scene-text {
-                font-size: 0.95rem;
-                line-height: 2;
-            }
-
-            .scene-quote {
-                padding: 16px 20px;
-                font-size: 1rem;
-            }
-
-            .cinematic-nav {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .cinematic-nav-btn {
-                flex: 1;
-                min-width: 100px;
-                justify-content: center;
-            }
-
-            .cinematic-indicator {
-                order: -1;
-                width: 100%;
-                justify-content: center;
-            }
+            .cinematic-nav { flex-wrap: wrap; gap: 10px; }
+            .cinematic-nav-btn { flex: 1; min-width: 100px; justify-content: center; }
+            .cinematic-indicator { order: -1; width: 100%; justify-content: center; }
 
             .character-card { padding: var(--space-sm); min-height: auto; }
             .character-number { font-size: 4rem; }
 
             .revelation-box { padding: var(--space-lg) var(--space-sm); }
 
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-brand { font-size: 2.5rem; }
+
+            /* Reduce particle count on mobile */
+            .scene-particles { display: none; }
+            .ambient-particles { display: none; }
+
+            /* Simplify transitions on mobile */
+            .scene { transition: opacity 0.8s var(--ease-out), visibility 0s linear 0.8s; }
+            .scene.active { transition: opacity 0.8s var(--ease-out), visibility 0s linear 0s; }
+            .scene.exiting { transform: none; }
         }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
         }
 
-        :focus-visible {
-            outline: 2px solid var(--blood-light);
-            outline-offset: 4px;
-            border-radius: var(--r-sm);
-        }
+        :focus-visible { outline: 2px solid var(--blood-light); outline-offset: 4px; border-radius: var(--r-sm); }
 
         .skip-link {
             position: absolute;
-            top: -100px;
-            left: 0;
+            top: -100px; left: 0;
             padding: 12px 24px;
             background: var(--blood);
             color: var(--bone);
@@ -1996,11 +1517,11 @@
         </a>
 
         <div class="nav-links" id="navLinks">
-            <a href="#story" class="nav-link"><span class="nav-link-text" data-fa="داستان" data-en="Story">داستان</span></a>
-            <a href="#characters" class="nav-link"><span class="nav-link-text" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span></a>
-            <a href="#locations" class="nav-link"><span class="nav-link-text" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span></a>
-            <a href="#mechanics" class="nav-link"><span class="nav-link-text" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</span></a>
-            <a href="#revelation" class="nav-link"><span class="nav-link-text" data-fa="حقیقت" data-en="Truth">حقیقت</span></a>
+            <a href="#story" class="nav-link"><span data-fa="داستان" data-en="Story">داستان</span></a>
+            <a href="#characters" class="nav-link"><span data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span></a>
+            <a href="#locations" class="nav-link"><span data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span></a>
+            <a href="#mechanics" class="nav-link"><span data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</span></a>
+            <a href="#revelation" class="nav-link"><span data-fa="حقیقت" data-en="Truth">حقیقت</span></a>
         </div>
 
         <div class="nav-actions">
@@ -2018,9 +1539,7 @@
         <div class="hero-bg-number" aria-hidden="true">7</div>
         <div class="hero-content">
             <div class="hero-eyebrow" data-fa="تجربه‌ی روایی روان‌شناختی" data-en="Psychological Narrative Experience">تجربه‌ی روایی روان‌شناختی</div>
-            <h1 class="hero-title" id="heroTitle">
-                <span class="hero-title-main">No.7</span>
-            </h1>
+            <h1 class="hero-title" id="heroTitle"><span class="hero-title-main">No.7</span></h1>
             <p class="hero-subtitle" data-fa="هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است." data-en="Seven people. Seven memories. One truth no one is ready to hear. In a city that isn't real, you must find Number 1 before sunset — but every salvation is a loss.">هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است.</p>
             <div class="hero-cta">
                 <a href="#story" class="btn btn-primary">
@@ -2038,28 +1557,20 @@
         </div>
     </section>
 
-    <!-- CINEMATIC STORY EXPERIENCE -->
+    <!-- CINEMATIC STORY -->
     <section class="cinematic-story" id="story" aria-labelledby="storyTitle">
-        <div class="scene-container" id="sceneContainer">
-            <!-- Scenes will be generated by JavaScript -->
-        </div>
-
+        <div class="scene-container" id="sceneContainer"></div>
         <div class="transition-overlay" id="transitionOverlay"></div>
-
         <div class="cinematic-nav">
             <button class="cinematic-nav-btn prev" id="prevScene" aria-label="Previous chapter">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 <span data-fa="قبلی" data-en="Previous">قبلی</span>
             </button>
-
             <div class="cinematic-indicator">
                 <span id="currentScene">01</span>
-                <div class="cinematic-progress">
-                    <div class="cinematic-progress-bar" id="cinematicProgress"></div>
-                </div>
+                <div class="cinematic-progress"><div class="cinematic-progress-bar" id="cinematicProgress"></div></div>
                 <span id="totalScenes">06</span>
             </div>
-
             <button class="cinematic-nav-btn next" id="nextScene" aria-label="Next chapter">
                 <span data-fa="ادامه" data-en="Continue">ادامه</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -2075,7 +1586,6 @@
                 <h2 class="section-title" id="charactersTitle" data-fa="هفت خاطره، <span class='accent'>هفت چهره</span>" data-en="Seven Memories, <span class='accent'>Seven Faces</span>">هفت خاطره، <span class="accent">هفت چهره</span></h2>
                 <p class="section-desc" data-fa="هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد." data-en="Each one is a part of someone who no longer remembers themselves.">هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد.</p>
             </div>
-
             <div class="characters-grid reveal-stagger">
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">01</span>
@@ -2085,7 +1595,6 @@
                     <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره." data-en="The last thing erased from their mind. The warmest and most painful memory.">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره.</p>
                     <p class="character-quote" data-fa="حالا دیگه هیچ دردی یادت نیست..." data-en="Now you don't remember any pain anymore...">حالا دیگه هیچ دردی یادت نیست...</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">02</span>
                     <div class="character-avatar" aria-hidden="true">۲</div>
@@ -2094,7 +1603,6 @@
                     <p class="character-desc" data-fa="کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند." data-en="A playful, energetic child. When they vanish, the city's colors fade.">کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند.</p>
                     <p class="character-quote" data-fa="یادت میاد چقدر می‌خندیدیم؟" data-en="Remember how much we used to laugh?">یادت میاد چقدر می‌خندیدیم؟</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">03</span>
                     <div class="character-avatar" aria-hidden="true">۳</div>
@@ -2103,7 +1611,6 @@
                     <p class="character-desc" data-fa="شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند." data-en="A fearless, determined character. When they vanish, the player can no longer pass through dark areas.">شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند.</p>
                     <p class="character-quote" data-fa="نترس. من اینجام." data-en="Don't be afraid. I'm here.">نترس. من اینجام.</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">04</span>
                     <div class="character-avatar" aria-hidden="true">۴</div>
@@ -2112,7 +1619,6 @@
                     <p class="character-desc" data-fa="مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد." data-en="A quiet but kind man. Has the exact same nervous tic the protagonist shows in mirrors.">مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد.</p>
                     <p class="character-quote" data-fa="قوی باش. مثل من." data-en="Be strong. Like me.">قوی باش. مثل من.</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">05</span>
                     <div class="character-avatar" aria-hidden="true">۵</div>
@@ -2121,7 +1627,6 @@
                     <p class="character-desc" data-fa="تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود." data-en="The only one who knows the childhood song. When they vanish, that song is erased from the player's mind.">تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود.</p>
                     <p class="character-quote" data-fa="یادت هست اون آهنگو؟" data-en="Remember that song?">یادت هست اون آهنگو؟</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">06</span>
                     <div class="character-avatar" aria-hidden="true">۶</div>
@@ -2130,7 +1635,6 @@
                     <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...»" data-en="A dreamy, vague character. Constantly says: &quot;I wish I could wake up...&quot;">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...»</p>
                     <p class="character-quote" data-fa="کاش می‌تونستم بیدار شم..." data-en="I wish I could wake up...">کاش می‌تونستم بیدار شم...</p>
                 </article>
-
                 <article class="character-card">
                     <span class="character-number" aria-hidden="true">07</span>
                     <div class="character-avatar" aria-hidden="true">۷</div>
@@ -2151,38 +1655,32 @@
                 <h2 class="section-title" id="locationsTitle" data-fa="شهری که <span class='accent'>واقعیت ندارد</span>" data-en="A City That <span class='accent'>Isn't Real</span>">شهری که <span class="accent">واقعیت ندارد</span></h2>
                 <p class="section-desc" data-fa="هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است." data-en="Every location is a reflection of a hospital room or a buried memory.">هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است.</p>
             </div>
-
             <div class="locations-grid reveal-stagger">
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🏠</div>
                     <h3 class="location-name" data-fa="اتاق بیداری" data-en="The Awakening Room">اتاق بیداری</h3>
                     <p class="location-desc" data-fa="جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود." data-en="Where the game begins. A simple room with a window letting in morning light.">جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود.</p>
                 </article>
-
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌆</div>
                     <h3 class="location-name" data-fa="خیابان‌های بی‌پایان" data-en="The Endless Streets">خیابان‌های بی‌پایان</h3>
                     <p class="location-desc" data-fa="خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست." data-en="City streets that feel familiar but are empty.">خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست.</p>
                 </article>
-
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌳</div>
                     <h3 class="location-name" data-fa="پارک خاطرات" data-en="Memory Park">پارک خاطرات</h3>
                     <p class="location-desc" data-fa="پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد." data-en="A park with empty swings and trees whose leaves slowly fall.">پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد.</p>
                 </article>
-
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🏚️</div>
                     <h3 class="location-name" data-fa="خانه‌ی قدیمی" data-en="The Old House">خانه‌ی قدیمی</h3>
                     <p class="location-desc" data-fa="خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند." data-en="An abandoned house that smells of childhood. Photos on the wall have no faces.">خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند.</p>
                 </article>
-
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">🌑</div>
                     <h3 class="location-name" data-fa="غروب ابدی" data-en="The Eternal Sunset">غروب ابدی</h3>
                     <p class="location-desc" data-fa="هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود." data-en="As you approach the end, the sky grows darker.">هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود.</p>
                 </article>
-
                 <article class="location-card">
                     <div class="location-icon" aria-hidden="true">⬛</div>
                     <h3 class="location-name" data-fa="تهی‌گاه" data-en="The Void">تهی‌گاه</h3>
@@ -2200,38 +1698,32 @@
                 <h2 class="section-title" id="mechanicsTitle" data-fa="وقتی <span class='accent'>گیم‌پلی</span> خودش داستان است" data-en="When <span class='accent'>Gameplay</span> Is the Story">وقتی <span class="accent">گیم‌پلی</span> خودش داستان است</h2>
                 <p class="section-desc" data-fa="در شماره ۷، هر مکانیک بازتابی از از دست دادن است." data-en="In No.7, every mechanic is a reflection of loss.">در شماره ۷، هر مکانیک بازتابی از از دست دادن است.</p>
             </div>
-
             <div class="mechanics-grid reveal-stagger">
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">💀</div>
                     <h3 class="mechanic-title" data-fa="محو شدن" data-en="Disappearance">محو شدن</h3>
                     <p class="mechanic-desc" data-fa="هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود." data-en="Every time a character is found, they vanish forever.">هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود.</p>
                 </article>
-
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">⭐</div>
                     <h3 class="mechanic-title" data-fa="از دست دادن توانایی" data-en="Losing Abilities">از دست دادن توانایی</h3>
                     <p class="mechanic-desc" data-fa="با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود." data-en="With each character's disappearance, an ability is taken from the player.">با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود.</p>
                 </article>
-
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">⌚</div>
                     <h3 class="mechanic-title" data-fa="دستبند شمارش معکوس" data-en="Bracelet Countdown">دستبند شمارش معکوس</h3>
                     <p class="mechanic-desc" data-fa="دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود." data-en="The No.7 bracelet is on the HUD. With each disappearance, one of its numbers is erased.">دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود.</p>
                 </article>
-
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">🧩</div>
                     <h3 class="mechanic-title" data-fa="معماهای خاطره‌ای" data-en="Memory Puzzles">معماهای خاطره‌ای</h3>
                     <p class="mechanic-desc" data-fa="معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود." data-en="Puzzles are solved with memories. When a memory vanishes, the solution is lost forever.">معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود.</p>
                 </article>
-
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">🌅</div>
                     <h3 class="mechanic-title" data-fa="غروب پیش‌رونده" data-en="Progressive Sunset">غروب پیش‌رونده</h3>
                     <p class="mechanic-desc" data-fa="با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی." data-en="As the game progresses, the sky darkens. Sunset = surgery time.">با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی.</p>
                 </article>
-
                 <article class="mechanic-card">
                     <div class="mechanic-icon" aria-hidden="true">🔄</div>
                     <h3 class="mechanic-title" data-fa="تکرار با آگاهی" data-en="Replay with Awareness">تکرار با آگاهی</h3>
@@ -2262,15 +1754,61 @@
                 <span data-fa="© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی" data-en="© 2025 No.7 — A Narrative Experience">© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی</span>
                 <span data-fa="ساخته شده با عشق و درد" data-en="Made with love and pain">ساخته شده با عشق و درد</span>
             </div>
+            <div class="footer-author">
+                <span data-fa="طراحی و توسعه توسط" data-en="Designed & Developed by">طراحی و توسعه توسط</span>
+                <a href="https://github.com/Ali-dehghannejad" target="_blank" rel="noopener noreferrer">Ali Dehghannejad</a>
+            </div>
         </div>
     </footer>
 
     <script>
         'use strict';
 
-        /* ========================================
-           CINEMATIC STORY DATA
-        ======================================== */
+        /* ===== DEVICE DETECTION ===== */
+        const isMobile = window.matchMedia('(max-width: 968px)').matches;
+        const isTouchDevice = window.matchMedia('(hover: none)').matches;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ===== STATE ===== */
+        const state = {
+            lang: 'fa',
+            currentScene: 0,
+            totalScenes: 6,
+            isTransitioning: false,
+            cursorX: 0,
+            cursorY: 0,
+            targetX: 0,
+            targetY: 0,
+            scrollY: 0,
+            ticking: false,
+            isPageVisible: true,
+            cursorRAF: null
+        };
+
+        /* ===== DOM CACHE ===== */
+        const dom = {
+            html: document.documentElement,
+            body: document.body,
+            preloader: document.getElementById('preloader'),
+            nav: document.getElementById('nav'),
+            navLinks: document.getElementById('navLinks'),
+            langToggle: document.getElementById('langToggle'),
+            langLabel: document.getElementById('langLabel'),
+            mobileToggle: document.getElementById('mobileToggle'),
+            scrollProgress: document.getElementById('scrollProgress'),
+            sceneContainer: document.getElementById('sceneContainer'),
+            prevBtn: document.getElementById('prevScene'),
+            nextBtn: document.getElementById('nextScene'),
+            currentSceneEl: document.getElementById('currentScene'),
+            totalScenesEl: document.getElementById('totalScenes'),
+            progressBar: document.getElementById('cinematicProgress'),
+            transitionOverlay: document.getElementById('transitionOverlay'),
+            cursorDot: document.querySelector('.cursor-dot'),
+            cursorRing: document.querySelector('.cursor-ring'),
+            particlesContainer: document.getElementById('ambientParticles')
+        };
+
+        /* ===== STORY DATA ===== */
         const storyData = {
             fa: [
                 {
@@ -2285,7 +1823,7 @@
                     chapter: 'فصل دوم',
                     title: 'شهر هفت نفر',
                     content: `<span class="line">شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷.</span>
-                    <span class="line">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد.</span>
+                    <span class="line">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند.</span>
                     <span class="line"><span class="scene-highlight">اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود.</span></span>
                     <span class="line"><span class="scene-quote">بالاخره پیدام کردی...</span></span>
                     <span class="line">فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند.</span>`
@@ -2293,8 +1831,8 @@
                 {
                     chapter: 'فصل سوم',
                     title: 'شمارش معکوس',
-                    content: `<span class="line">وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد.</span>
-                    <span class="line">اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند.</span>
+                    content: `<span class="line">وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد.</span>
+                    <span class="line">اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند.</span>
                     <span class="line"><span class="scene-highlight">بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد.</span></span>`
                 },
                 {
@@ -2302,10 +1840,10 @@
                     title: 'شماره ۱',
                     content: `<span class="line">نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند.</span>
                     <span class="line"><span class="scene-quote">خیلی طول کشید.</span></span>
-                    <span class="line">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
+                    <span class="line">بازیکن گیج می‌شود. شماره ۱ ادامه می‌دهد:</span>
                     <span class="line"><span class="scene-quote">ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.</span></span>
                     <span class="line"><span class="scene-highlight">سکوت مطلق.</span></span>
-                    <span class="line">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش.</span>`
+                    <span class="line">شماره ۱، آخرین خاطره است. خاطره‌ی مادرش.</span>`
                 },
                 {
                     chapter: 'فصل پنجم',
@@ -2313,13 +1851,12 @@
                     content: `<span class="line">صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:</span>
                     <span class="line"><span class="scene-quote">عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.</span></span>
                     <span class="line">حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده.</span>
-                    <span class="line">او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود.</span>
                     <span class="line"><span class="scene-highlight">آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش.</span></span>`
                 },
                 {
                     chapter: 'فصل ششم',
                     title: 'وقتی بازی را دوباره شروع می‌کنی...',
-                    content: `<span class="line">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند.</span>
+                    content: `<span class="line">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند.</span>
                     <span class="line">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.»</span>
                     <span class="line">اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
                     <span class="line"><span class="scene-quote">گاهی نجات دادن، همان از دست دادن است.</span></span>`
@@ -2337,8 +1874,8 @@
                 {
                     chapter: 'Chapter II',
                     title: 'The City of Seven',
-                    content: `<span class="line">The protagonist enters a vast, two-dimensional city. A city that feels both familiar and alien. In this city, there are seven people. Each has a number on their wrist: from No.1 to No.7.</span>
-                    <span class="line">The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them. Feels like they've finally found something worth fighting for.</span>
+                    content: `<span class="line">The protagonist enters a vast, two-dimensional city. A city that feels both familiar and alien. In this city, there are seven people. Each has a number on their wrist.</span>
+                    <span class="line">The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them.</span>
                     <span class="line"><span class="scene-highlight">But... every time you find one of them, they disappear.</span></span>
                     <span class="line"><span class="scene-quote">You finally found me...</span></span>
                     <span class="line">Just one sentence. And then they vanish. As if they never existed.</span>`
@@ -2346,8 +1883,8 @@
                 {
                     chapter: 'Chapter III',
                     title: 'The Countdown',
-                    content: `<span class="line">Midway through the game, only three remain. The player panics. Wants to save everyone. Tries to run faster, find sooner, hold tighter.</span>
-                    <span class="line">But fails. One by one, they too disappear. The city grows darker. Colors fade. The cheerful music stops. The abilities the player had vanish one by one.</span>
+                    content: `<span class="line">Midway through the game, only three remain. The player panics. Wants to save everyone.</span>
+                    <span class="line">But fails. One by one, they too disappear. The city grows darker. Colors fade.</span>
                     <span class="line"><span class="scene-highlight">The player thinks someone is killing them. Thinks there's an enemy.</span></span>`
                 },
                 {
@@ -2355,10 +1892,10 @@
                     title: 'Number 1',
                     content: `<span class="line">Near the end, only Number 1 remains. The player finds them. Number 1 smiles.</span>
                     <span class="line"><span class="scene-quote">It took long enough.</span></span>
-                    <span class="line">The player is confused. "What?" Number 1 continues:</span>
+                    <span class="line">Number 1 continues:</span>
                     <span class="line"><span class="scene-quote">We are not seven people. We are your seven memories.</span></span>
                     <span class="line"><span class="scene-highlight">Absolute silence.</span></span>
-                    <span class="line">Throughout the game, the player thought they were saving people. In reality... every time they found one, they were losing one of their own memories forever. Number 1 is the last memory. The memory of their mother.</span>`
+                    <span class="line">Number 1 is the last memory. The memory of their mother.</span>`
                 },
                 {
                     chapter: 'Chapter V',
@@ -2366,13 +1903,12 @@
                     content: `<span class="line">The screen goes black. The beeping of hospital machines. Then a doctor's voice:</span>
                     <span class="line"><span class="scene-quote">The surgery was successful... but their long-term memory is almost completely gone.</span></span>
                     <span class="line">The truth is revealed: that city, those people, that adventure... all happened inside the mind of a 16-year-old boy lying on a hospital bed.</span>
-                    <span class="line">He had suffered severe psychological trauma — an accident that took his family from him. And he himself, before the surgery, had requested selective deletion of painful memories.</span>
                     <span class="line"><span class="scene-highlight">Those seven people were seven aspects of his existence: his courage, his laughter, his childhood, his father, his mother, his first friend, his dreams.</span></span>`
                 },
                 {
                     chapter: 'Chapter VI',
                     title: 'When You Restart the Game...',
-                    content: `<span class="line">When you restart the game, everything has changed. Hints you missed before are now obvious. Dialogues you thought were ordinary now carry a different meaning.</span>
+                    content: `<span class="line">When you restart the game, everything has changed. Hints you missed before are now obvious.</span>
                     <span class="line">The player's motivation throughout the game was completely natural: "Find everyone and save them."</span>
                     <span class="line">But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.</span>
                     <span class="line"><span class="scene-quote">Sometimes saving is the same as losing.</span></span>`
@@ -2380,209 +1916,11 @@
             ]
         };
 
-        /* ========================================
-           APPLICATION STATE
-        ======================================== */
-        const state = {
-            lang: 'fa',
-            currentScene: 0,
-            totalScenes: 6,
-            isTransitioning: false,
-            mouseX: 0,
-            mouseY: 0,
-            targetX: 0,
-            targetY: 0,
-            cursorX: 0,
-            cursorY: 0,
-            scrollY: 0,
-            ticking: false
-        };
-
-        /* ========================================
-           DOM CACHE
-        ======================================== */
-        const dom = {
-            html: document.documentElement,
-            body: document.body,
-            preloader: document.getElementById('preloader'),
-            nav: document.getElementById('nav'),
-            navLinks: document.getElementById('navLinks'),
-            langToggle: document.getElementById('langToggle'),
-            langLabel: document.getElementById('langLabel'),
-            mobileToggle: document.getElementById('mobileToggle'),
-            scrollProgress: document.getElementById('scrollProgress'),
-            cursorDot: document.querySelector('.cursor-dot'),
-            cursorRing: document.querySelector('.cursor-ring'),
-            particlesContainer: document.getElementById('ambientParticles'),
-            sceneContainer: document.getElementById('sceneContainer'),
-            prevBtn: document.getElementById('prevScene'),
-            nextBtn: document.getElementById('nextScene'),
-            currentSceneEl: document.getElementById('currentScene'),
-            totalScenesEl: document.getElementById('totalScenes'),
-            progressBar: document.getElementById('cinematicProgress'),
-            transitionOverlay: document.getElementById('transitionOverlay')
-        };
-
-        /* ========================================
-           CINEMATIC STORY INITIALIZATION
-        ======================================== */
-        function initCinematicStory() {
-            renderScenes();
-            updateSceneNavigation();
-            activateScene(0);
-        }
-
-        function renderScenes() {
-            const scenes = storyData[state.lang];
-            dom.sceneContainer.innerHTML = '';
-
-            scenes.forEach((scene, index) => {
-                const sceneEl = document.createElement('div');
-                sceneEl.className = 'scene';
-                sceneEl.setAttribute('data-chapter', index + 1);
-                sceneEl.setAttribute('data-index', index);
-
-                // Generate particles for this scene
-                const particlesHTML = generateSceneParticles(index);
-
-                sceneEl.innerHTML = `
-                    <div class="scene-bg"></div>
-                    <div class="scene-fog"></div>
-                    <div class="scene-particles">${particlesHTML}</div>
-                    <div class="scene-rays"></div>
-                    <div class="scene-number">${String(index + 1).padStart(2, '0')}</div>
-                    <div class="scene-content">
-                        <div class="scene-chapter-label">${scene.chapter}</div>
-                        <h2 class="scene-title">${scene.title}</h2>
-                        <div class="scene-text">${scene.content}</div>
-                    </div>
-                `;
-
-                dom.sceneContainer.appendChild(sceneEl);
-            });
-
-            dom.totalScenesEl.textContent = String(scenes.length).padStart(2, '0');
-        }
-
-        function generateSceneParticles(chapterIndex) {
-            const particleCount = 20;
-            let html = '';
-
-            // Different particle colors per chapter
-            const colors = [
-                'rgba(120, 150, 200, 0.6)',  // Chapter 1: cold blue
-                'rgba(180, 160, 140, 0.5)',  // Chapter 2: dusty
-                'rgba(214, 48, 49, 0.7)',    // Chapter 3: blood red
-                'rgba(201, 169, 97, 0.6)',   // Chapter 4: gold
-                'rgba(220, 230, 240, 0.5)',  // Chapter 5: cold white
-                'rgba(140, 100, 180, 0.6)'   // Chapter 6: purple
-            ];
-
-            const color = colors[chapterIndex] || colors[0];
-
-            for (let i = 0; i < particleCount; i++) {
-                const left = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 10 + 15;
-                const size = Math.random() * 2 + 1;
-
-                html += `<div class="scene-particle" style="
-                    left: ${left}%;
-                    width: ${size}px;
-                    height: ${size}px;
-                    background: ${color};
-                    animation-delay: ${delay}s;
-                    animation-duration: ${duration}s;
-                "></div>`;
-            }
-
-            return html;
-        }
-
-        function activateScene(index) {
-            const scenes = dom.sceneContainer.querySelectorAll('.scene');
-
-            scenes.forEach((scene, i) => {
-                scene.classList.remove('active', 'exiting');
-                if (i === index) {
-                    scene.classList.add('active');
-                }
-            });
-
-            state.currentScene = index;
-            updateSceneNavigation();
-        }
-
-        function transitionToScene(direction) {
-            if (state.isTransitioning) return;
-
-            const scenes = storyData[state.lang];
-            const targetIndex = direction === 'next'
-                ? state.currentScene + 1
-                : state.currentScene - 1;
-
-            if (targetIndex < 0 || targetIndex >= scenes.length) return;
-
-            state.isTransitioning = true;
-
-            const currentScene = dom.sceneContainer.querySelector('.scene.active');
-            const targetScene = dom.sceneContainer.querySelectorAll('.scene')[targetIndex];
-
-            // Phase 1: Overlay fade in
-            dom.transitionOverlay.classList.add('active');
-
-            setTimeout(() => {
-                // Phase 2: Switch scenes
-                if (currentScene) {
-                    currentScene.classList.remove('active');
-                    currentScene.classList.add('exiting');
-                }
-                targetScene.classList.add('active');
-                state.currentScene = targetIndex;
-                updateSceneNavigation();
-
-                // Phase 3: Overlay fade out
-                setTimeout(() => {
-                    dom.transitionOverlay.classList.remove('active');
-
-                    setTimeout(() => {
-                        if (currentScene) {
-                            currentScene.classList.remove('exiting');
-                        }
-                        state.isTransitioning = false;
-                    }, 800);
-                }, 200);
-            }, 600);
-        }
-
-        function updateSceneNavigation() {
-            const scenes = storyData[state.lang];
-            dom.currentSceneEl.textContent = String(state.currentScene + 1).padStart(2, '0');
-            dom.prevBtn.disabled = state.currentScene === 0;
-            dom.nextBtn.disabled = state.currentScene === scenes.length - 1;
-
-            // Update progress bar
-            const progress = (state.currentScene + 1) / scenes.length;
-            dom.progressBar.style.transform = `scaleX(${progress})`;
-        }
-
-        /* ========================================
-           PRELOADER
-        ======================================== */
-        function initPreloader() {
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    dom.preloader.classList.add('hidden');
-                    dom.body.classList.remove('is-loading');
-                }, 1800);
-            });
-        }
-
-        /* ========================================
-           CUSTOM CURSOR
-        ======================================== */
+        /* ===== CURSOR (Desktop Only, with Visibility API) ===== */
         function initCursor() {
-            if (window.matchMedia('(hover: none)').matches) return;
+            if (isTouchDevice || prefersReducedMotion) return;
+
+            dom.body.classList.add('has-cursor');
 
             document.addEventListener('mousemove', (e) => {
                 state.targetX = e.clientX;
@@ -2591,33 +1929,43 @@
 
             const hoverTargets = 'a, button, .character-card, .location-card, .mechanic-card';
             document.addEventListener('mouseover', (e) => {
-                if (e.target.closest(hoverTargets)) {
-                    dom.body.classList.add('cursor-hover');
-                }
-            });
+                if (e.target.closest(hoverTargets)) dom.body.classList.add('cursor-hover');
+            }, { passive: true });
+
             document.addEventListener('mouseout', (e) => {
-                if (e.target.closest(hoverTargets)) {
-                    dom.body.classList.remove('cursor-hover');
-                }
-            });
+                if (e.target.closest(hoverTargets)) dom.body.classList.remove('cursor-hover');
+            }, { passive: true });
 
             function animateCursor() {
+                if (!state.isPageVisible) {
+                    state.cursorRAF = requestAnimationFrame(animateCursor);
+                    return;
+                }
+
                 state.cursorX += (state.targetX - state.cursorX) * 0.2;
                 state.cursorY += (state.targetY - state.cursorY) * 0.2;
 
-                dom.cursorDot.style.transform = `translate(${state.targetX}px, ${state.targetY}px) translate(-50%, -50%)`;
-                dom.cursorRing.style.transform = `translate(${state.cursorX}px, ${state.cursorY}px) translate(-50%, -50%)`;
+                dom.cursorDot.style.transform = `translate3d(${state.targetX}px, ${state.targetY}px, 0) translate(-50%, -50%)`;
+                dom.cursorRing.style.transform = `translate3d(${state.cursorX}px, ${state.cursorY}px, 0) translate(-50%, -50%)`;
 
-                requestAnimationFrame(animateCursor);
+                state.cursorRAF = requestAnimationFrame(animateCursor);
             }
-            animateCursor();
+
+            state.cursorRAF = requestAnimationFrame(animateCursor);
         }
 
-        /* ========================================
-           PARTICLES
-        ======================================== */
+        /* ===== PAGE VISIBILITY API ===== */
+        function initVisibilityAPI() {
+            document.addEventListener('visibilitychange', () => {
+                state.isPageVisible = !document.hidden;
+            });
+        }
+
+        /* ===== PARTICLES (Reduced on mobile) ===== */
         function initParticles() {
-            const count = window.innerWidth < 768 ? 12 : 24;
+            if (isMobile) return; // Disabled on mobile
+
+            const count = 15; // Reduced from 24
             const fragment = document.createDocumentFragment();
 
             for (let i = 0; i < count; i++) {
@@ -2632,9 +1980,128 @@
             dom.particlesContainer.appendChild(fragment);
         }
 
-        /* ========================================
-           LANGUAGE SWITCHER
-        ======================================== */
+        /* ===== CINEMATIC STORY ===== */
+        function initCinematicStory() {
+            renderScenes();
+            updateSceneNavigation();
+            activateScene(0);
+        }
+
+        function renderScenes() {
+            const scenes = storyData[state.lang];
+            dom.sceneContainer.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+
+            scenes.forEach((scene, index) => {
+                const sceneEl = document.createElement('div');
+                sceneEl.className = 'scene';
+                sceneEl.setAttribute('data-chapter', index + 1);
+
+                const particlesHTML = isMobile ? '' : generateSceneParticles(index);
+
+                sceneEl.innerHTML = `
+                    <div class="scene-bg"></div>
+                    ${!isMobile ? '<div class="scene-fog"></div>' : ''}
+                    <div class="scene-particles">${particlesHTML}</div>
+                    ${!isMobile ? '<div class="scene-rays"></div>' : ''}
+                    <div class="scene-number">${String(index + 1).padStart(2, '0')}</div>
+                    <div class="scene-content">
+                        <div class="scene-chapter-label">${scene.chapter}</div>
+                        <h2 class="scene-title">${scene.title}</h2>
+                        <div class="scene-text">${scene.content}</div>
+                    </div>
+                `;
+
+                fragment.appendChild(sceneEl);
+            });
+
+            dom.sceneContainer.appendChild(fragment);
+            dom.totalScenesEl.textContent = String(scenes.length).padStart(2, '0');
+        }
+
+        function generateSceneParticles(chapterIndex) {
+            const colors = [
+                'rgba(120, 150, 200, 0.6)',
+                'rgba(180, 160, 140, 0.5)',
+                'rgba(214, 48, 49, 0.7)',
+                'rgba(201, 169, 97, 0.6)',
+                'rgba(220, 230, 240, 0.5)',
+                'rgba(140, 100, 180, 0.6)'
+            ];
+
+            const color = colors[chapterIndex] || colors[0];
+            let html = '';
+
+            for (let i = 0; i < 10; i++) { // Reduced from 20
+                html += `<div class="scene-particle" style="left:${Math.random()*100}%;animation-delay:${Math.random()*15}s;animation-duration:${Math.random()*10+15}s;background:${color}"></div>`;
+            }
+
+            return html;
+        }
+
+        function activateScene(index) {
+            const scenes = dom.sceneContainer.querySelectorAll('.scene');
+            scenes.forEach((scene, i) => {
+                scene.classList.remove('active', 'exiting');
+                if (i === index) scene.classList.add('active');
+            });
+            state.currentScene = index;
+            updateSceneNavigation();
+        }
+
+        function transitionToScene(direction) {
+            if (state.isTransitioning) return;
+
+            const scenes = storyData[state.lang];
+            const targetIndex = direction === 'next' ? state.currentScene + 1 : state.currentScene - 1;
+            if (targetIndex < 0 || targetIndex >= scenes.length) return;
+
+            state.isTransitioning = true;
+
+            const currentScene = dom.sceneContainer.querySelector('.scene.active');
+            const targetScene = dom.sceneContainer.querySelectorAll('.scene')[targetIndex];
+
+            dom.transitionOverlay.classList.add('active');
+
+            setTimeout(() => {
+                if (currentScene) {
+                    currentScene.classList.remove('active');
+                    currentScene.classList.add('exiting');
+                }
+                targetScene.classList.add('active');
+                state.currentScene = targetIndex;
+                updateSceneNavigation();
+
+                setTimeout(() => {
+                    dom.transitionOverlay.classList.remove('active');
+                    setTimeout(() => {
+                        if (currentScene) currentScene.classList.remove('exiting');
+                        state.isTransitioning = false;
+                    }, 800);
+                }, 200);
+            }, 600);
+        }
+
+        function updateSceneNavigation() {
+            const scenes = storyData[state.lang];
+            dom.currentSceneEl.textContent = String(state.currentScene + 1).padStart(2, '0');
+            dom.prevBtn.disabled = state.currentScene === 0;
+            dom.nextBtn.disabled = state.currentScene === scenes.length - 1;
+            const progress = (state.currentScene + 1) / scenes.length;
+            dom.progressBar.style.transform = `scaleX(${progress})`;
+        }
+
+        /* ===== PRELOADER ===== */
+        function initPreloader() {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    dom.preloader.classList.add('hidden');
+                    dom.body.classList.remove('is-loading');
+                }, 1500);
+            });
+        }
+
+        /* ===== LANGUAGE ===== */
         function switchLanguage() {
             state.lang = state.lang === 'fa' ? 'en' : 'fa';
 
@@ -2652,27 +2119,20 @@
                 dom.langLabel.textContent = 'EN';
             }
 
-            // Update all translatable elements
             document.querySelectorAll('[data-fa][data-en]').forEach(el => {
                 const text = el.getAttribute(`data-${state.lang}`);
                 if (text !== null && text !== '') {
-                    if (text.includes('<') || text.includes('&')) {
-                        el.innerHTML = text;
-                    } else {
-                        el.textContent = text;
-                    }
+                    el.innerHTML = text.includes('<') || text.includes('&') ? text : text;
+                    el.textContent = text;
                 }
             });
 
-            // Re-render cinematic scenes
             state.currentScene = 0;
             renderScenes();
             activateScene(0);
         }
 
-        /* ========================================
-           NAVIGATION
-        ======================================== */
+        /* ===== NAVIGATION ===== */
         function initNavigation() {
             dom.mobileToggle.addEventListener('click', () => {
                 const isOpen = dom.navLinks.classList.toggle('open');
@@ -2711,34 +2171,29 @@
             });
         }
 
-        /* ========================================
-           SCROLL
-        ======================================== */
+        /* ===== SCROLL (Throttled with rAF) ===== */
         function initScroll() {
             function onScroll() {
-                state.scrollY = window.pageYOffset;
+                if (state.ticking) return;
 
-                if (!state.ticking) {
-                    requestAnimationFrame(() => {
-                        dom.nav.classList.toggle('scrolled', state.scrollY > 50);
+                requestAnimationFrame(() => {
+                    state.scrollY = window.pageYOffset;
+                    dom.nav.classList.toggle('scrolled', state.scrollY > 50);
 
-                        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                        const progress = (state.scrollY / docHeight) * 100;
-                        dom.scrollProgress.style.width = progress + '%';
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = docHeight > 0 ? (state.scrollY / docHeight) * 100 : 0;
+                    dom.scrollProgress.style.width = progress + '%';
 
-                        state.ticking = false;
-                    });
-                    state.ticking = true;
-                }
+                    state.ticking = false;
+                });
+
+                state.ticking = true;
             }
 
             window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
         }
 
-        /* ========================================
-           REVEAL
-        ======================================== */
+        /* ===== REVEAL (Intersection Observer) ===== */
         function initReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2747,57 +2202,31 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -80px 0px'
-            });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
         }
 
-        /* ========================================
-           CARD SPOTLIGHT
-        ======================================== */
-        function initCardSpotlight() {
-            const cards = document.querySelectorAll('.character-card, .location-card, .mechanic-card');
-
-            cards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = ((e.clientX - rect.left) / rect.width) * 100;
-                    const y = ((e.clientY - rect.top) / rect.height) * 100;
-                    card.style.setProperty('--mouse-x', x + '%');
-                    card.style.setProperty('--mouse-y', y + '%');
-                });
-            });
-        }
-
-        /* ========================================
-           INITIALIZATION
-        ======================================== */
+        /* ===== INIT ===== */
         function init() {
             initPreloader();
+            initVisibilityAPI();
             initCursor();
             initParticles();
             initNavigation();
             initScroll();
             initReveal();
-            initCardSpotlight();
             initCinematicStory();
 
             dom.langToggle.addEventListener('click', switchLanguage);
             dom.prevBtn.addEventListener('click', () => transitionToScene('prev'));
             dom.nextBtn.addEventListener('click', () => transitionToScene('next'));
 
-            // Keyboard navigation
+            // Keyboard nav for story section
             document.addEventListener('keydown', (e) => {
                 const storySection = document.getElementById('story');
                 const rect = storySection.getBoundingClientRect();
-                const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-                if (!isInView) return;
+                if (rect.top > window.innerHeight || rect.bottom < 0) return;
 
                 if (e.key === 'ArrowLeft' && state.lang === 'en') transitionToScene('prev');
                 else if (e.key === 'ArrowRight' && state.lang === 'en') transitionToScene('next');
