@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No.7 | شماره ۷</title>
+    <meta name="description" content="هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست.">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-500-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-700-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/vazirmatn@latest/arabic-900-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-500-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-900-normal.css">
+
+    <style>
+        :root {
+            --font-fa: 'Vazirmatn', system-ui, sans-serif;
+            --font-en: 'Inter', system-ui, sans-serif;
+
+            --bg-void: #060609;
+            --bg-primary: #0a0a10;
+            --bg-secondary: #101018;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --bg-glass: rgba(255, 255, 255, 0.04);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.15);
+
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --text-muted: #606078;
+
+            --accent: #c0392b;
+            --accent-light: #e74c3c;
+            --accent-dark: #8b2a20;
+            --accent-glow: rgba(231, 76, 60, 0.4);
+            --accent-soft: rgba(192, 57, 43, 0.1);
+
+            --radius-lg: 24px;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
+
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.4s var(--ease);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-fa);
+            background: var(--bg-void);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: font-family 0.3s var(--ease);
+        }
+
+        body.lang-en {
+            font-family: var(--font-en);
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-void); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 3px; }
+
+        /* ===== 3D CHESS BACKGROUND ===== */
+        .chess-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .chess-bg::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: -50%;
+            top: 20%;
+            background-image:
+                linear-gradient(45deg, rgba(192, 57, 43, 0.06) 25%, transparent 25%, transparent 75%, rgba(192, 57, 43, 0.06) 75%),
+                linear-gradient(45deg, rgba(192, 57, 43, 0.06) 25%, transparent 25%, transparent 75%, rgba(192, 57, 43, 0.06) 75%);
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px;
+            transform: perspective(600px) rotateX(65deg) translateZ(-100px);
+            transform-origin: center top;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
+            animation: floorDrift 20s linear infinite;
+        }
+
+        .chess-bg::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: -50%;
+            top: 20%;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(231, 76, 60, 0.08) 79px, rgba(231, 76, 60, 0.08) 80px),
+                repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(231, 76, 60, 0.08) 79px, rgba(231, 76, 60, 0.08) 80px);
+            background-size: 80px 80px;
+            transform: perspective(600px) rotateX(65deg) translateZ(-99px);
+            transform-origin: center top;
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 60%, transparent 100%);
+        }
+
+        @keyframes floorDrift {
+            0% { background-position: 0 0, 40px 40px; }
+            100% { background-position: 80px 80px, 120px 120px; }
+        }
+
+        .chess-bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at 50% 30%, transparent 0%, var(--bg-void) 70%),
+                linear-gradient(180deg, var(--bg-void) 0%, transparent 20%, transparent 80%, var(--bg-void) 100%);
+        }
+
+        /* Architecture columns */
+        .arch-column {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(231, 76, 60, 0.1) 30%, rgba(231, 76, 60, 0.1) 70%, transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .arch-column:nth-child(1) { left: 10%; }
+        .arch-column:nth-child(2) { left: 30%; }
+        .arch-column:nth-child(3) { left: 50%; }
+        .arch-column:nth-child(4) { left: 70%; }
+        .arch-column:nth-child(5) { left: 90%; }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-void);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            transition: opacity 0.8s var(--ease), visibility 0.8s var(--ease);
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-number {
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--accent);
+            line-height: 1;
+            animation: preloaderPulse 1.5s var(--ease) infinite;
+        }
+
+        .preloader-bar {
+            width: 180px;
+            height: 2px;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .preloader-bar::after {
+            content: '';
+            display: block;
+            height: 100%;
+            background: var(--accent);
+            animation: preloaderFill 1.8s var(--ease) forwards;
+        }
+
+        @keyframes preloaderPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        @keyframes preloaderFill {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 32px;
+            background: rgba(6, 6, 9, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all var(--transition);
+        }
+
+        .nav.scrolled {
+            border-bottom-color: var(--border-glass);
+            background: rgba(6, 6, 9, 0.92);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .nav-brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--accent-light), var(--accent-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: #fff;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-radius: var(--radius-xs);
+            transition: all var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--bg-glass);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: inherit;
+        }
+
+        .lang-toggle:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .lang-toggle .pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            animation: pulseDot 2s infinite;
+        }
+
+        .lang-toggle:hover .pulse { background: #fff; }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .mobile-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-xs);
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: var(--text-primary);
+            position: relative;
+            transition: all var(--transition);
+        }
+
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all var(--transition);
+        }
+
+        .mobile-toggle span::before { top: -6px; }
+        .mobile-toggle span::after { top: 6px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            z-index: 2;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeInUp 1s var(--ease) 0.2s both;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            box-shadow: 0 0 10px var(--accent-glow);
+            animation: pulseDot 2s infinite;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 14vw, 11rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            position: relative;
+            animation: fadeInUp 1s var(--ease) 0.4s both;
+        }
+
+        .hero-title-main {
+            display: block;
+            background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto 48px;
+            line-height: 2;
+            animation: fadeInUp 1s var(--ease) 0.6s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s var(--ease) 0.8s both;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 8px 32px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--text-primary);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s var(--ease) 1.2s both;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(180deg, var(--text-muted), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-scroll-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: var(--accent-light);
+            animation: scrollLine 2s var(--ease) infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(400%); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 120px 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            padding: 6px 14px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            border-radius: 50px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title .accent {
+            color: var(--accent-light);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* ===== STORY TIMELINE ===== */
+        .story-section {
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.8) 10%, rgba(10, 10, 16, 0.8) 90%, transparent 100%);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                var(--border-glass) 10%,
+                var(--accent) 50%,
+                var(--border-glass) 90%,
+                transparent 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--bg-void);
+            border: 2px solid var(--accent);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 0 4px var(--bg-void), 0 0 20px var(--accent-glow);
+            transition: all var(--transition);
+            grid-column: 2;
+            grid-row: 1;
+            align-self: start;
+            margin-top: 32px;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .timeline-item:hover .timeline-content {
+            border-color: rgba(231, 76, 60, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .timeline-item:hover .timeline-content::before { opacity: 1; }
+
+        .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; }
+        .timeline-item:nth-child(even) .timeline-content { grid-column: 3; }
+        .timeline-item:nth-child(odd) .timeline-spacer { grid-column: 3; }
+        .timeline-item:nth-child(even) .timeline-spacer { grid-column: 1; }
+
+        .timeline-chapter {
+            display: inline-block;
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .timeline-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .timeline-quote {
+            display: block;
+            margin: 20px 0;
+            padding: 16px 24px;
+            background: linear-gradient(90deg, var(--accent-soft), transparent);
+            border-inline-start: 3px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: var(--text-primary);
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .timeline-highlight {
+            color: var(--accent-light);
+            font-weight: 700;
+        }
+
+        /* ===== CHARACTERS ===== */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .character-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .character-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .character-card:hover {
+            border-color: rgba(231, 76, 60, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .character-card:hover::before { opacity: 1; }
+
+        .character-number {
+            position: absolute;
+            top: 20px;
+            inset-inline-end: 24px;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--accent);
+            opacity: 0.3;
+            transition: all var(--transition);
+        }
+
+        .character-card:hover .character-number {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+
+        .character-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .character-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .character-role {
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .character-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .character-quote {
+            padding-top: 16px;
+            border-top: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .character-quote::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        /* ===== LOCATIONS ===== */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .location-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all var(--transition);
+        }
+
+        .location-card:hover {
+            border-color: rgba(231, 76, 60, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .location-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent-soft), transparent);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .location-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .location-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* ===== MECHANICS ===== */
+        .mechanics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .mechanic-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mechanic-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transform: scaleX(0);
+            transition: transform var(--transition);
+        }
+
+        .mechanic-card:hover {
+            border-color: rgba(231, 76, 60, 0.3);
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .mechanic-card:hover::after { transform: scaleX(1); }
+
+        .mechanic-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent-soft), transparent);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            transition: all var(--transition);
+        }
+
+        .mechanic-card:hover .mechanic-icon {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        .mechanic-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .mechanic-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* ===== REVELATION SECTION ===== */
+        .revelation-section {
+            padding: 120px 24px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .revelation-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .revelation-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, var(--accent-soft) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .revelation-number {
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 900;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--accent);
+            opacity: 0.3;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .revelation-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.3;
+            position: relative;
+        }
+
+        .revelation-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 2;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .revelation-quote {
+            display: inline-block;
+            padding: 20px 32px;
+            background: linear-gradient(90deg, var(--accent-soft), transparent, var(--accent-soft));
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-style: italic;
+            font-size: 1.2rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 80px 24px 40px;
+            background: var(--bg-void);
+            border-top: 1px solid var(--border-glass);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-brand {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-quote {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-inline: auto;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+        }
+
+        .reveal-stagger.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
+        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
+        .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .nav { padding: 12px 16px; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(6, 6, 9, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 16px;
+                border-bottom: 1px solid var(--border-glass);
+                gap: 4px;
+            }
+
+            .nav-links.open { display: flex; }
+            .nav-link { width: 100%; padding: 12px 16px; }
+            .mobile-toggle { display: flex; }
+
+            .timeline::before { left: 20px; }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                padding-inline-start: 50px;
+                gap: 0;
+            }
+
+            .timeline-dot {
+                position: absolute;
+                left: 12px;
+                top: 32px;
+                grid-column: auto;
+                grid-row: auto;
+                margin: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                grid-column: 1;
+            }
+
+            .timeline-spacer { display: none; }
+
+            .section { padding: 80px 20px; }
+            .section-header { margin-bottom: 50px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 100px 20px 60px; }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn { width: 100%; justify-content: center; }
+
+            .timeline-content { padding: 24px; }
+            .timeline-title { font-size: 1.2rem; }
+
+            .character-card { padding: 24px; min-height: auto; }
+            .character-number { font-size: 4rem; }
+
+            .revelation-box { padding: 40px 24px; }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-number">7</div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- 3D Chess Background -->
+    <div class="chess-bg"></div>
+    <div class="chess-bg-overlay"></div>
+    <div class="arch-column"></div>
+    <div class="arch-column"></div>
+    <div class="arch-column"></div>
+    <div class="arch-column"></div>
+    <div class="arch-column"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-brand">
+            <div class="nav-brand-mark">7</div>
+            <span>No.7</span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#story" class="nav-link" data-fa="داستان" data-en="Story">داستان</a>
+            <a href="#characters" class="nav-link" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</a>
+            <a href="#locations" class="nav-link" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</a>
+            <a href="#mechanics" class="nav-link" data-fa="مکانیک‌ها" data-en="Mechanics">مکانیک‌ها</a>
+            <a href="#revelation" class="nav-link" data-fa="حقیقت" data-en="Truth">حقیقت</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+                <span class="pulse"></span>
+                <span id="langLabel">EN</span>
+            </button>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow" data-fa="بازی روایی روان‌شناختی" data-en="Narrative Psychological Game">بازی روایی روان‌شناختی</div>
+            <h1 class="hero-title">
+                <span class="hero-title-main">No.7</span>
+            </h1>
+            <p class="hero-subtitle" data-fa="هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است." data-en="Seven people. Seven memories. One truth no one is ready to hear. In a city that isn't real, you must find Number 1 before sunset — but every salvation is a loss.">هفت نفر. هفت خاطره. یک حقیقت که هیچ‌کس آماده‌ی شنیدنش نیست. در شهری که واقعیت ندارد، باید قبل از غروب شماره ۱ را پیدا کنی — اما هر نجات، یک از دست دادن است.</p>
+            <div class="hero-cta">
+                <a href="#story" class="btn btn-primary">
+                    <span data-fa="شروع سفر" data-en="Begin the Journey">شروع سفر</span>
+                </a>
+                <a href="#characters" class="btn btn-secondary">
+                    <span data-fa="ملاقات با هفت نفر" data-en="Meet the Seven">ملاقات با هفت نفر</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span data-fa="اسکرول" data-en="Scroll">اسکرول</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Story -->
+    <section class="section story-section" id="story">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow" data-fa="لور کامل بازی" data-en="Complete Game Lore">لور کامل بازی</span>
+                <h2 class="section-title" data-fa="داستان <span class='accent'>شماره ۷</span>" data-en="The Story of <span class='accent'>No.7</span>">داستان <span class="accent">شماره ۷</span></h2>
+                <p class="section-desc" data-fa="روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند." data-en="A tale of awakening, searching, and a truth that changes everything. Six chapters that will forever change your mind.">روایتی از بیداری، جستجو، و حقیقتی که همه چیز را تغییر می‌دهد. شش فصلی که ذهن تو را برای همیشه عوض می‌کند.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل اول — بیداری" data-en="Chapter I — Awakening">فصل اول — بیداری</span>
+                        <h3 class="timeline-title" data-fa="صبحی بدون خاطره" data-en="A Morning Without Memory">صبحی بدون خاطره</h3>
+                        <p class="timeline-text">
+                            <span data-fa="شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:" data-en="The protagonist is a 16-year-old boy. He wakes up one morning in an unfamiliar room. He has no memory — doesn't know his name, where he came from, or why he's here. On his wrist, there's only a cold metal bracelet engraved with:">شخصیت اصلی یک پسر ۱۶ ساله است. یک روز صبح در اتاقی ناشناخته بیدار می‌شود. هیچ خاطره‌ای ندارد — نه نامش را می‌داند، نه از کجا آمده، نه چرا اینجاست. روی دستش فقط یک دستبند فلزی سرد است که روی آن حک شده:</span>
+                            <span class="timeline-quote" data-fa="«اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.»" data-en=""If you want to survive, find Number 1 before sunset."">«اگر می‌خواهی زنده بمانی، قبل از غروب شماره ۱ را پیدا کن.»</span>
+                            <span data-fa="یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب." data-en="A recorded voice. That's all. No other explanation. Just a big city, seven people with numbers on their wrists, and a deadline: before sunset.">یک صدای ضبط‌شده. تمام. هیچ توضیح دیگری وجود ندارد. فقط یک شهر بزرگ، هفت نفر با شماره‌هایی روی دستشان، و یک مهلت: قبل از غروب.</span>
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل دوم — جستجو" data-en="Chapter II — The Search">فصل دوم — جستجو</span>
+                        <h3 class="timeline-title" data-fa="شهر هفت نفر" data-en="The City of Seven">شهر هفت نفر</h3>
+                        <p class="timeline-text">
+                            <span data-fa="شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷. هر کدام شخصیت، گذشته و داستان خاص خودشان را دارند." data-en="The protagonist enters a vast, two-dimensional city. A city that feels both familiar and alien. In this city, there are seven people. Each has a number on their wrist: from No.1 to No.7. Each has their own personality, past, and story.">شخصیت اصلی وارد شهری بزرگ و دوبعدی می‌شود. شهری که هم آشنا به نظر می‌رسد و هم بیگانه. در این شهر، هفت نفر وجود دارند. هر کدام یک شماره روی دستشان دارند: از شماره ۱ تا شماره ۷. هر کدام شخصیت، گذشته و داستان خاص خودشان را دارند.</span>
+                            <br><br>
+                            <span data-fa="بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد." data-en="The player gradually gets to know them. Becomes friends. Helps them. Solves puzzles with them. Feels like they've finally found something worth fighting for.">بازیکن کم‌کم با آن‌ها آشنا می‌شود. دوست می‌شود. به آن‌ها کمک می‌کند. با آن‌ها معما حل می‌کند. احساس می‌کند که بالاخره چیزی پیدا کرده که ارزش جنگیدن دارد.</span>
+                            <br><br>
+                            <span class="timeline-highlight" data-fa="اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود." data-en="But... every time you find one of them, they disappear.">اما... هر بار که یکی را پیدا می‌کند، آن شخص ناپدید می‌شود.</span>
+                            <span class="timeline-quote" data-fa="«بالاخره پیدام کردی...»" data-en=""You finally found me..."">«بالاخره پیدام کردی...»</span>
+                            <span data-fa="فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند." data-en="Just one sentence. And then they vanish. As if they never existed.">فقط یک جمله. و بعد محو می‌شوند. مثل اینکه هرگز وجود نداشتند.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل سوم — وحشت" data-en="Chapter III — Terror">فصل سوم — وحشت</span>
+                        <h3 class="timeline-title" data-fa="شمارش معکوس" data-en="The Countdown">شمارش معکوس</h3>
+                        <p class="timeline-text">
+                            <span data-fa="وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد." data-en="Midway through the game, only three remain. The player panics. Wants to save everyone. Tries to run faster, find sooner, hold tighter.">وسط بازی، کم‌کم فقط سه نفر باقی می‌مانند. بازیکن وحشت می‌کند. می‌خواهد همه را نجات دهد. تلاش می‌کند سریع‌تر بدود، زودتر پیدا کند، محکم‌تر نگه دارد.</span>
+                            <br><br>
+                            <span data-fa="اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند." data-en="But fails. One by one, they too disappear. The city grows darker. Colors fade. The cheerful music stops. The abilities the player had vanish one by one.">اما موفق نمی‌شود. یکی یکی، آن‌ها هم محو می‌شوند. شهر تاریک‌تر می‌شود. رنگ‌ها کدر می‌شوند. موسیقی شاد قطع می‌شود. توانایی‌هایی که بازیکن داشت، یکی یکی از بین می‌روند.</span>
+                            <br><br>
+                            <span class="timeline-highlight" data-fa="بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد." data-en="The player thinks someone is killing them. Thinks there's an enemy.">بازیکن فکر می‌کند کسی آن‌ها را می‌کشد. فکر می‌کند یک دشمن وجود دارد.</span>
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل چهارم — حقیقت" data-en="Chapter IV — The Truth">فصل چهارم — حقیقت</span>
+                        <h3 class="timeline-title" data-fa="شماره ۱" data-en="Number 1">شماره ۱</h3>
+                        <p class="timeline-text">
+                            <span data-fa="نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند." data-en="Near the end, only Number 1 remains. The player finds them. Number 1 smiles.">نزدیک پایان، فقط شماره ۱ باقی مانده. بازیکن او را پیدا می‌کند. شماره ۱ لبخند می‌زند.</span>
+                            <span class="timeline-quote" data-fa="«خیلی طول کشید.»" data-en=""It took long enough."">«خیلی طول کشید.»</span>
+                            <span data-fa="بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:" data-en="The player is confused. "What?" Number 1 continues:">بازیکن گیج می‌شود. «چی؟» شماره ۱ ادامه می‌دهد:</span>
+                            <span class="timeline-quote" data-fa="«ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.»" data-en=""We are not seven people. We are your seven memories."">«ما هفت نفر نیستیم. ما هفت خاطره‌ی تو هستیم.»</span>
+                            <br><br>
+                            <span class="timeline-highlight" data-fa="سکوت مطلق." data-en="Absolute silence.">سکوت مطلق.</span>
+                            <br><br>
+                            <span data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش." data-en="Throughout the game, the player thought they were saving people. In reality... every time they found one, they were losing one of their own memories forever. Number 1 is the last memory. The memory of their mother.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. در واقع... هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. شماره ۱، آخرین خاطره است. خاطره‌ی مادرش.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل پنجم — بیداری واقعی" data-en="Chapter V — The Real Awakening">فصل پنجم — بیداری واقعی</span>
+                        <h3 class="timeline-title" data-fa="اتاق عمل" data-en="The Operating Room">اتاق عمل</h3>
+                        <p class="timeline-text">
+                            <span data-fa="صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:" data-en="The screen goes black. The beeping of hospital machines. Then a doctor's voice:">صفحه سیاه می‌شود. صدای بیپ دستگاه‌های بیمارستان. بعد صدای یک دکتر:</span>
+                            <span class="timeline-quote" data-fa="«عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.»" data-en=""The surgery was successful... but their long-term memory is almost completely gone."">«عمل موفقیت‌آمیز بود... اما حافظه‌ی بلندمدتش تقریباً کاملاً از بین رفته.»</span>
+                            <br><br>
+                            <span data-fa="حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود." data-en="The truth is revealed: that city, those people, that adventure... all happened inside the mind of a 16-year-old boy lying on a hospital bed. He had suffered severe psychological trauma — an accident that took his family from him. And he himself, before the surgery, had requested selective deletion of painful memories.">حقیقت آشکار می‌شود: آن شهر، آن آدم‌ها، آن ماجراجویی... همه در ذهن یک پسر ۱۶ ساله اتفاق افتاده که روی تخت بیمارستان بوده. او دچار ترومای شدید روانی شده بود — تصادفی که خانواده‌اش را از او گرفت. و خودش، قبل از عمل، درخواست حذف انتخابی خاطرات دردناک را ثبت کرده بود.</span>
+                            <br><br>
+                            <span class="timeline-highlight" data-fa="آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش." data-en="Those seven people were seven aspects of his existence: his courage, his laughter, his childhood, his father, his mother, his first friend, his dreams.">آن هفت نفر، هفت جنبه‌ی وجود او بودند: یکی شجاعتش. یکی خنده‌هایش. یکی کودکی‌اش. یکی پدرش. یکی مادرش. یکی اولین دوستش. یکی رؤیاهایش.</span>
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-chapter" data-fa="فصل ششم — تکرار" data-en="Chapter VI — The Loop">فصل ششم — تکرار</span>
+                        <h3 class="timeline-title" data-fa="وقتی بازی را دوباره شروع می‌کنی..." data-en="When You Restart the Game...">وقتی بازی را دوباره شروع می‌کنی...</h3>
+                        <p class="timeline-text">
+                            <span data-fa="وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند." data-en="When you restart the game, everything has changed. Hints you missed before are now obvious. Dialogues you thought were ordinary now carry a different meaning.">وقتی بازی را دوباره شروع می‌کنی، همه چیز تغییر کرده. سرنخ‌هایی که قبلاً ندیده بودی حالا آشکارند. دیالوگ‌هایی که فکر می‌کردی معمولی هستند، حالا معنای دیگری دارند.</span>
+                            <br><br>
+                            <span data-fa="انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است." data-en="The player's motivation throughout the game was completely natural: "Find everyone and save them." But in the end, they realize that the very thing they thought was right caused them to lose what was most valuable.">انگیزه‌ی بازیکن در تمام بازی کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما در پایان می‌فهمد که همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شده که بیش از همه ارزش داشته است.</span>
+                            <span class="timeline-quote" data-fa="«گاهی نجات دادن، همان از دست دادن است.»" data-en=""Sometimes saving is the same as losing."">«گاهی نجات دادن، همان از دست دادن است.»</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters -->
+    <section class="section" id="characters">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow" data-fa="شخصیت‌ها" data-en="Characters">شخصیت‌ها</span>
+                <h2 class="section-title" data-fa="هفت خاطره، <span class='accent'>هفت چهره</span>" data-en="Seven Memories, <span class='accent'>Seven Faces</span>">هفت خاطره، <span class="accent">هفت چهره</span></h2>
+                <p class="section-desc" data-fa="هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی." data-en="Each one is a part of someone who no longer remembers themselves. They aren't real — but their pain is the realest thing you'll feel.">هر کدام بخشی از کسی هستند که دیگر خودش را به یاد نمی‌آورد. آن‌ها واقعی نیستند — اما دردشان واقعی‌ترین چیزی است که حس می‌کنی.</p>
+            </div>
+
+            <div class="characters-grid reveal-stagger">
+                <div class="character-card">
+                    <span class="character-number">01</span>
+                    <div class="character-avatar">۱</div>
+                    <h3 class="character-name" data-fa="شماره ۱ — مادر" data-en="No.1 — Mother">شماره ۱ — مادر</h3>
+                    <div class="character-role" data-fa="آخرین خاطره" data-en="The Last Memory">آخرین خاطره</div>
+                    <p class="character-desc" data-fa="آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»" data-en="The last thing erased from their mind. The warmest and most painful memory. When you find them, they smile and say: "It took long enough."">آخرین چیزی که از ذهن او پاک می‌شود. گرم‌ترین و دردناک‌ترین خاطره. وقتی پیدایش می‌کنی، لبخند می‌زند و می‌گوید: «خیلی طول کشید.»</p>
+                    <p class="character-quote" data-fa="«حالا دیگه هیچ دردی یادت نیست...»" data-en=""Now you don't remember any pain anymore..."">«حالا دیگه هیچ دردی یادت نیست...»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">02</span>
+                    <div class="character-avatar">۲</div>
+                    <h3 class="character-name" data-fa="شماره ۲ — خنده‌ها" data-en="No.2 — Laughter">شماره ۲ — خنده‌ها</h3>
+                    <div class="character-role" data-fa="شادی از دست رفته" data-en="Lost Joy">شادی از دست رفته</div>
+                    <p class="character-desc" data-fa="کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود." data-en="A playful, energetic child. When they vanish, the city's colors fade and the cheerful music stops forever.">کودکی شوخ و پرانرژی. وقتی محو می‌شود، رنگ‌های شهر کدر می‌شوند و موسیقی شاد برای همیشه قطع می‌شود.</p>
+                    <p class="character-quote" data-fa="«یادت میاد چقدر می‌خندیدیم؟»" data-en=""Remember how much we used to laugh?"">«یادت میاد چقدر می‌خندیدیم؟»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">03</span>
+                    <div class="character-avatar">۳</div>
+                    <h3 class="character-name" data-fa="شماره ۳ — شجاعت" data-en="No.3 — Courage">شماره ۳ — شجاعت</h3>
+                    <div class="character-role" data-fa="قدرت درونی" data-en="Inner Strength">قدرت درونی</div>
+                    <p class="character-desc" data-fa="شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد." data-en="A fearless, determined character. When they vanish, the player can no longer pass through dark areas or overcome large obstacles.">شخصیتی نترس و مصمم. وقتی محو می‌شود، بازیکن دیگر نمی‌تواند از جاهای تاریک عبور کند یا موانع بزرگ را پشت سر بگذارد.</p>
+                    <p class="character-quote" data-fa="«نترس. من اینجام.»" data-en=""Don't be afraid. I'm here."">«نترس. من اینجام.»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">04</span>
+                    <div class="character-avatar">۴</div>
+                    <h3 class="character-name" data-fa="شماره ۴ — پدر" data-en="No.4 — Father">شماره ۴ — پدر</h3>
+                    <div class="character-role" data-fa="تکیه‌گاه" data-en="The Support">تکیه‌گاه</div>
+                    <p class="character-desc" data-fa="مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست." data-en="A quiet but kind man. Has the exact same nervous tic the protagonist shows in mirrors. A hint that's not obvious at first glance.">مردی ساکت اما مهربان. دقیقاً همان تیک عصبی را دارد که شخصیت اصلی در آینه‌ها نشان می‌دهد. سرنخی که در نگاه اول مشخص نیست.</p>
+                    <p class="character-quote" data-fa="«قوی باش. مثل من.»" data-en=""Be strong. Like me."">«قوی باش. مثل من.»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">05</span>
+                    <div class="character-avatar">۵</div>
+                    <h3 class="character-name" data-fa="شماره ۵ — اولین دوست" data-en="No.5 — First Friend">شماره ۵ — اولین دوست</h3>
+                    <div class="character-role" data-fa="پیوند انسانی" data-en="Human Bond">پیوند انسانی</div>
+                    <p class="character-desc" data-fa="تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند." data-en="The only one who knows the childhood song. When they vanish, that song is erased from the player's mind and the door that opened with it stays closed forever.">تنها کسی که آهنگ کودکی را بلد است. وقتی محو می‌شود، آن آهنگ از ذهن بازیکن پاک می‌شود و دری که با آن آهنگ باز می‌شد، برای همیشه بسته می‌ماند.</p>
+                    <p class="character-quote" data-fa="«یادت هست اون آهنگو؟»" data-en=""Remember that song?"">«یادت هست اون آهنگو؟»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">06</span>
+                    <div class="character-avatar">۶</div>
+                    <h3 class="character-name" data-fa="شماره ۶ — رؤیاها" data-en="No.6 — Dreams">شماره ۶ — رؤیاها</h3>
+                    <div class="character-role" data-fa="آینده‌ی نساخته" data-en="Unbuilt Future">آینده‌ی نساخته</div>
+                    <p class="character-desc" data-fa="شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست." data-en="A dreamy, vague character. Constantly says: "I wish I could wake up..." The player thinks they're talking about a nightmare, but they're actually in a coma.">شخصیتی رویایی و مبهم. مدام می‌گوید: «کاش می‌تونستم بیدار شم...» بازیکن فکر می‌کند از کابوس حرف می‌زند، اما در واقع او در کماست.</p>
+                    <p class="character-quote" data-fa="«کاش می‌تونستم بیدار شم...»" data-en=""I wish I could wake up..."">«کاش می‌تونستم بیدار شم...»</p>
+                </div>
+
+                <div class="character-card">
+                    <span class="character-number">07</span>
+                    <div class="character-avatar">۷</div>
+                    <h3 class="character-name" data-fa="شماره ۷ — کودکی" data-en="No.7 — Childhood">شماره ۷ — کودکی</h3>
+                    <div class="character-role" data-fa="خودِ بازیکن" data-en="The Player">خودِ بازیکن</div>
+                    <p class="character-desc" data-fa="همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست." data-en="The same boy who awakens at the start of the game. The last piece of identity. When the others vanish, they remain — but no longer know who they are.">همان پسری که در ابتدای بازی بیدار می‌شود. آخرین تکه‌ی هویت. وقتی بقیه محو می‌شوند، او می‌ماند — اما دیگر نمی‌داند کیست.</p>
+                    <p class="character-quote" data-fa="«من کی‌ام؟»" data-en=""Who am I?"">«من کی‌ام؟»</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="section" id="locations">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow" data-fa="مکان‌ها" data-en="Locations">مکان‌ها</span>
+                <h2 class="section-title" data-fa="شهری که <span class='accent'>واقعیت ندارد</span>" data-en="A City That <span class='accent'>Isn't Real</span>">شهری که <span class="accent">واقعیت ندارد</span></h2>
+                <p class="section-desc" data-fa="هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی." data-en="Every location is a reflection of a hospital room or a buried memory. When you look closely, you'll see the signs.">هر مکان، بازتابی از یک اتاق در بیمارستان یا یک خاطره‌ی دفن شده است. وقتی با دقت نگاه کنی، نشانه‌ها را می‌بینی.</p>
+            </div>
+
+            <div class="locations-grid reveal-stagger">
+                <div class="location-card">
+                    <div class="location-icon">🏠</div>
+                    <h3 class="location-name" data-fa="اتاق بیداری" data-en="The Awakening Room">اتاق بیداری</h3>
+                    <p class="location-desc" data-fa="جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده." data-en="Where the game begins. A simple room with a window letting in morning light. Actually a reflection of the hospital room that the mind has transformed into a bedroom.">جایی که بازی شروع می‌شود. اتاقی ساده با یک پنجره که نور صبح از آن وارد می‌شود. در واقع بازتابی از اتاق بیمارستان است که ذهن آن را به شکل اتاق خواب تغییر داده.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🌆</div>
+                    <h3 class="location-name" data-fa="خیابان‌های بی‌پایان" data-en="The Endless Streets">خیابان‌های بی‌پایان</h3>
+                    <p class="location-desc" data-fa="خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است." data-en="City streets that feel familiar but are empty. An ambulance siren is heard in the distance — actually the sound of the heart monitor.">خیابان‌های شهر که به نظر آشنا می‌آیند اما هیچ‌کس در آن‌ها نیست. صدای آمبولانس در دوردست شنیده می‌شود — در واقع صدای دستگاه مانیتور قلب است.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🌳</div>
+                    <h3 class="location-name" data-fa="پارک خاطرات" data-en="Memory Park">پارک خاطرات</h3>
+                    <p class="location-desc" data-fa="پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند." data-en="A park with empty swings and trees whose leaves slowly fall. Where No.2 (Laughter) is found. When they vanish, the leaves turn black forever.">پارکی با تاب‌های خالی و درختانی که برگ‌هایشان به آرامی می‌ریزد. جایی که شماره ۲ (خنده‌ها) پیدا می‌شود. با محو شدنش، برگ‌ها برای همیشه سیاه می‌شوند.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🏚️</div>
+                    <h3 class="location-name" data-fa="خانه‌ی قدیمی" data-en="The Old House">خانه‌ی قدیمی</h3>
+                    <p class="location-desc" data-fa="خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده." data-en="An abandoned house that smells of childhood. Photos on the wall have no faces. Where No.4 (Father) waits.">خانه‌ای متروکه که بوی کودکی می‌دهد. عکس‌های روی دیوار چهره‌ی ندارند. جایی که شماره ۴ (پدر) منتظر ایستاده.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">🌑</div>
+                    <h3 class="location-name" data-fa="غروب ابدی" data-en="The Eternal Sunset">غروب ابدی</h3>
+                    <p class="location-desc" data-fa="هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود." data-en="As you approach the end, the sky grows darker. Sunset is actually the time of full anesthesia or surgery. The environment becomes more abstract and terrifying.">هرچه به پایان بازی نزدیک‌تر می‌شوید، آسمان تاریک‌تر می‌شود. غروب خورشید در واقع زمان بیهوشی کامل یا زمان جراحی است. محیط انتزاعی‌تر و ترسناک‌تر می‌شود.</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-icon">⬛</div>
+                    <h3 class="location-name" data-fa="تهی‌گاه" data-en="The Void">تهی‌گاه</h3>
+                    <p class="location-desc" data-fa="جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است." data-en="Where it appears at the end of the game. A black, infinite space where only No.1 waits. This is the border between mind and reality.">جایی که در انتهای بازی ظاهر می‌شود. فضایی سیاه و بی‌انتها که فقط شماره ۱ در آن منتظر است. اینجا مرز بین ذهن و واقعیت است.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanics -->
+    <section class="section" id="mechanics">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow" data-fa="مکانیک‌های بازی" data-en="Game Mechanics">مکانیک‌های بازی</span>
+                <h2 class="section-title" data-fa="وقتی <span class='accent'>گیم‌پلی</span> خودش داستان است" data-en="When <span class='accent'>Gameplay</span> Is the Story">وقتی <span class="accent">گیم‌پلی</span> خودش داستان است</h2>
+                <p class="section-desc" data-fa="در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی." data-en="In No.7, every mechanic is a reflection of loss. You don't play to win — you play to see what you lose.">در شماره ۷، هر مکانیک بازتابی از از دست دادن است. تو بازی نمی‌کنی که برنده شوی — بازی می‌کنی تا ببینی چه چیزی را از دست می‌دهی.</p>
+            </div>
+
+            <div class="mechanics-grid reveal-stagger">
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">💀</div>
+                    <h3 class="mechanic-title" data-fa="محو شدن" data-en="Disappearance">محو شدن</h3>
+                    <p class="mechanic-desc" data-fa="هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت." data-en="Every time a character is found, they vanish forever. Only one sentence remains, and silence.">هر بار که یک شخصیت پیدا می‌شود، برای همیشه محو می‌شود. فقط یک جمله باقی می‌ماند و سکوت.</p>
+                </div>
+
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">⭐</div>
+                    <h3 class="mechanic-title" data-fa="از دست دادن توانایی" data-en="Losing Abilities">از دست دادن توانایی</h3>
+                    <p class="mechanic-desc" data-fa="با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا." data-en="With each character's disappearance, an ability is taken from the player. Jumping, dark vision, or even the color of the world.">با محو شدن هر شخصیت، یک قابلیت از بازیکن گرفته می‌شود. پرش، دید در تاریکی، یا حتی رنگ دنیا.</p>
+                </div>
+
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">⌚</div>
+                    <h3 class="mechanic-title" data-fa="دستبند شمارش معکوس" data-en="Bracelet Countdown">دستبند شمارش معکوس</h3>
+                    <p class="mechanic-desc" data-fa="دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود." data-en="The No.7 bracelet is on the HUD. With each disappearance, one of its numbers is erased.">دستبند No.7 روی صفحه (HUD) است. با محو شدن هر شخصیت، یکی از اعداد روی آن پاک می‌شود.</p>
+                </div>
+
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">🧩</div>
+                    <h3 class="mechanic-title" data-fa="معماهای خاطره‌ای" data-en="Memory Puzzles">معماهای خاطره‌ای</h3>
+                    <p class="mechanic-desc" data-fa="معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود." data-en="Puzzles are solved with memories. When a memory vanishes, the solution is lost forever.">معماها با خاطرات حل می‌شوند. وقتی خاطره محو شود، راه‌حل هم برای همیشه از دست می‌رود.</p>
+                </div>
+
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">🌅</div>
+                    <h3 class="mechanic-title" data-fa="غروب پیش‌رونده" data-en="Progressive Sunset">غروب پیش‌رونده</h3>
+                    <p class="mechanic-desc" data-fa="با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر." data-en="As the game progresses, the sky darkens. Sunset = surgery time. The closer, the more abstract the environment.">با پیشرفت بازی، آسمان تاریک‌تر می‌شود. غروب = زمان جراحی. هرچه نزدیک‌تر، محیط انتزاعی‌تر.</p>
+                </div>
+
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">🔄</div>
+                    <h3 class="mechanic-title" data-fa="تکرار با آگاهی" data-en="Replay with Awareness">تکرار با آگاهی</h3>
+                    <p class="mechanic-desc" data-fa="در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند." data-en="In the second playthrough, you see hints that were invisible the first time. Dialogues take on new meaning.">در دور دوم، سرنخ‌هایی می‌بینید که بار اول نامرئی بودند. دیالوگ‌ها معنای دیگری پیدا می‌کنند.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revelation -->
+    <section class="revelation-section" id="revelation">
+        <div class="container">
+            <div class="revelation-box reveal">
+                <div class="revelation-number">7</div>
+                <h2 class="revelation-title" data-fa="حقیقت نهایی" data-en="The Final Truth">حقیقت نهایی</h2>
+                <p class="revelation-text" data-fa="بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت." data-en="Throughout the game, the player thought they were saving people. But in reality, every time they found one, they were losing one of their own memories forever. The player's motivation was completely natural: "Find everyone and save them." But the very thing they thought was right caused them to lose what was most valuable.">بازیکن در تمام بازی فکر می‌کرد آدم‌ها را نجات می‌دهد. اما در واقع، هر بار که یکی را پیدا می‌کرد، داشت یکی از خاطرات خودش را برای همیشه از دست می‌داد. انگیزه‌ی بازیکن کاملاً طبیعی بود: «همه را پیدا کنم و نجات بدهم.» اما همان کاری که فکر می‌کرد درست است، باعث از دست رفتن چیزی شد که بیش از همه ارزش داشت.</p>
+                <div class="revelation-quote" data-fa="«گاهی نجات دادن، همان از دست دادن است.»" data-en=""Sometimes saving is the same as losing."">«گاهی نجات دادن، همان از دست دادن است.»</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">No.7</div>
+            <p class="footer-quote" data-fa="گاهی نجات دادن، همان از دست دادن است." data-en="Sometimes saving is the same as losing.">گاهی نجات دادن، همان از دست دادن است.</p>
+            <div class="footer-bottom">
+                <span data-fa="© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی" data-en="© 2025 No.7 — A Narrative Experience">© ۲۰۲۵ شماره ۷ — یک تجربه‌ی روایی</span>
+                <span data-fa="ساخته شده با عشق و درد" data-en="Made with love and pain">ساخته شده با عشق و درد</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1800);
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('langToggle');
+        const langLabel = document.getElementById('langLabel');
+        const htmlEl = document.documentElement;
+        const bodyEl = document.body;
+        let currentLang = 'fa';
+
+        function switchLanguage() {
+            currentLang = currentLang === 'fa' ? 'en' : 'fa';
+
+            if (currentLang === 'en') {
+                htmlEl.setAttribute('dir', 'ltr');
+                htmlEl.setAttribute('lang', 'en');
+                bodyEl.classList.add('lang-en');
+                bodyEl.classList.remove('lang-fa');
+                langLabel.textContent = 'FA';
+            } else {
+                htmlEl.setAttribute('dir', 'rtl');
+                htmlEl.setAttribute('lang', 'fa');
+                bodyEl.classList.add('lang-fa');
+                bodyEl.classList.remove('lang-en');
+                langLabel.textContent = 'EN';
+            }
+
+            document.querySelectorAll('[data-fa][data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text !== null && text !== '') {
+                    if (text.includes('<')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+        }
+
+        langToggle.addEventListener('click', switchLanguage);
+
+        // Mobile Nav
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Nav Scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId.length < 2) return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = nav.offsetHeight;
+                    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        });
+
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Keyboard
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                navLinks.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
+
